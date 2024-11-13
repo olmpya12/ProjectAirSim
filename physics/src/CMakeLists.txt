@@ -21,6 +21,7 @@ add_library(
     unreal_physics.cpp
     physics_world.cpp
     matlab_physics.cpp
+    jsbsim_physics.cpp
 )
 
 set_target_properties(${TARGET_NAME} PROPERTIES
@@ -29,7 +30,10 @@ set_target_properties(${TARGET_NAME} PROPERTIES
     COMPILE_PDB_OUTPUT_DIR ${CMAKE_BINARY_DIR}
 )
 
-add_dependencies(${TARGET_NAME} core_sim nng-external)
+add_dependencies(${TARGET_NAME} core_sim jsbsim-repo nng-external)
+
+# Set up JSBSim for linking
+target_link_directories(${TARGET_NAME} PRIVATE ${JSBSIM_STATIC_LIB_DIR})
 
 # Set up nng for linking
 target_link_directories(${TARGET_NAME} PRIVATE ${NNG_LIB_DIR})
@@ -46,6 +50,7 @@ target_include_directories(
         ${JSON_INCLUDE_DIR}
         ${NNG_INCLUDE_DIR}
         ${MSGPACK_INCLUDE_DIR}
+        ${JSBSIM_INCLUDE_DIR}
 )
 
 if(WIN32)
@@ -58,6 +63,7 @@ if(WIN32)
             mswsock  # req by nng on Win
             advapi32  # req by nng on Win
             lvmon
+            jsbsim
     )
 else()
     target_link_libraries(
@@ -65,6 +71,7 @@ else()
         PRIVATE
         core_sim
         nng
+        jsbsim
     )
 endif()
 

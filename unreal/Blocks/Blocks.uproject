@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "ADCB9388-4993-4307-B443-6F7A0F8BE22D",
+	"EngineAssociation": "5.2",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -37,9 +37,9 @@
 			"Enabled": true
 		},
 		{
-      "Name": "Niagara",
-      "Enabled": true
-    }
+			"Name": "Niagara",
+			"Enabled": true
+		}
 	],
 	"TargetPlatforms": [
 		"LinuxNoEditor",

@@ -8,6 +8,7 @@ public class ProjectAirSim : ModuleRules
 {
     public ProjectAirSim(ReadOnlyTargetRules Target) : base(Target)
     {
+		bEnableUndefinedIdentifierWarnings = false;
         CppStandard = CppStandardVersion.Cpp17;
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         PrivatePCHHeaderFile = "Public/ProjectAirSim.h";
@@ -48,6 +49,7 @@ public class ProjectAirSim : ModuleRules
                     PluginDirectory + "/SimLibs/core_sim/include",
                     PluginDirectory + "/SimLibs/simserver/include",
                     PluginDirectory + "/SimLibs/physics/include",
+                    PluginDirectory + "/SimLibs/core_sim/jsbsim/include",
                     PluginDirectory + "/SimLibs/rendering_scene/include",
                     PluginDirectory + "/SimLibs/multirotor_api/include",
                     PluginDirectory + "/SimLibs/rover_api/include",
@@ -72,6 +74,7 @@ public class ProjectAirSim : ModuleRules
                     PluginDirectory + "/SimLibs/core_sim/include",
                     PluginDirectory + "/SimLibs/simserver/include",
                     PluginDirectory + "/SimLibs/physics/include",
+                    PluginDirectory + "/SimLibs/core_sim/jsbsim/include",
                     PluginDirectory + "/SimLibs/multirotor_api/include",
                     PluginDirectory + "/SimLibs/rover_api/include",
                     PluginDirectory + "/SimLibs/rendering_scene/include",
@@ -142,6 +145,7 @@ public class ProjectAirSim : ModuleRules
                     PluginDirectory + "/SimLibs/core_sim/" + buildType + "/core_sim.lib",
                     PluginDirectory + "/SimLibs/simserver/" + buildType + "/simserver.lib",
                     PluginDirectory + "/SimLibs/physics/" + buildType + "/physics.lib",
+                    PluginDirectory + "/SimLibs/core_sim/jsbsim/lib/" + buildType + "/jsbsim.lib",
                     PluginDirectory + "/SimLibs/multirotor_api/" + buildType + "/multirotor_api.lib",
                     PluginDirectory + "/SimLibs/rover_api/" + buildType + "/rover_api.lib",
                     PluginDirectory + "/SimLibs/rendering_scene/" + buildType + "/rendering_scene.lib",
@@ -173,6 +177,9 @@ public class ProjectAirSim : ModuleRules
                 var fileName = Path.GetFileName(file);
                 RuntimeDependencies.Add("$(BinaryOutputDir)/" + fileName, PluginDirectory + "/SimLibs/shared_libs/" + fileName);
             }
+
+            // JSBSim dll
+            RuntimeDependencies.Add("$(BinaryOutputDir)/" + "JSBSim.dll", PluginDirectory + "/SimLibs/core_sim/jsbsim/lib/" + buildType + "/" + "JSBSim.dll");
         }
         else
         {
@@ -182,6 +189,7 @@ public class ProjectAirSim : ModuleRules
                     PluginDirectory + "/SimLibs/core_sim/" + buildType + "/libcore_sim.a",
                     PluginDirectory + "/SimLibs/simserver/" + buildType + "/libsimserver.a",
                     PluginDirectory + "/SimLibs/physics/" + buildType + "/libphysics.a",
+                    PluginDirectory + "/SimLibs/core_sim/jsbsim/lib/" + buildType + "/libjsbsim.a",
                     PluginDirectory + "/SimLibs/multirotor_api/" + buildType + "/libmultirotor_api.a",
                     PluginDirectory + "/SimLibs/rover_api/" + buildType + "/librover_api.a",
                     PluginDirectory + "/SimLibs/rendering_scene/" + buildType + "/librendering_scene.a",
@@ -201,6 +209,9 @@ public class ProjectAirSim : ModuleRules
                 var fileName = Path.GetFileName(file);
                 RuntimeDependencies.Add("$(BinaryOutputDir)/" + fileName, PluginDirectory + "/SimLibs/shared_libs/" + fileName);
             }
+
+            // JSBSim so
+            RuntimeDependencies.Add("$(BinaryOutputDir)/" + "libjsbsim.so", PluginDirectory + "/SimLibs/core_sim/jsbsim/lib/" + buildType + "/" + "JSBSim.so");
 
             PublicAdditionalLibraries.AddRange(liststrLibraries);
             PublicSystemLibraries.AddRange(

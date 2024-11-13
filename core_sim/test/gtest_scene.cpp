@@ -26,7 +26,7 @@ class Simulator {
     Logger logger(callback);
     logger.SetLogLevel(LogLevel::kVerbose);
     return Scene(logger, TopicManager(logger), "", ServiceManager(logger),
-                 StateManager(logger));
+                 StateManager(logger),"");
   }
 
   static void LoadScene(Scene& scene, ConfigJson config_json) {

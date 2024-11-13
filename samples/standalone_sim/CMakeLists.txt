@@ -25,6 +25,7 @@ if(WIN32)
         simserver
         core_sim
         nng-external
+        jsbsim-repo
         physics
         multirotor_api
         rendering_scene
@@ -35,6 +36,7 @@ else()
         simserver
         core_sim
         nng-external
+        jsbsim-repo
         openssl-external
         physics
         multirotor_api
@@ -46,6 +48,10 @@ endif()
 target_link_directories(${TARGET_NAME} PRIVATE ${NNG_LIB_DIR} ${OPENSSL_LIB_DIR})
 target_compile_definitions(${TARGET_NAME} PRIVATE NNG_STATIC_LIB=ON OPENSSL_STATIC_LIB=ON)
 target_link_directories(${TARGET_NAME} PRIVATE ${ONNX_LIB_DIR})
+
+# Set up JSBSim for linking
+target_link_directories(${TARGET_NAME} PRIVATE ${JSBSIM_STATIC_LIB_DIR})
+
 target_include_directories(
     ${TARGET_NAME}
     PUBLIC
@@ -67,6 +73,7 @@ if(WIN32)
             simserver
             core_sim
             physics
+            jsbsim
             mavlinkcom
             multirotor_api
             rendering_scene
@@ -83,6 +90,7 @@ else()
         simserver
         core_sim
         physics
+        jsbsim
         mavlinkcom
         multirotor_api
         rendering_scene
