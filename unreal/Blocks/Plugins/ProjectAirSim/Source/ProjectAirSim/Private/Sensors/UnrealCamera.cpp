@@ -966,9 +966,9 @@ void UUnrealCamera::OnRendered(
   // shared_ptr to the sensor impl to use for publishing the image
   // message.
   (new FAutoDeleteAsyncTask<FImagePackingAsyncTask>(
-          std::move(CaptureResults), CapturedCameraTransform, SimCamera,
-          std::move(Annotations)))
-          ->StartBackgroundTask();
+       std::move(CaptureResults), CapturedCameraTransform, SimCamera,
+       std::move(Annotations)))
+      ->StartBackgroundTask();
 
   // Reset flag to allow next frame capture to start
   bCapturePending = false;

@@ -55,12 +55,15 @@ void AUnrealScene::LoadUnrealScene(
   // Load UnrealEnvActor actors for each env actor in sim scene
   auto env_actors = Scene.GetEnvActors();
   for (auto& env_actor : env_actors) {
-      if (env_actor.get().GetEnvActorType() == projectairsim::EnvActorType::kEnvActor) {
-        LoadUnrealEnvActor(World, env_actor.get());
-      } else if (env_actor.get().GetEnvActorType() == projectairsim::EnvActorType::kEnvCar) {
-        LoadUnrealEnvCar(World, env_actor.get());
-      } else if (env_actor.get().GetEnvActorType() == projectairsim::EnvActorType::kEnvHuman) {
-        LoadUnrealEnvHuman(World, env_actor.get());
+    if (env_actor.get().GetEnvActorType() ==
+        projectairsim::EnvActorType::kEnvActor) {
+      LoadUnrealEnvActor(World, env_actor.get());
+    } else if (env_actor.get().GetEnvActorType() ==
+               projectairsim::EnvActorType::kEnvCar) {
+      LoadUnrealEnvCar(World, env_actor.get());
+    } else if (env_actor.get().GetEnvActorType() ==
+               projectairsim::EnvActorType::kEnvHuman) {
+      LoadUnrealEnvHuman(World, env_actor.get());
     }
   }
   // Load UnrealEnvParticleEffect actors for each env particle in sim scene

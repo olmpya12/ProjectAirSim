@@ -226,8 +226,8 @@ FString AUnrealSimLoader::ResolveTilesDirectory(
 
 #ifdef ENABLE_CESIUM
 void AUnrealSimLoader::ConfigureCesiumTileset(
-    ACesium3DTileset* CesiumTile, microsoft::projectairsim::GeoPoint& HomeGeoPoint,
-    FString TilesetDir) {
+    ACesium3DTileset* CesiumTile,
+    microsoft::projectairsim::GeoPoint& HomeGeoPoint, FString TilesetDir) {
   CesiumTile->Url = FString("file:///" + TilesetDir);
 
   // Disable culling and lower LODs since sensors might be independent from
@@ -396,10 +396,9 @@ void AUnrealSimLoader::LoadUnrealScene() {
               GISRenderer = UnrealWorld->SpawnActor<AGISRenderer>(
                   AGISRenderer::StaticClass(), FTransform(), GISSpawnParams);
 
-              GISRenderer->Init(SimServer, TilesDir,
-                                Scene.GetHomeGeoPoint().geo_point,
-                                Scene.GetTilesAltitudeOffset(),
-                                HorizonTilesDir);
+              GISRenderer->Init(
+                  SimServer, TilesDir, Scene.GetHomeGeoPoint().geo_point,
+                  Scene.GetTilesAltitudeOffset(), HorizonTilesDir);
               break;
             }
             case projectairsim::SceneType::kBlackShark: {

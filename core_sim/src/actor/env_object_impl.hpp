@@ -12,9 +12,8 @@ class EnvObject::Impl : public ActorImpl {
  public:
   typedef microsoft::projectairsim::Transform Pose;
 
-  Impl(const std::string& id, const Pose& origin,
-       const Logger& logger, const TopicManager& topic_manager,
-       const std::string& parent_topic_path,
+  Impl(const std::string& id, const Pose& origin, const Logger& logger,
+       const TopicManager& topic_manager, const std::string& parent_topic_path,
        const ServiceManager& service_manager,
        const StateManager& state_manager);
 
@@ -33,7 +32,6 @@ class EnvObject::Impl : public ActorImpl {
   Visual visual_settings_;
   EnvObject::Loader loader_;
   std::vector<std::reference_wrapper<Topic>> topics_;
-
 };
 
 }  // namespace projectairsim

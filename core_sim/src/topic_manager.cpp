@@ -3,9 +3,9 @@
 #include "topic_manager.hpp"
 
 #include <array>
-#include <list>
 #include <atomic>
 #include <functional>
+#include <list>
 #include <map>
 #include <memory>
 #include <shared_mutex>
@@ -29,7 +29,12 @@ namespace projectairsim {
 
 // forward declarations
 
-enum class FrameType : int { kSubscribe = 0, kUnsubscribe = 1, kMessage = 2, kUnsubscribeAll = 3 };
+enum class FrameType : int {
+  kSubscribe = 0,
+  kUnsubscribe = 1,
+  kMessage = 2,
+  kUnsubscribeAll = 3
+};
 
 class TopicManager::Impl {
  public:
@@ -79,11 +84,12 @@ class TopicManager::Impl {
     bool is_subscribed = false;
     int message_count = 0;
     std::string last_value;
-    std::list<std::shared_ptr< nng_pipe > > subscribers_;
+    std::list<std::shared_ptr<nng_pipe>> subscribers_;
     std::function<void(const Topic&, const Message&)> callback;
     std::function<void(const Topic&, bool is_subscribed)> callback_subscribed;
 
-    TopicBlock(const Topic &topic, std::function<void(const Topic&, bool is_subscribed)>
+    TopicBlock(const Topic& topic,
+               std::function<void(const Topic&, bool is_subscribed)>
                    callback_subscribed_in = nullptr)
         : topic(topic), callback_subscribed(callback_subscribed_in) {}
   };
@@ -134,7 +140,7 @@ class TopicManager::Impl {
   nng_socket topic_socket_;
   std::atomic<bool> state_;
   std::map<std::string, std::shared_ptr<TopicBlock>> topic_table_;
-  std::list<std::shared_ptr< nng_pipe > >  subscribers_;
+  std::list<std::shared_ptr<nng_pipe>> subscribers_;
   std::function<void(const std::string&, const MessageType&,
                      const std::string&)>
       topic_published_callback_;
@@ -169,7 +175,8 @@ void TopicManager::SubscribeTopic(
   pimpl_->SubscribeTopic(topic, callback);
 }
 
-bool TopicManager::Unsubscribe(const std::vector<std::string>& topic_paths, nng_pipe pipe) {
+bool TopicManager::Unsubscribe(const std::vector<std::string>& topic_paths,
+                               nng_pipe pipe) {
   return pimpl_->Unsubscribe(topic_paths, pipe);
 }
 
@@ -241,14 +248,14 @@ void TopicManager::Impl::HandleNNGPipeEvent(nng_pipe pipe, nng_pipe_ev ev) {
     //
     std::unique_lock<std::shared_timed_mutex> exclusive_lock(manager_lock_);
 
-    for( auto it = subscribers_.begin(); it != subscribers_.end(); ++it ) {
-        if( (*it).get()->id == pipe.id ) {
-            subscribers_.erase( it );
-            break;
-        }
+    for (auto it = subscribers_.begin(); it != subscribers_.end(); ++it) {
+      if ((*it).get()->id == pipe.id) {
+        subscribers_.erase(it);
+        break;
+      }
     }
- 
-    if( subscribers_.empty() ) {
+
+    if (subscribers_.empty()) {
       client_authorization_.SetToken(nullptr, 0);
 
       // Clear topics queues and unsubscribe all topics
@@ -258,18 +265,16 @@ void TopicManager::Impl::HandleNNGPipeEvent(nng_pipe pipe, nng_pipe_ev ev) {
 
     exclusive_lock.unlock();
     UnsubscribeAll(pipe);
-  }
-  else if (ev == NNG_PIPE_EV_ADD_POST) {
+  } else if (ev == NNG_PIPE_EV_ADD_POST) {
     // Client connected
-    log_.LogVerbose(
-        name_, "Pub-sub client connected--saving pipe id %d",
-        pipe.id);
+    log_.LogVerbose(name_, "Pub-sub client connected--saving pipe id %d",
+                    pipe.id);
     //
     //  Add pipe to array of connections
     //
     std::unique_lock<std::shared_timed_mutex> exclusive_lock(manager_lock_);
-    subscribers_.push_back( std::shared_ptr< nng_pipe >( new nng_pipe( pipe ) ) );
-   }
+    subscribers_.push_back(std::shared_ptr<nng_pipe>(new nng_pipe(pipe)));
+  }
 }
 
 void TopicManager::Impl::Start() {
@@ -283,11 +288,9 @@ void TopicManager::Impl::Start() {
     throw Error("Error initializing topic socket.");
   }
 
-  log_.LogVerbose(
-      name_, "Pub-sub connected with pair1 protocol");
- 
-  log_.LogVerbose(
-      name_, "Pub-sub polyamourous mode on");
+  log_.LogVerbose(name_, "Pub-sub connected with pair1 protocol");
+
+  log_.LogVerbose(name_, "Pub-sub polyamourous mode on");
 
   // A send call can get held up by the receiving callback if it tries to do any
   // processing other than just copying the data, so if it takes too long, just
@@ -418,7 +421,6 @@ void TopicManager::Impl::SubscribeTopic(
   auto block = iter->second;
   block->is_subscribed = true;
   block->callback = callback;
-
 }
 
 void TopicManager::Impl::PublishTopic(const Topic& topic,
@@ -451,7 +453,6 @@ void TopicManager::Impl::UnregisterTopic(const Topic& topic) {
   block->callback = nullptr;
 
   topic_table_.erase(iter->first);
-
 }
 
 void TopicManager::Impl::RecvLoop() {
@@ -459,7 +460,7 @@ void TopicManager::Impl::RecvLoop() {
     nng_msg* recv_msg_;
 
     int rv = nng_recvmsg(topic_socket_, &recv_msg_,
-                      NNG_FLAG_ALLOC | NNG_FLAG_NONBLOCK);
+                         NNG_FLAG_ALLOC | NNG_FLAG_NONBLOCK);
 
     if (rv != 0) {
       if (rv == NNG_EAGAIN) {
@@ -474,7 +475,7 @@ void TopicManager::Impl::RecvLoop() {
     }
 
     nng_pipe client_pipe = nng_msg_get_pipe(recv_msg_);
-    recv_buffer_ = static_cast<char *>( nng_msg_body(recv_msg_) );
+    recv_buffer_ = static_cast<char*>(nng_msg_body(recv_msg_));
     recv_buffer_size_ = nng_msg_len(recv_msg_);
 
     auto object_handle = msgpack::unpack(recv_buffer_, recv_buffer_size_);
@@ -484,8 +485,7 @@ void TopicManager::Impl::RecvLoop() {
 
     Topic topic;
 
-    if (frame.type != FrameType::kUnsubscribeAll)
-    {
+    if (frame.type != FrameType::kUnsubscribeAll) {
       std::shared_lock<std::shared_timed_mutex> shared_lock(manager_lock_);
       auto topic_path = frame.topic;
       auto iter = topic_table_.find(topic_path);
@@ -502,11 +502,14 @@ void TopicManager::Impl::RecvLoop() {
     }
 
     if (frame.type == FrameType::kSubscribe) {
-      send_dispatcher_.dispatch([this, topic, client_pipe]() { Subscribe(topic, client_pipe); });
+      send_dispatcher_.dispatch(
+          [this, topic, client_pipe]() { Subscribe(topic, client_pipe); });
     } else if (frame.type == FrameType::kUnsubscribe) {
-      send_dispatcher_.dispatch([this, topic, client_pipe]() { Unsubscribe(topic, client_pipe); });
+      send_dispatcher_.dispatch(
+          [this, topic, client_pipe]() { Unsubscribe(topic, client_pipe); });
     } else if (frame.type == FrameType::kUnsubscribeAll) {
-      send_dispatcher_.dispatch([this, topic, client_pipe]() { UnsubscribeAll(client_pipe); });
+      send_dispatcher_.dispatch(
+          [this, topic, client_pipe]() { UnsubscribeAll(client_pipe); });
     } else if (frame.type == FrameType::kMessage) {
       auto message = MessageUtils::ToMessage(topic, frame.body);
       recv_dispatcher_.dispatch(
@@ -536,7 +539,7 @@ void TopicManager::Impl::Send(const Topic& topic, const Message& message) {
   // topic.
   block->last_value = message.Serialize();
 
-  for( auto pipe : block->subscribers_) {
+  for (auto pipe : block->subscribers_) {
     Send(block, *(pipe.get()));
   }
 
@@ -558,14 +561,16 @@ void TopicManager::Impl::Subscribe(const Topic& topic, nng_pipe pipe) {
     return;
   }
 
-  log_.LogTrace(name_, "Client subscribing to topic %s, %d", topic_path.c_str(), pipe.id);
+  log_.LogTrace(name_, "Client subscribing to topic %s, %d", topic_path.c_str(),
+                pipe.id);
 
   {
     auto block = iter->second;
     auto callback_subscribed = block->callback_subscribed;
 
     block->is_subscribed = true;
-    block->subscribers_.push_back( std::shared_ptr< nng_pipe >( new nng_pipe( pipe ) ) );
+    block->subscribers_.push_back(
+        std::shared_ptr<nng_pipe>(new nng_pipe(pipe)));
 
     if (!block->last_value.empty()) {
       Send(block, pipe);
@@ -576,34 +581,39 @@ void TopicManager::Impl::Subscribe(const Topic& topic, nng_pipe pipe) {
   }
 }
 
-bool TopicManager::Impl::Unsubscribe(const std::string& topic_path, nng_pipe pipe) {
+bool TopicManager::Impl::Unsubscribe(const std::string& topic_path,
+                                     nng_pipe pipe) {
   std::shared_lock<std::shared_timed_mutex> shared_lock(manager_lock_);
   auto iter = topic_table_.find(topic_path);
   if (iter == topic_table_.end()) {
-    log_.LogError(name_, "Client cannot unsubscribe from unregistered topic '%s'",
+    log_.LogError(name_,
+                  "Client cannot unsubscribe from unregistered topic '%s'",
                   topic_path.c_str());
     return false;
   }
 
-  log_.LogTrace(name_, "Client unsubscribing from topic %s", topic_path.c_str());
+  log_.LogTrace(name_, "Client unsubscribing from topic %s",
+                topic_path.c_str());
 
   {
     auto block = iter->second;
     auto callback_subscribed = block->callback_subscribed;
 
-    for( auto it = block->subscribers_.begin(); it != block->subscribers_.end(); ++it ) {
-        if( (*it).get()->id == pipe.id ) {
-            block->subscribers_.erase( it );
-            break;
-        }
+    for (auto it = block->subscribers_.begin(); it != block->subscribers_.end();
+         ++it) {
+      if ((*it).get()->id == pipe.id) {
+        block->subscribers_.erase(it);
+        break;
+      }
     }
- 
-    if( block->subscribers_.empty() ) {
-        block->is_subscribed = false;
+
+    if (block->subscribers_.empty()) {
+      block->is_subscribed = false;
     }
 
     // Notify callbacks of change in subscription
-    if (callback_subscribed != nullptr) callback_subscribed(block->topic, false);
+    if (callback_subscribed != nullptr)
+      callback_subscribed(block->topic, false);
   }
 
   return true;
@@ -627,21 +637,22 @@ void TopicManager::Impl::UnsubscribeAll(nng_pipe pipe) {
   std::shared_lock<std::shared_timed_mutex> shared_lock(manager_lock_);
   log_.LogTrace(name_, "Unsubscribing all topics.");
   for (auto [topic, topic_block] : topic_table_) {
-
-    for( auto it = topic_block->subscribers_.begin(); it != topic_block->subscribers_.end(); ++it ) {
-        if( (*it).get()->id == pipe.id ) {
-            topic_block->subscribers_.erase( it );
-            break;
-        }
+    for (auto it = topic_block->subscribers_.begin();
+         it != topic_block->subscribers_.end(); ++it) {
+      if ((*it).get()->id == pipe.id) {
+        topic_block->subscribers_.erase(it);
+        break;
+      }
     }
- 
-    if( topic_block->subscribers_.empty() ) {
-        topic_block->is_subscribed = false;
+
+    if (topic_block->subscribers_.empty()) {
+      topic_block->is_subscribed = false;
     }
   }
 }
 
-void TopicManager::Impl::Send(const std::shared_ptr<TopicBlock>& block, nng_pipe pipe) {
+void TopicManager::Impl::Send(const std::shared_ptr<TopicBlock>& block,
+                              nng_pipe pipe) {
   auto topic_path = block->topic.GetPath();
   if (block->last_value.empty()) {
     // No published data to send yet
@@ -660,18 +671,19 @@ void TopicManager::Impl::Send(const std::shared_ptr<TopicBlock>& block, nng_pipe
     nng_msg* send_msg_;
     int rv = nng_msg_alloc(&send_msg_, 0);
     if (rv != 0) {
-        auto errno_str = nng_strerror(rv);
-        log_.LogWarning(name_, "nng_msg_alloc for topic '%s' failed with error '%s'.",
-                        frame.topic.c_str(), errno_str);
-        return;
-      }
+      auto errno_str = nng_strerror(rv);
+      log_.LogWarning(name_,
+                      "nng_msg_alloc for topic '%s' failed with error '%s'.",
+                      frame.topic.c_str(), errno_str);
+      return;
+    }
 
-    nng_msg_append( send_msg_, sbuf.data(), sbuf.size() );
-    nng_msg_set_pipe( send_msg_, pipe );
+    nng_msg_append(send_msg_, sbuf.data(), sbuf.size());
+    nng_msg_set_pipe(send_msg_, pipe);
 
-    rv = nng_sendmsg( topic_socket_, send_msg_, 0 );
+    rv = nng_sendmsg(topic_socket_, send_msg_, 0);
 
-    //nng_msg_free(send_msg_);  // docs say socket will free msg when sent
+    // nng_msg_free(send_msg_);  // docs say socket will free msg when sent
 
     if (rv != 0) {
       auto errno_str = nng_strerror(rv);

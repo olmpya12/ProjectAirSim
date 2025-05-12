@@ -1342,8 +1342,8 @@ void CapabilitiesCommand::Execute(std::shared_ptr<MavLinkVehicle> com) {
       printf("      MAV_PROTOCOL_CAPABILITY_MISSION_INT\n");
     }
     if ((ver.capabilities &
-         static_cast<int>(
-             MAV_PROTOCOL_CAPABILITY::MAV_PROTOCOL_CAPABILITY_PARAM_ENCODE_BYTEWISE)) !=
+         static_cast<int>(MAV_PROTOCOL_CAPABILITY::
+                              MAV_PROTOCOL_CAPABILITY_PARAM_ENCODE_BYTEWISE)) !=
         0) {
       printf("      MAV_PROTOCOL_CAPABILITY_PARAM_ENCODE_BYTEWISE\n");
     }

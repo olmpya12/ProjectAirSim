@@ -43,8 +43,8 @@ class MavLinkConnectionImpl {
       const std::string& nodeName, const std::string& localAddr,
       const std::string& remoteIpAddr, int remotePort);
   std::string acceptTcp(std::shared_ptr<MavLinkConnection> parent,
-                 const std::string& nodeName, const std::string& localAddr,
-                 int listeningPort);
+                        const std::string& nodeName,
+                        const std::string& localAddr, int listeningPort);
 
   std::string getName();
   int getTargetComponentId();

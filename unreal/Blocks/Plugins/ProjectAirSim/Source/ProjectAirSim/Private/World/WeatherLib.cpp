@@ -182,7 +182,7 @@ bool UWeatherLib::setWeatherParamScalar(UWorld* World,
 
           auto weather_root_comp = weather_fog_->GetRootComponent();
 
-          if( weather_root_comp ) {
+          if (weather_root_comp) {
             if (fog + dust > 0.0f) {
               weather_root_comp->SetVisibility(true);
             } else {

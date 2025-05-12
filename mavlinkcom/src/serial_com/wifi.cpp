@@ -2,10 +2,10 @@
 
 #if defined(linux) | defined(__linux)
 
+#include <sys/socket.h>
 // Including <sys/socket.h> must be before including <linux/wireless.h> to avoid
 // an incomplete type error for struct sockaddr when building against UE's
 // packaged Linux toolchain
-#include <sys/socket.h>
 #include <linux/wireless.h>
 #include <stdlib.h>
 #include <string.h>
@@ -28,9 +28,9 @@ int getWifiRssi(int socket, const char* ifaceName) {
   //    req.u.data.pointer = &stats;
   //    req.u.data.length = sizeof(iw_statistics);
   //
-  //#ifdef CLEAR_UPDATED
+  // #ifdef CLEAR_UPDATED
   //    req.u.data.flags = 1;
-  //#endif
+  // #endif
   //
   //    /* Perform the ioctl */
   //    if (ioctl(socket, SIOCGIWSTATS, &req) == -1) {

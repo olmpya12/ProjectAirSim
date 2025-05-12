@@ -214,10 +214,11 @@ static projectairsim::ImageMessage ToSimImageMessage(
       interop_image_message.time_stamp, interop_image_message.height,
       interop_image_message.width, interop_image_message.encoding,
       interop_image_message.big_endian, interop_image_message.step,
-      std::move(out_image_data), std::vector<float>(), interop_image_message.pos.x,
-      interop_image_message.pos.y, interop_image_message.pos.z,
-      interop_image_message.rot.w, interop_image_message.rot.x,
-      interop_image_message.rot.y, interop_image_message.rot.z);
+      std::move(out_image_data), std::vector<float>(),
+      interop_image_message.pos.x, interop_image_message.pos.y,
+      interop_image_message.pos.z, interop_image_message.rot.w,
+      interop_image_message.rot.x, interop_image_message.rot.y,
+      interop_image_message.rot.z);
   // TODO: add annotation
 }
 
@@ -257,9 +258,10 @@ static projectairsim::LidarMessage ToSimLidarMessage(
 
   // TODO unity support for az/el/range output format
   return projectairsim::LidarMessage(
-      interop_lidar_message.time_stamp, std::move(point_cloud), std::vector<float>(),
-      std::move(segmentation_cloud), std::move(intensity_cloud),
-      std::move(laser_index_cloud), ToSimPose(interop_lidar_message.pose));
+      interop_lidar_message.time_stamp, std::move(point_cloud),
+      std::vector<float>(), std::move(segmentation_cloud),
+      std::move(intensity_cloud), std::move(laser_index_cloud),
+      ToSimPose(interop_lidar_message.pose));
 }
 
 }  // namespace UnityInterop

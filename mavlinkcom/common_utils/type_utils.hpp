@@ -23,9 +23,9 @@ template <typename T>
 struct has_const_iterator : private sfinae_base {
  private:
   template <typename C>
-  static yes &test(typename C::const_iterator *);
+  static yes& test(typename C::const_iterator*);
   template <typename C>
-  static no &test(...);
+  static no& test(...);
 
  public:
   static const bool value = sizeof(test<T>(nullptr)) == sizeof(yes);
@@ -38,26 +38,26 @@ template <typename T>
 struct has_begin_end : private sfinae_base {
  private:
   template <typename C>
-  static yes &
+  static yes&
   f(typename std::enable_if<
       std::is_same<decltype(static_cast<typename C::const_iterator (C::*)()
                                             const>(&C::begin)),
-                   typename C::const_iterator (C::*)() const>::value>::type *);
+                   typename C::const_iterator (C::*)() const>::value>::type*);
 
   template <typename C>
-  static no &f(...);
+  static no& f(...);
 
   // using template parameter symbol 'D' instead of 'C' as a workaround for
   // VS2017 compiler issue (internal compiler error) starting 15.9.X releases.
   template <typename D>
-  static yes &g(typename std::enable_if<
+  static yes& g(typename std::enable_if<
                 std::is_same<decltype(static_cast<typename D::const_iterator (
                                           D::*)() const>(&D::end)),
                              typename D::const_iterator (D::*)() const>::value,
-                void>::type *);
+                void>::type*);
 
   template <typename D>
-  static no &g(...);
+  static no& g(...);
 
  public:
   static bool const beg_value = sizeof(f<T>(nullptr)) == sizeof(yes);

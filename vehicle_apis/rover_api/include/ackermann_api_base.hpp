@@ -24,7 +24,6 @@ class AckermannApiBase : public RoverApiBase, public AckermannApi {
 
   virtual ~AckermannApiBase(void) = default;
 
-
   //---------------------------------------------------------------------------
   // IAckermannApi Methods
   // (Redeclared here so we can attach service methods)

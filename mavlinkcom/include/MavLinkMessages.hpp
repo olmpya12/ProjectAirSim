@@ -10001,7 +10001,7 @@ class MavLinkGimbalDeviceSetAttitude : public MavLinkMessageBase {
 // low regular rate (e.g. 10Hz).
 class MavLinkGimbalDeviceAttitudeStatus : public MavLinkMessageBase {
  public:
-  const static uint32_t kMessageId= 285;
+  const static uint32_t kMessageId = 285;
   MavLinkGimbalDeviceAttitudeStatus() { msgid = kMessageId; }
   // System ID
   uint8_t target_system = 0;
@@ -10036,7 +10036,7 @@ class MavLinkGimbalDeviceAttitudeStatus : public MavLinkMessageBase {
 // control intention e.g. feed forward angular control in z-axis.
 class MavLinkAutopilotStateForGimbalDevice : public MavLinkMessageBase {
  public:
-  const static uint32_t kMessageId= 286;
+  const static uint32_t kMessageId = 286;
   MavLinkAutopilotStateForGimbalDevice() { msgid = kMessageId; }
   // System ID
   uint8_t target_system = 0;

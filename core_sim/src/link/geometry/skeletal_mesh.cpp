@@ -73,8 +73,8 @@ const Vector3& SkeletalMesh::GetScale() const {
 // class SkeletalMesh::Impl
 
 SkeletalMesh::Impl::Impl(const Logger& logger)
-    : GeometryImpl(GeometryType::kSkeletalMesh, Constant::Component::skeletal_mesh,
-                   logger),
+    : GeometryImpl(GeometryType::kSkeletalMesh,
+                   Constant::Component::skeletal_mesh, logger),
       loader_(*this),
       scale_(Vector3::Ones()) {}
 

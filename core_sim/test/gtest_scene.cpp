@@ -22,7 +22,9 @@ class Simulator {
  public:
   static Scene MakeScene() {
     auto callback = [](const std::string& component, LogLevel level,
-                       const std::string& message) { std::cerr << message << std::endl; };
+                       const std::string& message) {
+      std::cerr << message << std::endl;
+    };
     Logger logger(callback);
     logger.SetLogLevel(LogLevel::kVerbose);
     return Scene(logger, TopicManager(logger), "", ServiceManager(logger),

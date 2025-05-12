@@ -11,7 +11,6 @@
 #include "core_sim/message/message.hpp"
 #include "core_sim/topic.hpp"
 #include "json.hpp"
-
 #include "nng/nng.h"
 
 namespace microsoft {

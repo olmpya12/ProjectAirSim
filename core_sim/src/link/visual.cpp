@@ -8,8 +8,8 @@
 #include "core_sim/config_json.hpp"
 #include "core_sim/error.hpp"
 #include "core_sim/link/geometry/file_mesh.hpp"
-#include "core_sim/link/geometry/unreal_mesh.hpp"
 #include "core_sim/link/geometry/skeletal_mesh.hpp"
+#include "core_sim/link/geometry/unreal_mesh.hpp"
 #include "core_sim/logger.hpp"
 #include "core_sim/transforms/transform.hpp"
 #include "geometry_impl.hpp"
@@ -148,7 +148,8 @@ void Visual::Loader::LoadGeometry(const json& json) {
 
   auto type = JsonUtils::GetString(geometry_json, Constant::Config::type);
 
-  impl_.logger_.LogVerbose(impl_.name_, "Json: %s", geometry_json.dump().c_str());
+  impl_.logger_.LogVerbose(impl_.name_, "Json: %s",
+                           geometry_json.dump().c_str());
 
   if (type == Constant::Config::file_mesh) {
     auto mesh = new FileMesh(impl_.logger_);

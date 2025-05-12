@@ -17,15 +17,14 @@
 #include "core_sim/joint.hpp"
 #include "core_sim/link.hpp"
 #include "core_sim/logger.hpp"
-#include "core_sim/message/int8_message.hpp"
 #include "core_sim/message/int32_message.hpp"
+#include "core_sim/message/int8_message.hpp"
 #include "core_sim/message/pose_stamped_message.hpp"
 #include "core_sim/runtime_components.hpp"
 #include "core_sim/sensors/sensor.hpp"
 #include "core_sim/service_method.hpp"
 #include "core_sim/transforms/transform.hpp"
 #include "core_sim/transforms/transform_tree.hpp"
-
 
 namespace microsoft {
 namespace projectairsim {

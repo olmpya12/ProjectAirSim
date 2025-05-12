@@ -4,7 +4,6 @@
 #define CORE_SIM_ACTOR_ENV_ACTOR_LOADER_HPP_
 
 #include "core_sim/actor/env_actor.hpp"
-
 #include "json.hpp"
 
 using json = nlohmann::json;
@@ -12,7 +11,7 @@ using json = nlohmann::json;
 namespace microsoft {
 namespace projectairsim {
 
-class EnvActor; // Forward declaration
+class EnvActor;  // Forward declaration
 
 class EnvActor::Loader {
  public:

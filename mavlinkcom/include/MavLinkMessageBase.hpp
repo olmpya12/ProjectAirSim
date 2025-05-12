@@ -94,9 +94,9 @@ class MavLinkMessageBase {
   void pack_int32_t_array(int len, char* buffer, const int32_t* field,
                           int offset) const;
   void pack_float_array(int len, char* buffer, const float* field,
-                        int offset) const;  
-  void pack_double_array(int len, char* buffer, const double* field,
                         int offset) const;
+  void pack_double_array(int len, char* buffer, const double* field,
+                         int offset) const;
 
   void unpack_uint8_t(const char* buffer, uint8_t* field, int offset);
   void unpack_int8_t(const char* buffer, int8_t* field, int offset);
@@ -119,11 +119,11 @@ class MavLinkMessageBase {
   void unpack_uint32_t_array(int len, const char* buffer, uint32_t* field,
                              int offset);
   void unpack_int32_t_array(int len, const char* buffer, int32_t* field,
-                             int offset);
+                            int offset);
   void unpack_float_array(int len, const char* buffer, float* field,
                           int offset);
   void unpack_double_array(int len, const char* buffer, double* field,
-                          int offset);
+                           int offset);
 
   std::string char_array_tostring(int len, const char* field);
   std::string uint8_t_array_tostring(int len, const uint8_t* field);

@@ -7,10 +7,10 @@
 #include "UnrealEnvActor.h"
 
 #include <algorithm>
+#include <exception>
 #include <iterator>
 #include <utility>
 #include <vector>
-#include <exception>
 
 #include "Camera/CameraComponent.h"
 #include "Components/StaticMeshComponent.h"
@@ -178,20 +178,23 @@ void AUnrealEnvActor::RotateEnvActorLinksAtRate() {
   for (auto& [LinkName, AxisRotRate] : EnvActorLinkRotRates) {
     FVector Axis = UnrealHelpers::ToFVector(
         projectairsim::TransformUtils::NedToNeuAngular(AxisRotRate.axis()));
-//
-//  try/catch Added to address out of bounds errors from EnvActorLinks.at(LinkName)
-//  Adding the FScopeLock above suppresses the exceptions, but unknown root cause 
-//
+    //
+    //  try/catch Added to address out of bounds errors from
+    //  EnvActorLinks.at(LinkName) Adding the FScopeLock above suppresses the
+    //  exceptions, but unknown root cause
+    //
     try {
-      EnvActorLinks.at(LinkName)->AddLocalRotation(FQuat(Axis, dt * AxisRotRate.angle()));
-    }
-    catch (const std::exception& e) {
-        FString exceptionCause(e.what());
-        FString linkName(LinkName.c_str());
-        UnrealLogger::Log(projectairsim::LogLevel::kTrace,
-                          TEXT("Container At Error rotating link <%s>, container size %d: %s"), *linkName, EnvActorLinks.size(), *exceptionCause);
-        UnrealLogger::Log(projectairsim::LogLevel::kTrace,
-                          TEXT("EnvActor object %x"), this);
+      EnvActorLinks.at(LinkName)->AddLocalRotation(
+          FQuat(Axis, dt * AxisRotRate.angle()));
+    } catch (const std::exception& e) {
+      FString exceptionCause(e.what());
+      FString linkName(LinkName.c_str());
+      UnrealLogger::Log(
+          projectairsim::LogLevel::kTrace,
+          TEXT("Container At Error rotating link <%s>, container size %d: %s"),
+          *linkName, EnvActorLinks.size(), *exceptionCause);
+      UnrealLogger::Log(projectairsim::LogLevel::kTrace,
+                        TEXT("EnvActor object %x"), this);
     }
   }
 }

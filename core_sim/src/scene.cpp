@@ -24,7 +24,6 @@
 #include "json.hpp"
 #include "message/common_utils.hpp"
 
-
 namespace microsoft {
 namespace projectairsim {
 
@@ -1218,7 +1217,6 @@ void Scene::Loader::LoadEnvObjectsWithJSON(const json& json) {
   for (int i = 0; i < impl_.env_objects_.size(); ++i) {
     impl_.env_object_index_by_id_.emplace(impl_.env_objects_[i]->GetID(), i);
   }
-
 }
 
 void Scene::Loader::LoadClockSettings(const json& json) {
@@ -1584,8 +1582,7 @@ std::unique_ptr<EnvObject> Scene::Loader::LoadEnvObjectWithJSON(
   auto origin = GetActorOrigin(jsonIn, id);
   json env_object_config;
 
-  impl_.logger_.LogVerbose(impl_.name_,
-                           "[%s][%s] Loading 'Enviroment Object'.",
+  impl_.logger_.LogVerbose(impl_.name_, "[%s][%s] Loading 'Enviroment Object'.",
                            impl_.id_.c_str(), id.c_str());
 
   try {
@@ -1624,8 +1621,8 @@ std::unique_ptr<EnvObject> Scene::Loader::LoadEnvObjectWithJSON(
   if (type == Constant::Config::env_particle_effect) {
     auto env_object =
         new EnvObject(id, origin, impl_.logger_, impl_.topic_manager_,
-                       impl_.topic_path_ + "/env_objects",
-                       impl_.service_manager_, impl_.state_manager_);
+                      impl_.topic_path_ + "/env_objects",
+                      impl_.service_manager_, impl_.state_manager_);
 
     env_object->Load(env_object_config);
 

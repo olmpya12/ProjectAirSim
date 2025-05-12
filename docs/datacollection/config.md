@@ -2,7 +2,7 @@
 
 This document serves to provide context on the configuration file that defines the data generation run and what the different components and parameters within it mean. This configuration file is intended to be the single file that a user has to modify in order to collect the desired data from the sim.
 
-A sample config - [datacollection_config.jsonc](../../client\python\example_user_scripts\datacollection\configs\datacollector_config.jsonc) is available for reference. Note - the datacollection API's only reads `this` file so please make all modifications to this file only.
+A sample config - [datacollector_config.jsonc](../../client\python\example_user_scripts\datacollection\configs\datacollector_config.jsonc) is available for reference. Note - the datacollection API's only reads `this` file so please make all modifications to this file only.
 
 The config file is broken into three main sections:
 * [Environments Spec](#environment-spec)
@@ -65,7 +65,7 @@ Referred to as `collection-spec` in the config, these params define the kind of 
 
 Referred to as `augmentation-spec` in the config, these params define the augmentations that will be applied to images collected through the module. 
 
-Note: These augmentations can be applied as a part of the data collection pipeline by adding the corresponding API to your script or separately on a directory of data by running [dataaug.py](../../client\python\projectairsim\src\projectairsim\datacollection\augmentation\dataaug.py). In each case, the config file needs to configured with the desired augmentations.
+Note: These augmentations can be applied as a part of the data collection pipeline by adding the corresponding API to your script or separately on a directory of data by running [dataaug.py](../../client/python/projectairsim/src/projectairsim/datacollection/augmentation/dataaug.py). In each case, the config file needs to configured with the desired augmentations.
 
 The following augmentations are currently supported:
    

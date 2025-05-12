@@ -41,7 +41,6 @@ class EnvCar::Impl : public EnvActorGrounded::Impl {
   float wheel_radius = 0;
   float wheels_distance = 0;
   bool is_skeletal_mesh = false;
-
 };
 
 EnvCar::EnvCar(const std::string& id, const Pose& origin, Logger& logger,
@@ -97,7 +96,7 @@ void EnvCar::Impl::UpdateKinematics(TimeSec curr_time) {
   }
   steering_angle_deg =
       steering_angle * 180 / M_PI;  // Steering angle in degrees
-  if(!is_skeletal_mesh) {
+  if (!is_skeletal_mesh) {
     // Update the wheels rotation rate and angle
     SetLinkRotationAngle("FL_Normal", steering_angle_deg);
     SetLinkRotationAngle("FR_Normal", steering_angle_deg);
@@ -120,7 +119,8 @@ void EnvCar::Impl::SetWheelRadius(float wheel_radius_) {
 }
 
 void EnvCar::SetWheelsDistance(float wheels_distance) {
-  std::static_pointer_cast<EnvCar::Impl>(pimpl_)->SetWheelsDistance(wheels_distance);
+  std::static_pointer_cast<EnvCar::Impl>(pimpl_)->SetWheelsDistance(
+      wheels_distance);
 }
 
 void EnvCar::Impl::SetWheelsDistance(float wheels_distance_) {
@@ -128,7 +128,8 @@ void EnvCar::Impl::SetWheelsDistance(float wheels_distance_) {
 }
 
 void EnvCar::HasSkeletalMesh(bool is_skeletal_mesh) {
-  std::static_pointer_cast<EnvCar::Impl>(pimpl_)->HasSkeletalMesh(is_skeletal_mesh);
+  std::static_pointer_cast<EnvCar::Impl>(pimpl_)->HasSkeletalMesh(
+      is_skeletal_mesh);
 }
 
 void EnvCar::Impl::HasSkeletalMesh(bool is_skeletal_mesh_) {
@@ -139,17 +140,15 @@ float EnvCar::GetSteeringAngleDeg() const {
   return std::static_pointer_cast<EnvCar::Impl>(pimpl_)->steering_angle_deg;
 }
 
-float EnvCar::Impl::GetSteeringAngleDeg() const {
-  return steering_angle_deg;
-}
+float EnvCar::Impl::GetSteeringAngleDeg() const { return steering_angle_deg; }
 
 float EnvCar::GetWheelRotationRateDeg() const {
-  return std::static_pointer_cast<EnvCar::Impl>(pimpl_)->wheel_rotation_rate_deg;
+  return std::static_pointer_cast<EnvCar::Impl>(pimpl_)
+      ->wheel_rotation_rate_deg;
 }
 float EnvCar::Impl::GetWheelRotationRateDeg() const {
   return wheel_rotation_rate_deg;
 }
-
 
 bool EnvCar::Impl::SetLinkRotationAngle(const std::string& link_name,
                                         const float rotation_deg) {

@@ -26,11 +26,10 @@ class ImageMessage::Impl : public MessageImpl {
 
   Impl(TimeNano time_stamp_val, uint32_t height_val, uint32_t width_val,
        const std::string& encoding_val, bool big_endian_val, uint32_t step_val,
-       std::vector<uint8_t>&& data_val, std::vector<float>&& data_float, 
-       float pos_x_val, float pos_y_val, float pos_z_val, float rot_w_val, 
+       std::vector<uint8_t>&& data_val, std::vector<float>&& data_float,
+       float pos_x_val, float pos_y_val, float pos_z_val, float rot_w_val,
        float rot_x_val, float rot_y_val, float rot_z_val,
-       std::vector<Annotation> annotations = std::vector<Annotation>()
-       );
+       std::vector<Annotation> annotations = std::vector<Annotation>());
 
   ~Impl() override {}
 
@@ -98,8 +97,8 @@ ImageMessage::ImageMessage(TimeNano time_stamp_val, uint32_t height_val,
                            std::vector<Annotation> annotations)
     : Message(std::make_shared<ImageMessage::Impl>(
           time_stamp_val, height_val, width_val, encoding_val, big_endian_val,
-          step_val, std::move(data_val), std::move(data_float_val), pos_x_val, 
-          pos_y_val, pos_z_val, rot_w_val, rot_x_val, rot_y_val, rot_z_val, 
+          step_val, std::move(data_val), std::move(data_float_val), pos_x_val,
+          pos_y_val, pos_z_val, rot_w_val, rot_x_val, rot_y_val, rot_z_val,
           annotations)) {}
 
 ImageMessage::~ImageMessage() {}
@@ -151,7 +150,7 @@ std::vector<uint8_t>& ImageMessage::GetPixelVector() {
 const std::vector<Annotation> ImageMessage::GetAnnotations() const {
   return static_cast<ImageMessage::Impl*>(pimpl_.get())->GetAnnotations();
 }
-  // -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // class ImageMessage::Impl
 
 ImageMessage::Impl::Impl()
@@ -165,11 +164,11 @@ ImageMessage::Impl::Impl()
 ImageMessage::Impl::Impl(TimeNano time_stamp_val, uint32_t height_val,
                          uint32_t width_val, const std::string& encoding_val,
                          bool big_endian_val, uint32_t step_val,
-                         std::vector<uint8_t>&& data_val, std::vector<float>&& data_float_val,
-                         float pos_x_val, float pos_y_val, float pos_z_val, 
-                         float rot_w_val, float rot_x_val, float rot_y_val, float rot_z_val,
-                         std::vector<Annotation> annotations_val
-                         )
+                         std::vector<uint8_t>&& data_val,
+                         std::vector<float>&& data_float_val, float pos_x_val,
+                         float pos_y_val, float pos_z_val, float rot_w_val,
+                         float rot_x_val, float rot_y_val, float rot_z_val,
+                         std::vector<Annotation> annotations_val)
     : MessageImpl(MessageType::kImage),
       time_stamp(time_stamp_val),
       height(height_val),

@@ -1040,8 +1040,8 @@ void Camera::Impl::PublishImages(std::map<ImageType, ImageMessage>&& images) {
               image_msg.GetTimestamp(), image_msg.GetHeight(),
               image_msg.GetWidth(), image_msg.GetEncoding(),
               image_msg.IsBigEndian(), image_msg.GetStep(), std::move(seg_data),
-              std::move(empty_float_data), pos_data[0], pos_data[1], pos_data[2],
-              pos_data[3], pos_data[4], pos_data[5], pos_data[6],
+              std::move(empty_float_data), pos_data[0], pos_data[1],
+              pos_data[2], pos_data[3], pos_data[4], pos_data[5], pos_data[6],
               image_msg.GetAnnotations());
           topic_manager_.PublishTopic(
               onnx_.post_process_image_entry.image_topic, pp_img_msg);

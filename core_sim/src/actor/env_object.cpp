@@ -20,49 +20,48 @@ using json = nlohmann::json;
 // -----------------------------------------------------------------------------
 // class  EnvObject
 
- EnvObject:: EnvObject() : Actor(nullptr) {}
+EnvObject::EnvObject() : Actor(nullptr) {}
 
- EnvObject:: EnvObject(const std::string& id, const Pose& origin,
-                   const Logger& logger, const TopicManager& topic_manager,
-                   const std::string& parent_topic_path,
-                   const ServiceManager& service_manager,
-                   const StateManager& state_manager)
+EnvObject::EnvObject(const std::string& id, const Pose& origin,
+                     const Logger& logger, const TopicManager& topic_manager,
+                     const std::string& parent_topic_path,
+                     const ServiceManager& service_manager,
+                     const StateManager& state_manager)
     : Actor(std::shared_ptr<ActorImpl>(new EnvObject::Impl(
-          id, origin, logger, topic_manager,
-          parent_topic_path, service_manager, state_manager))) {}
+          id, origin, logger, topic_manager, parent_topic_path, service_manager,
+          state_manager))) {}
 
- EnvObject:: EnvObject(std::shared_ptr<Impl> pimpl)
+EnvObject::EnvObject(std::shared_ptr<Impl> pimpl)
     : Actor(std::shared_ptr<ActorImpl>(pimpl)) {}
 
-void  EnvObject::Load(ConfigJson config_json) {
-  return static_cast< EnvObject::Impl*>(pimpl_.get())->Load(config_json);
+void EnvObject::Load(ConfigJson config_json) {
+  return static_cast<EnvObject::Impl*>(pimpl_.get())->Load(config_json);
 }
 
-const Visual& EnvObject::GetVisual() const { 
-  return static_cast<EnvObject::Impl*>(pimpl_.get())->GetVisual(); }
+const Visual& EnvObject::GetVisual() const {
+  return static_cast<EnvObject::Impl*>(pimpl_.get())->GetVisual();
+}
 
 const std::unordered_map<std::string, std::vector<std::string>>&
- EnvObject::GetLinkChildrenMap() const {
-  return static_cast< EnvObject::Impl*>(pimpl_.get())->GetLinkChildrenMap();
+EnvObject::GetLinkChildrenMap() const {
+  return static_cast<EnvObject::Impl*>(pimpl_.get())->GetLinkChildrenMap();
 }
 
 // -----------------------------------------------------------------------------
 // class  EnvObject::Impl
 
- EnvObject::Impl::Impl(const std::string& id,
-                     const Pose& origin, const Logger& logger,
-                     const TopicManager& topic_manager,
-                     const std::string& parent_topic_path,
-                     const ServiceManager& service_manager,
-                     const StateManager& state_manager)
+EnvObject::Impl::Impl(const std::string& id, const Pose& origin,
+                      const Logger& logger, const TopicManager& topic_manager,
+                      const std::string& parent_topic_path,
+                      const ServiceManager& service_manager,
+                      const StateManager& state_manager)
     : ActorImpl(ActorType::kEnvObject, id, origin,
                 Constant::Component::env_object, logger, topic_manager,
                 parent_topic_path, service_manager, state_manager),
-                loader_(*this),
-                visual_settings_(logger) {
-}
+      loader_(*this),
+      visual_settings_(logger) {}
 
-void  EnvObject::Impl::Load(ConfigJson config_json) {
+void EnvObject::Impl::Load(ConfigJson config_json) {
   // Load  EnvObject from JSON config
   json json = config_json;
   loader_.Load(json);
@@ -73,14 +72,14 @@ void  EnvObject::Impl::Load(ConfigJson config_json) {
 const Visual& EnvObject::Impl::GetVisual() const { return visual_settings_; }
 
 const std::unordered_map<std::string, std::vector<std::string>>&
- EnvObject::Impl::GetLinkChildrenMap() const {
+EnvObject::Impl::GetLinkChildrenMap() const {
   return link_children_map_;
 }
 
 // class  EnvObject::Loader
- EnvObject::Loader::Loader( EnvObject::Impl& impl) : impl_(impl) {}
+EnvObject::Loader::Loader(EnvObject::Impl& impl) : impl_(impl) {}
 
-void  EnvObject::Loader::Load(const json& json) {
+void EnvObject::Loader::Load(const json& json) {
   LoadVisual(json);
   impl_.is_loaded_ = true;
 }

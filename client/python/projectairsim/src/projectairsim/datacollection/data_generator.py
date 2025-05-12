@@ -248,11 +248,11 @@ class DataGenerator:
 
         projectairsim_log().info(f"Augmenting Data, after collection")
         augmented_imageids, bbox_2d_coords = augment_data(
-            self.config.augmentation_spec,
-            self.save_path,
-            self.connection_string,
-            self.compute_location,
+            augmentations = self.config.augmentation_spec,
+            save_path = self.save_path,
+            compute_location = self.compute_location,
         )
+        
         projectairsim_log().info(f"Images Augmented and Stored.")
 
         return True

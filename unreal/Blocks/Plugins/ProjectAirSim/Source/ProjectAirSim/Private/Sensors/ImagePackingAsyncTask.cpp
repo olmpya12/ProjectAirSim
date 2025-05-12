@@ -143,8 +143,7 @@ void FImagePackingAsyncTask::DoWork() {
             ImgResponse.CameraPosition.z(), ImgResponse.CameraOrientation.w(),
             ImgResponse.CameraOrientation.x(),
             ImgResponse.CameraOrientation.y(),
-            ImgResponse.CameraOrientation.z(), Annotations
-            ));
+            ImgResponse.CameraOrientation.z(), Annotations));
   }
 
   // Publish the whole pack of image messages

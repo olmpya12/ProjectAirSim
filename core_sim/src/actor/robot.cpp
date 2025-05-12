@@ -586,10 +586,11 @@ void Robot::Impl::CreateTopics() {
 
   rotor_info_topic_ = Topic("rotor_info", topic_path_, TopicType::kPublished, 0,
                             MessageType::kRotorInfo);
-  
+
   // Ground truth pose and kinematics topic
-  gt_kinematics_topic_ = Topic("gt_kinematics", topic_path_, TopicType::kPublished, 0,
-                            MessageType::kKinematics);
+  gt_kinematics_topic_ =
+      Topic("gt_kinematics", topic_path_, TopicType::kPublished, 0,
+            MessageType::kKinematics);
 
   topics_.push_back(actual_robot_pose_topic_);
   topics_.push_back(desired_robot_pose_topic_);
@@ -828,7 +829,7 @@ void Robot::Impl::OnBeginUpdate() {
   auto pose_msg = PoseStampedMessage(time_stamp, kinematics_.pose.position,
                                      kinematics_.pose.orientation);
   topic_manager_.PublishTopic(actual_robot_pose_topic_, pose_msg);
-  
+
   // Publish initial kinematics
   auto kinematics_msg = KinematicsMessage(time_stamp, kinematics_);
   topic_manager_.PublishTopic(gt_kinematics_topic_, kinematics_msg);

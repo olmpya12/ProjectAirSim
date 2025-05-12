@@ -343,7 +343,7 @@ void MavLinkMessageBase::unpack_uint32_t_array(int len, const char* buffer,
   }
 }
 void MavLinkMessageBase::unpack_int32_t_array(int len, const char* buffer,
-                                               int32_t* field, int offset) {
+                                              int32_t* field, int offset) {
   for (int i = 0; i < len; i++) {
     _mav_get_int32_t(buffer, offset, field);
     offset += sizeof(int32_t);
@@ -360,7 +360,7 @@ void MavLinkMessageBase::unpack_float_array(int len, const char* buffer,
   }
 }
 void MavLinkMessageBase::unpack_double_array(int len, const char* buffer,
-                                            double* field, int offset) {
+                                             double* field, int offset) {
   for (int i = 0; i < len; i++) {
     _mav_get_double(buffer, offset, field);
     offset += sizeof(double);
@@ -498,7 +498,7 @@ std::string MavLinkMessageBase::int32_t_array_tostring(int len,
   return BinaryArray<int32_t>::toString(len, field);
 }
 std::string MavLinkMessageBase::uint32_t_array_tostring(int len,
-                                                       const uint32_t* field) {
+                                                        const uint32_t* field) {
   return BinaryArray<uint32_t>::toString(len, field);
 }
 std::string MavLinkMessageBase::float_array_tostring(int len,
@@ -513,7 +513,7 @@ std::string MavLinkMessageBase::float_array_tostring(int len,
   return line.str();
 }
 std::string MavLinkMessageBase::double_array_tostring(int len,
-                                                     const double* field) {
+                                                      const double* field) {
   std::ostringstream line;
   for (int i = 0; i < len; i++) {
     line << double_tostring(field[i]);

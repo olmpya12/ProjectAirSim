@@ -1429,36 +1429,43 @@ std::vector<int> WorldSimApi::createVoxelGrid(
                     ncells_x * ncells_y * ncells_z);
 
   UnrealHelpers::RunCommandOnGameThread(
-      [this, &ncells_x, &ncells_z, &ncells_y, &n_z_resolution, &params, &scale_cm,
-       &position_in_UE, &use_segmentation]() {
+      [this, &ncells_x, &ncells_z, &ncells_y, &n_z_resolution, &params,
+       &scale_cm, &position_in_UE, &use_segmentation]() {
         ParallelFor(ncells_x, [&](int32 i) {
           ParallelFor(ncells_y, [&](int32 j) {
             ParallelFor(ncells_z, [&](int32 k) {
               TArray<FOverlapResult> overlapping_objects;
-              int idx = i + ncells_x * (k + ncells_z * j);  // first index is x, then z, then y
-              FVector vposition = FVector((i - ncells_x / 2) * scale_cm,
-                                          (j - ncells_y / 2) * scale_cm,
-                                          (k - ncells_z / 2) * (scale_cm * n_z_resolution)) +
-                                  position_in_UE;
+              int idx =
+                  i +
+                  ncells_x *
+                      (k + ncells_z * j);  // first index is x, then z, then y
+              FVector vposition =
+                  FVector((i - ncells_x / 2) * scale_cm,
+                          (j - ncells_y / 2) * scale_cm,
+                          (k - ncells_z / 2) * (scale_cm * n_z_resolution)) +
+                  position_in_UE;
               bool overlapping = unreal_world_->OverlapMultiByChannel(
                   overlapping_objects, vposition, FQuat::Identity,
                   ECollisionChannel::ECC_Visibility,
-                  FCollisionShape::MakeBox(FVector(scale_cm / 2, scale_cm / 2, n_z_resolution * scale_cm / 2)), params);
+                  FCollisionShape::MakeBox(
+                      FVector(scale_cm / 2, scale_cm / 2,
+                              n_z_resolution * scale_cm / 2)),
+                  params);
               if (overlapping) {
                 if (use_segmentation) {
                   int max_segmentationID = 0;
                   FString max_object_name = TEXT("None");
 
                   for (const auto& overlap : overlapping_objects) {
-                      UPrimitiveComponent* component = overlap.GetComponent();
-                      int segID = component->CustomDepthStencilValue;
-                      FString object_name = component->GetOwner()->GetName();
+                    UPrimitiveComponent* component = overlap.GetComponent();
+                    int segID = component->CustomDepthStencilValue;
+                    FString object_name = component->GetOwner()->GetName();
 
-                      // Save the object name with the highest segmentation ID
-                      if (segID > max_segmentationID) {
-                          max_segmentationID = segID;
-                          max_object_name = object_name;
-                      }
+                    // Save the object name with the highest segmentation ID
+                    if (segID > max_segmentationID) {
+                      max_segmentationID = segID;
+                      max_object_name = object_name;
+                    }
                   }
                   voxel_grid_[idx] = max_segmentationID;
                 } else {

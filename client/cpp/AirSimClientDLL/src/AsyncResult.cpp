@@ -7,7 +7,6 @@
 
 #include "pch.h"
 
-
 namespace microsoft {
 namespace projectairsim {
 namespace client {

@@ -1,7 +1,10 @@
 name: Windows Build
 
-# Controls when the action will run.
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
@@ -11,7 +14,6 @@ jobs:
       contents: write
     runs-on: windows-2022
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v3
 

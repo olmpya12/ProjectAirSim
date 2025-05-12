@@ -35,9 +35,9 @@ template <typename T>
 struct has_const_iterator : private sfinae_base {
  private:
   template <typename C>
-  static yes &test(typename C::const_iterator *);
+  static yes& test(typename C::const_iterator*);
   template <typename C>
-  static no &test(...);
+  static no& test(...);
 
  public:
   static const bool value = sizeof(test<T>(nullptr)) == sizeof(yes);
@@ -48,24 +48,24 @@ template <typename T>
 struct has_begin_end : private sfinae_base {
  private:
   template <typename C>
-  static yes &
+  static yes&
   f(typename std::enable_if<
       std::is_same<decltype(static_cast<typename C::const_iterator (C::*)()
                                             const>(&C::begin)),
-                   typename C::const_iterator (C::*)() const>::value>::type *);
+                   typename C::const_iterator (C::*)() const>::value>::type*);
 
   template <typename C>
-  static no &f(...);
+  static no& f(...);
 
   template <typename C>
-  static yes &g(typename std::enable_if<
+  static yes& g(typename std::enable_if<
                 std::is_same<decltype(static_cast<typename C::const_iterator (
                                           C::*)() const>(&C::end)),
                              typename C::const_iterator (C::*)() const>::value,
-                void>::type *);
+                void>::type*);
 
   template <typename C>
-  static no &g(...);
+  static no& g(...);
 
  public:
   static bool const beg_value = sizeof(f<T>(nullptr)) == sizeof(yes);
@@ -79,9 +79,9 @@ struct has_begin_end : private sfinae_base {
 template <typename TChar>
 struct delimiters_values {
   using char_type = TChar;
-  const char_type *prefix;
-  const char_type *delimiter;
-  const char_type *postfix;
+  const char_type* prefix;
+  const char_type* delimiter;
+  const char_type* postfix;
 };
 
 // Defines the delimiter values for a specific container and character type
@@ -105,7 +105,7 @@ struct print_container_helper {
 
   template <typename U>
   struct printer {
-    static void print_body(const U &c, ostream_type &stream) {
+    static void print_body(const U& c, ostream_type& stream) {
       using std::begin;
       using std::end;
 
@@ -125,9 +125,9 @@ struct print_container_helper {
     }
   };
 
-  print_container_helper(const T &container) : container_(container) {}
+  print_container_helper(const T& container) : container_(container) {}
 
-  inline void operator()(ostream_type &stream) const {
+  inline void operator()(ostream_type& stream) const {
     if (delimiters_type::values.prefix != NULL)
       stream << delimiters_type::values.prefix;
 
@@ -138,7 +138,7 @@ struct print_container_helper {
   }
 
  private:
-  const T &container_;
+  const T& container_;
 };
 
 // Specialization for pairs
@@ -152,7 +152,7 @@ struct print_container_helper<T, TChar, TCharTraits,
       typename print_container_helper<T, TChar, TCharTraits,
                                       TDelimiters>::ostream_type;
 
-  static void print_body(const std::pair<T1, T2> &c, ostream_type &stream) {
+  static void print_body(const std::pair<T1, T2>& c, ostream_type& stream) {
     stream << c.first;
     if (print_container_helper<T, TChar, TCharTraits,
                                TDelimiters>::delimiters_type::values
@@ -179,15 +179,15 @@ struct print_container_helper<T, TChar, TCharTraits,
   template <std::size_t I>
   struct Int {};
 
-  static void print_body(const element_type &c, ostream_type &stream) {
+  static void print_body(const element_type& c, ostream_type& stream) {
     tuple_print(c, stream, Int<0>());
   }
 
-  static void tuple_print(const element_type &, ostream_type &,
+  static void tuple_print(const element_type&, ostream_type&,
                           Int<sizeof...(Args)>) {}
 
   static void tuple_print(
-      const element_type &c, ostream_type &stream,
+      const element_type& c, ostream_type& stream,
       typename std::conditional<sizeof...(Args) != 0, Int<0>,
                                 std::nullptr_t>::type) {
     stream << std::get<0>(c);
@@ -195,7 +195,7 @@ struct print_container_helper<T, TChar, TCharTraits,
   }
 
   template <std::size_t N>
-  static void tuple_print(const element_type &c, ostream_type &stream, Int<N>) {
+  static void tuple_print(const element_type& c, ostream_type& stream, Int<N>) {
     if (print_container_helper<T, TChar, TCharTraits,
                                TDelimiters>::delimiters_type::values
             .delimiter != NULL)
@@ -213,9 +213,9 @@ struct print_container_helper<T, TChar, TCharTraits,
 
 template <typename T, typename TChar, typename TCharTraits,
           typename TDelimiters>
-inline std::basic_ostream<TChar, TCharTraits> &operator<<(
-    std::basic_ostream<TChar, TCharTraits> &stream,
-    const print_container_helper<T, TChar, TCharTraits, TDelimiters> &helper) {
+inline std::basic_ostream<TChar, TCharTraits>& operator<<(
+    std::basic_ostream<TChar, TCharTraits>& stream,
+    const print_container_helper<T, TChar, TCharTraits, TDelimiters>& helper) {
   helper(stream);
   return stream;
 }
@@ -384,40 +384,40 @@ const delimiters_values<wchar_t>
 
 struct custom_delims_base {
   virtual ~custom_delims_base() {}
-  virtual std::ostream &stream(::std::ostream &) = 0;
-  virtual std::wostream &stream(::std::wostream &) = 0;
+  virtual std::ostream& stream(::std::ostream&) = 0;
+  virtual std::wostream& stream(::std::wostream&) = 0;
 };
 
 template <typename T, typename Delims>
 struct custom_delims_wrapper : custom_delims_base {
-  custom_delims_wrapper(const T &t_) : t(t_) {}
+  custom_delims_wrapper(const T& t_) : t(t_) {}
 
-  std::ostream &stream(std::ostream &s) {
+  std::ostream& stream(std::ostream& s) {
     return s << print_container_helper<T, char, std::char_traits<char>, Delims>(
                t);
   }
 
-  std::wostream &stream(std::wostream &s) {
+  std::wostream& stream(std::wostream& s) {
     return s << print_container_helper<T, wchar_t, std::char_traits<wchar_t>,
                                        Delims>(t);
   }
 
  private:
-  const T &t;
+  const T& t;
 };
 
 template <typename Delims>
 struct custom_delims {
   template <typename Container>
-  custom_delims(const Container &c)
+  custom_delims(const Container& c)
       : base(new custom_delims_wrapper<Container, Delims>(c)) {}
 
   std::unique_ptr<custom_delims_base> base;
 };
 
 template <typename TChar, typename TCharTraits, typename Delims>
-inline std::basic_ostream<TChar, TCharTraits> &operator<<(
-    std::basic_ostream<TChar, TCharTraits> &s, const custom_delims<Delims> &p) {
+inline std::basic_ostream<TChar, TCharTraits>& operator<<(
+    std::basic_ostream<TChar, TCharTraits>& s, const custom_delims<Delims>& p) {
   return p.base->stream(s);
 }
 
@@ -426,15 +426,15 @@ inline std::basic_ostream<TChar, TCharTraits> &operator<<(
 
 template <typename T>
 struct array_wrapper_n {
-  typedef const T *const_iterator;
+  typedef const T* const_iterator;
   typedef T value_type;
 
-  array_wrapper_n(const T *const a, size_t n) : _array(a), _n(n) {}
+  array_wrapper_n(const T* const a, size_t n) : _array(a), _n(n) {}
   inline const_iterator begin() const { return _array; }
   inline const_iterator end() const { return _array + _n; }
 
  private:
-  const T *const _array;
+  const T* const _array;
   size_t _n;
 };
 
@@ -451,10 +451,10 @@ struct bucket_print_wrapper {
 
   const_iterator end() const { return m_map.cend(n); }
 
-  bucket_print_wrapper(const T &m, size_type bucket) : m_map(m), n(bucket) {}
+  bucket_print_wrapper(const T& m, size_type bucket) : m_map(m), n(bucket) {}
 
  private:
-  const T &m_map;
+  const T& m_map;
   const size_type n;
 };
 
@@ -463,13 +463,13 @@ struct bucket_print_wrapper {
 // Global accessor functions for the convenience wrappers
 
 template <typename T>
-inline pretty_print::array_wrapper_n<T> pretty_print_array(const T *const a,
+inline pretty_print::array_wrapper_n<T> pretty_print_array(const T* const a,
                                                            size_t n) {
   return pretty_print::array_wrapper_n<T>(a, n);
 }
 
 template <typename T>
-pretty_print::bucket_print_wrapper<T> bucket_print(const T &m,
+pretty_print::bucket_print_wrapper<T> bucket_print(const T& m,
                                                    typename T::size_type n) {
   return pretty_print::bucket_print_wrapper<T>(m, n);
 }
@@ -482,8 +482,8 @@ namespace std {
 
 template <typename T, typename TChar, typename TCharTraits>
 inline typename enable_if<::pretty_print::is_container<T>::value,
-                          basic_ostream<TChar, TCharTraits> &>::type
-operator<<(basic_ostream<TChar, TCharTraits> &stream, const T &container) {
+                          basic_ostream<TChar, TCharTraits>&>::type
+operator<<(basic_ostream<TChar, TCharTraits>& stream, const T& container) {
   return stream
          << ::pretty_print::print_container_helper<T, TChar, TCharTraits>(
                 container);

@@ -26,9 +26,9 @@ class TopicManager;
 class ServiceManager;
 class StateManager;
 
-class  EnvObject : public Actor {
+class EnvObject : public Actor {
  public:
-   EnvObject();
+  EnvObject();
 
   typedef microsoft::projectairsim::Transform Pose;
 
@@ -50,12 +50,12 @@ class  EnvObject : public Actor {
   class Impl;
   class Loader;
 
-   EnvObject(const std::string& id, const Pose& origin, const Logger& logger,
-           const TopicManager& topic_manager,
-           const std::string& parent_topic_path,
-           const ServiceManager& service_manager,
-           const StateManager& state_manager);
-   EnvObject(std::shared_ptr<Impl> pimpl);
+  EnvObject(const std::string& id, const Pose& origin, const Logger& logger,
+            const TopicManager& topic_manager,
+            const std::string& parent_topic_path,
+            const ServiceManager& service_manager,
+            const StateManager& state_manager);
+  EnvObject(std::shared_ptr<Impl> pimpl);
 
   void Load(ConfigJson config_json) override;
 };

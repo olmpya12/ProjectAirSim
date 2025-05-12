@@ -565,7 +565,6 @@ void UnrealHelpers::ForceUnrealGarbageCollection() {
   }
 }
 
-
 bool UnrealHelpers::SetDoublePropertyValue(AActor* actor, FName propertyName,
                                            double value) {
   FDoubleProperty* DoubleProp =
@@ -589,7 +588,7 @@ bool UnrealHelpers::CallFunction(AActor* actor, FName functionName) {
 }
 
 double UnrealHelpers::GetDoublePropertyValue(AActor* actor, FName propertyName,
-                                            double default_val) {
+                                             double default_val) {
   FDoubleProperty* DoubleProp =
       FindFProperty<FDoubleProperty>(actor->GetClass(), propertyName);
   if (DoubleProp != NULL) {

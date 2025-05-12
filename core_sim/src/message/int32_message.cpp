@@ -38,7 +38,8 @@ class Int32Message::Impl : public MessageImpl {
 // -----------------------------------------------------------------------------
 // class Int32Message
 
-Int32Message::Int32Message() : Message(std::make_shared<Int32Message::Impl>()) {}
+Int32Message::Int32Message()
+    : Message(std::make_shared<Int32Message::Impl>()) {}
 
 Int32Message::Int32Message(int32_t val)
     : Message(std::make_shared<Int32Message::Impl>(val)) {}

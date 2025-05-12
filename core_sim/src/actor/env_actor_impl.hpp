@@ -100,8 +100,8 @@ class EnvActor::Impl : public ActorImpl {
   bool auto_start_enabled_;  // not used currently
 
   TrajectoryKinematics traj_kinematics_;
-  TimeSec time_at_load = 0.0f; // time when trajectory was loaded
-  Kinematics kinematics_at_load; // kinematics when trajectory was loaded
+  TimeSec time_at_load = 0.0f;    // time when trajectory was loaded
+  Kinematics kinematics_at_load;  // kinematics when trajectory was loaded
 
   std::unordered_map<std::string, AngleAxis> link_rotation_angles_;
   std::unordered_map<std::string, AngleAxis> link_rotation_rates_;
