@@ -180,6 +180,11 @@ public class ProjectAirSim : ModuleRules
 
             // JSBSim dll
             RuntimeDependencies.Add("$(BinaryOutputDir)/" + "JSBSim.dll", PluginDirectory + "/SimLibs/core_sim/jsbsim/lib/" + buildType + "/" + "JSBSim.dll");
+            // Include JSBSim model folders (non-UFS files copied as-is)
+            RuntimeDependencies.Add("$(PluginDir)/SimLibs/core_sim/jsbsim/models/aircraft/*", StagedFileType.NonUFS);
+            RuntimeDependencies.Add("$(PluginDir)/SimLibs/core_sim/jsbsim/models/engine/*", StagedFileType.NonUFS);
+            RuntimeDependencies.Add("$(PluginDir)/SimLibs/core_sim/jsbsim/models/scripts/*", StagedFileType.NonUFS);
+            RuntimeDependencies.Add("$(PluginDir)/SimLibs/core_sim/jsbsim/models/systems/*", StagedFileType.NonUFS);
         }
         else
         {
