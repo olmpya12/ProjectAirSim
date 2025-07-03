@@ -30,4 +30,7 @@ There are some side effects to `lockstep`, primarily slower update loops.  Runni
 
 ---
 
-Copyright (C) Microsoft Corporation.  All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+
+MIT License. All rights reserved.

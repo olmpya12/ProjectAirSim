@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 ROS bridge for Project AirSim: ROS 2 abstractions
 """
 import rclpy

@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 
 Demonstrates spawning of light actors at runtime, changing their properties.
 Creates a spot light above the drone. Rotates object to look down, 

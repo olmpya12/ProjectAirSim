@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 
 Visualizes effects of chromatic_aberration and out of focus camera faults
 through a non-physics drone RGB camera.

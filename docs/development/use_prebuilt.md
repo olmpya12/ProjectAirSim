@@ -1,30 +1,10 @@
 # Using Pre-built Binary Environments
-{# include enable_internal_docs.tpp #}
 
 The quickest way to jump in and see what Project AirSim can do is to download and run a pre-built binary environment.
 
-## Package contents
+Currently, only the classic Blocks environment is available. To download it, visit the [GitHub releases section](https://github.com/ProjectAirSim/releases). If you require another environment (e.g., urban, geo-specific, etc.), you can sponsor its maintenance by contacting [envs@iamaisim.com](mailto:envs@iamaisim.com).
 
-Here is an example of the SoccerField environment package contents:
-
-```
-SoccerField_{Win64|Linux64}
-  └─ {WindowsNoEditor|LinuxNoEditor}
-    └─ Engine
-    └─ SoccerField
-    │  └─ Binaries
-    │  └─ Content
-    │  └─ ProjectAirSimConfig
-    |  |    scene_basic_drone.jsonc
-    |  |    robot_quadrotor_fastphysics.jsonc
-    │  │    ...
-    │  └─ Saved
-    └─ SoccerField{.exe|.sh}
-```
-
-The two key areas in the package are:
-1. The executable file to launch the environment (ex. `SoccerField.sh`)
-2. The `ProjectAirSimConfig` folder that contains the JSON simulator config files
+[IAMAI](https://iamaisim.com) also provides Docker-packaged environments with customized configurations.
 
 ## How to launch the environment
 
@@ -45,7 +25,7 @@ client = ProjectAirSimClient()
 world = World(client, "scene_basic_drone.jsonc")
 ```
 
-The Project AirSim Python client API library loads the JSONC (JSON with Comments) string from the scene configuration file `projectairsim_client\ProjectAirSim_Example_User_Scripts\sim_config\scene_basic_drone.jsonc`.  The scene configuration file specifies a single robot with a reference to the robot configuration file `robot_quadrotor_fastphysics.json` which resides in the same directory as the scene configuration file.  The contents of the files are assembled into a single string of JSON-formatted data and sent to Project AirSim.  Project AirSim then constructs the specified environment and robot(s).
+The Project AirSim Python client API library loads the JSONC (JSON with Comments) string from the scene configuration file `client\python\example_User_Scripts\sim_config\scene_basic_drone.jsonc`.  The scene configuration file specifies a single robot with a reference to the robot configuration file `robot_quadrotor_fastphysics.json` which resides in the same directory as the scene configuration file.  The contents of the files are assembled into a single string of JSON-formatted data and sent to Project AirSim.  Project AirSim then constructs the specified environment and robot(s).
 
 A set of example JSONC configuration files are provided so that the simulation can be launched out-of-the-box. If you wish to customize the configuration, please see **[Configuration Settings](../config.md)** for more details.
 
@@ -95,4 +75,7 @@ To be able to use new meshes and fully customize the drone and environment, see 
 
 ---
 
-Copyright (C) Microsoft Corporation.  All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+
+MIT License. All rights reserved.

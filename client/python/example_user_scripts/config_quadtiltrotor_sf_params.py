@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 
 Demonstrates flying a quadtiltrotor airtaxi with parameters read in from a config file.
 The airtaxi first rotates its heading to 45 degrees using a properly tuned MC_YAWRATE_MAX

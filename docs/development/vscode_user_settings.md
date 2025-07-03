@@ -1,5 +1,4 @@
 # Optional VS Code User Settings
-{# include enable_internal_docs.tpp #}
 
 Some required VS Code settings for the Project AirSim project are already included in the repo's `.vscode` folders, but there are many additional user settings that can help with development.
 
@@ -58,4 +57,7 @@ Here are some example optional User settings:
 
 ---
 
-Copyright (C) Microsoft Corporation.  All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+
+MIT License. All rights reserved.

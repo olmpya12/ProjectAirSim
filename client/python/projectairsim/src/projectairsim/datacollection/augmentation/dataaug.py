@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 
 Script for augmenting data based on augmentation spec in the config/API.
 Reads data from a local dir/azure and adds data to the same

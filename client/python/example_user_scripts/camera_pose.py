@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 
 Demonstrates how to use set_camera_pose() and camera_look_at_object() APIs.
 The camera frustum is rendered to illustrate the camera pose as it rotates

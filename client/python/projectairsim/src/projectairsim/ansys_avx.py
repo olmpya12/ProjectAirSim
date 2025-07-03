@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 
 Environment variable "ANSYS_ROOT" must be set to the root Ansys installation path:
 e.g. "C:\Program Files\ANSYS Inc\v231"

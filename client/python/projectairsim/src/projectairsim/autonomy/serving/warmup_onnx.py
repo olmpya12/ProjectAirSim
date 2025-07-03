@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 """
 Warmup script for ONNX model on GPU.
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 """
 
 import numpy as np

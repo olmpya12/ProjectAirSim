@@ -1,4 +1,7 @@
-// Copyright (C) Microsoft Corporation.  All rights reserved.
+// Copyright (C) Microsoft Corporation.  
+// Copyright (C) 2025 IAMAI Consulting Corp.
+//
+// MIT License. All rights reserved.
 
 #include "GISRenderer.h"
 

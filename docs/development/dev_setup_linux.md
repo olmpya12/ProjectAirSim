@@ -1,12 +1,11 @@
 # Developer Initial Setup for Linux
-{# include enable_internal_docs.tpp #}
 
 On Linux, Project AirSim can be developed with VS Code which provides a light-weight, cross-platform common experience between Linux and Windows.
 
-1. Clone the Project AirSim repo (**[SSH authentication](https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate)** is recommended for Linux)
+1. Clone the Project AirSim repo
 
     ```
-    git clone bizair@vs-ssh.visualstudio.com:v3/bizair/Project%20AirSim/projectairsim
+    git clone https://github.com/iamaisim/ProjectAirSim.git
     ```
 
 2. From the `projectairsim/` folder, install the prerequisites:
@@ -19,7 +18,7 @@ On Linux, Project AirSim can be developed with VS Code which provides a light-we
 
     - **make** - used by build scripts to drive CMake commands
     - **cmake** - used to build sim lib components
-    - **clang 13, libc++ 13** - used to build sim lib components and match the bundled toolchain of Unreal Engine 4.25
+    - **clang 13, libc++ 13** - used to build sim lib components and match the bundled toolchain of Unreal Engine 5.2
     - **ninja** - used as the preferred CMake generator/build tool
     - **vulkan loader library** - for UE rendering on Linux (OpenGL has been deprecated)
     - **vulkan utils** - utilities like `vulkaninfo` for checking for graphics support
@@ -55,7 +54,7 @@ On Linux, Project AirSim can be developed with VS Code which provides a light-we
 
     See **[Optional VS Code User Settings](vscode_user_settings.md)** for some example customized user settings that can help with Project AirSim development.
 
-5. Install Unreal Engine 4.25
+5. Install Unreal Engine 5.2
 
     - Get UE source from **[Unreal Engine's private GitHub repo](https://github.com/EpicGames/UnrealEngine)** (requires **[registering with Epic](https://docs.unrealengine.com/en-US/GettingStarted/DownloadingUnrealEngine/index.html)**)
 
@@ -106,4 +105,7 @@ Now you're ready to start **[Developing Project AirSim Libs](use_source.md#devel
 
 ---
 
-Copyright (C) Microsoft Corporation.  All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+
+MIT License. All rights reserved.

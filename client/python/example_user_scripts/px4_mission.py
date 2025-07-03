@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 
 Demonstrates flying a FastPhysics quadrotor using a PX4 controller running the mission
 already loaded into the vehicle by ground control software such as QGroundControl.

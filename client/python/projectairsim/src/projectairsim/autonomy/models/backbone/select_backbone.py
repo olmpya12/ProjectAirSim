@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 ProjectAirSim:: Autonomy building-blocks::Perception: Backbone selector
 """
 from projectairsim.autonomy.models.backbone.resnet_2d3d import (

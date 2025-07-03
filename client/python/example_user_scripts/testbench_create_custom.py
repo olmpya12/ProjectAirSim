@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 This script is used to generate a test bench for the Project AirSim.
 Test bench is a collection of test scenarios that can be used to test the drone.
 This script demonstrates how to generate a test bench with custom test scenarios.

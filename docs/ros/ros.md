@@ -1,5 +1,4 @@
 # Project AirSim ROS Bridge
-{# include enable_internal_docs.tpp #}
 
 Project AirSim can join a ROS1 (Robot Operating System) network using the Project AirSim ROS Bridge.  The bridge is a pure Python ROS1 node that connects to Project AirSim using the Client API.  The bridge is provided as a ROS package and the stand-alone node Python script can be launched using ROS mechanisms such as `rosrun` or `roslaunch` but the script can also be run directly with the Python interpreter.  The core bridge Python modules are provided as a Python package to allow the bridge to be integrated with other client code.
 
@@ -21,10 +20,8 @@ The Project AirSim ROS Bridge requires the following:
 
 	where `version` is the actual version ID.
 
-{# ifdef INTERNAL_DOCS #}
 ## ROS bridge library in-place install
 
-{# include for_internal_developers.md #}
 
 For convenience, internal developers may wish to install the Project AirSim ROS Bridge Python package (`projectairsim_ros`) "in place" instead of from the Python wheel file.  This allows changes to the package sources to be automatically picked up without having to rebuild and reinstall the wheel each time.  Developers are free to install the wheel, however, if they wish.
 
@@ -39,7 +36,6 @@ Follow the instructions [setup for the Project AirSim ROS Bridge](../ros/ros.md#
     pip install -e projectairsim_ros
 ```
 
-{# endif INTERNAL_DOCS #}
 
 ## Building
 Building the Project AirSim ROS Bridge package is not necessary to use the bridge, although doing so may help ensure dependencies are satisfied. To build the Project AirSim ROS Bridge package, include the Project AirSim ROS Bridge directory `ros` in the ROS catkin workspace and run `catkin_make`.
@@ -200,4 +196,7 @@ Samples of using the Project AirSim ROS Bridge are provided in the `ros/examples
 
 ---
 
-Copyright (C) Microsoft Corporation.  All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+
+MIT License. All rights reserved.

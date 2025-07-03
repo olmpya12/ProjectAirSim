@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 ProjectAirSim:: Autonomy:: Gym Environment: Sample policies
 
 Sample policies to test RL Sim envs locally. These are intended to take

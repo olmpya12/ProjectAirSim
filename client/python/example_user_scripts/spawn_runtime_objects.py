@@ -1,5 +1,7 @@
 """
-Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+MIT License. All rights reserved.
 
 Demonstrates loading/spawning glTF assets at runtime with the spawn_object_from_file API.
 A landing pad is spawned automatically from the scene config file under the drone's starting point.

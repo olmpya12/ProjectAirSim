@@ -60,4 +60,7 @@ The `build_map.py` node is marked "required" in the primary ROS launch file `bui
 
 ---
 
-Copyright (C) Microsoft Corporation.  All rights reserved.
+Copyright (C) Microsoft Corporation.  
+Copyright (C) 2025 IAMAI Consulting Corp.
+
+MIT License. All rights reserved.
