@@ -1,6 +1,6 @@
 # Project AirSim
 
-```{include} ../../README.md
+```{include} ../README.md
 :relative-docs: docs_build/source
 :relative-images: docs_build/source/images
 ```
@@ -9,7 +9,7 @@
 :maxdepth: 2
 :caption: Introduction
 
-README.md
+../README.md
 ```
 
 ```{toctree}
@@ -70,7 +70,6 @@ apis.md
 
 controllers/controllers.md
 controllers/simple_flight.md
-
 controllers/px4/px4.md
 controllers/px4/px4_build.md
 controllers/px4/px4_hitl.md
