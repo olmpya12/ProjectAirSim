@@ -72,7 +72,7 @@ See **[Installing system prerequisites](docs/system_specs.md#installing-system-p
 
 > I just want to download and run a Project AirSim environment and drive it with some Python code.
 
-*Note:* You can either build Project AirSim from source or download pre-built binaries to use with the Python client. Currently, only the classic Blocks environment is available. If you require another environment (e.g., urban, geo-specific, etc.), you can sponsor its maintenance by contacting [envs@iamaisim.com](mailto:envs@iamaisim.com).
+*Note:* You can either build Project AirSim from source or download pre-built binaries to use with the Python client. Currently, only the classic Blocks environment is available. A City environment will be available soon! If you require another environment (e.g., urban, geo-specific, forest, etc.), you can sponsor its maintenance by contacting [envs@iamaisim.com](mailto:envs@iamaisim.com).
 
 #### **[Use pre-built binary environments](docs/development/use_prebuilt.md)**
 
