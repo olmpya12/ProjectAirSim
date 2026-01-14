@@ -90,6 +90,10 @@ class Camera::Impl : public SensorImpl {
 
   bool SetFieldOfView(int image_type_id, float field_of_view);
 
+  bool SetProjectionMode(int image_type_id, int projection_mode);
+
+  bool SetOrthoWidth(int image_type_id, float ortho_width);
+
   bool SetAperture(float aperture);
 
   bool IsPoseUpdatePending() const;
@@ -806,6 +810,21 @@ bool Camera::Impl::SetFieldOfView(int image_type_id, float field_of_view) {
   return true;
 }
 
+bool Camera::Impl::SetProjectionMode(int image_type_id, int projection_mode) {
+  std::lock_guard<std::mutex> lock(update_lock_);
+  camera_settings.capture_settings.at(image_type_id).projection_mode =
+      projection_mode;
+  settings_update_pending = true;
+  return true;
+}
+
+bool Camera::Impl::SetOrthoWidth(int image_type_id, float ortho_width) {
+  std::lock_guard<std::mutex> lock(update_lock_);
+  camera_settings.capture_settings.at(image_type_id).ortho_width = ortho_width;
+  settings_update_pending = true;
+  return true;
+}
+
 bool Camera::Impl::SetAperture(float aperture) {
   std::lock_guard<std::mutex> lock(update_lock_);
   camera_settings.aperture = aperture;
@@ -1123,6 +1142,24 @@ void Camera::Impl::RegisterServiceMethods() {
       &Camera::Impl::SetFieldOfView, *this);
   service_manager_.RegisterMethod(set_field_of_view, set_field_of_view_handler);
 
+  auto set_projection_mode_method_name =
+      topic_path_ + "/" + "SetProjectionMode";
+  auto set_projection_mode = ServiceMethod(set_projection_mode_method_name,
+                                           {"image_type_id", "projection_mode"});
+  auto set_projection_mode_handler =
+      set_projection_mode.CreateMethodHandler(&Camera::Impl::SetProjectionMode,
+                                              *this);
+  service_manager_.RegisterMethod(set_projection_mode,
+                                  set_projection_mode_handler);
+
+  auto set_ortho_width_method_name = topic_path_ + "/" + "SetOrthoWidth";
+  auto set_ortho_width =
+      ServiceMethod(set_ortho_width_method_name,
+                    {"image_type_id", "ortho_width"});
+  auto set_ortho_width_handler =
+      set_ortho_width.CreateMethodHandler(&Camera::Impl::SetOrthoWidth, *this);
+  service_manager_.RegisterMethod(set_ortho_width, set_ortho_width_handler);
+
   auto reset_camera_pose_method_name = topic_path_ + "/" + "ResetCameraPose";
   auto reset_camera_pose =
       ServiceMethod(reset_camera_pose_method_name, {"wait_for_pose_update"});
@@ -1287,12 +1324,16 @@ void Camera::Loader::LoadCaptureSetting(const json& json) {
       json, Constant::Config::show_debug_plots, setting.show_debug_plots);
   setting.width =
       JsonUtils::GetInteger(json, Constant::Config::width, setting.width);
-  setting.height =
-      JsonUtils::GetInteger(json, Constant::Config::height, setting.height);
-  setting.fov_degrees = JsonUtils::GetNumber<float>(
-      json, Constant::Config::fov_degrees, setting.fov_degrees);
-  setting.pixels_as_float = JsonUtils::GetBoolean(
-      json, Constant::Config::pixels_as_float, setting.pixels_as_float);
+    setting.height =
+        JsonUtils::GetInteger(json, Constant::Config::height, setting.height);
+    setting.fov_degrees = JsonUtils::GetNumber<float>(
+        json, Constant::Config::fov_degrees, setting.fov_degrees);
+    setting.projection_mode = JsonUtils::GetInteger(
+        json, Constant::Config::projection_mode, setting.projection_mode);
+    setting.ortho_width = JsonUtils::GetNumber<float>(
+        json, Constant::Config::ortho_width, setting.ortho_width);
+    setting.pixels_as_float = JsonUtils::GetBoolean(
+        json, Constant::Config::pixels_as_float, setting.pixels_as_float);
   setting.compress =
       JsonUtils::GetBoolean(json, Constant::Config::compress, setting.compress);
 

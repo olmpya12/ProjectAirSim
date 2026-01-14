@@ -262,6 +262,9 @@ void Radar::Loader::LoadRadarSettings(const nlohmann::json& json) {
   impl.radar_settings_.range_max = JsonUtils::GetNumber<float>(
       json, Constant::Config::range_max, setting.range_max);
 
+  impl.radar_settings_.range_min = JsonUtils::GetNumber<float>(
+      json, Constant::Config::range_min, setting.range_min);
+
   impl.radar_settings_.range_resolution = JsonUtils::GetNumber<float>(
       json, Constant::Config::range_resolution, setting.range_resolution);
 
@@ -277,8 +280,61 @@ void Radar::Loader::LoadRadarSettings(const nlohmann::json& json) {
   impl.radar_settings_.track_interval = JsonUtils::GetNumber<float>(
       json, Constant::Config::track_interval, setting.track_interval);
 
+  impl.radar_settings_.data_latency = JsonUtils::GetNumber<float>(
+      json, Constant::Config::data_latency, setting.data_latency);
+
   impl.radar_settings_.rcs_adjust_factor = JsonUtils::GetNumber<float>(
       json, Constant::Config::rcs_adjust_factor, setting.rcs_adjust_factor);
+
+  impl.radar_settings_.beam_radius = JsonUtils::GetNumber<float>(
+      json, Constant::Config::beam_radius, setting.beam_radius);
+
+  impl.radar_settings_.range_noise_stddev = JsonUtils::GetNumber<float>(
+      json, Constant::Config::range_noise_stddev, setting.range_noise_stddev);
+
+  impl.radar_settings_.azimuth_noise_stddev = JsonUtils::GetNumber<float>(
+      json, Constant::Config::azimuth_noise_stddev,
+      setting.azimuth_noise_stddev);
+
+  impl.radar_settings_.elevation_noise_stddev = JsonUtils::GetNumber<float>(
+      json, Constant::Config::elevation_noise_stddev,
+      setting.elevation_noise_stddev);
+
+  impl.radar_settings_.velocity_noise_stddev = JsonUtils::GetNumber<float>(
+      json, Constant::Config::velocity_noise_stddev,
+      setting.velocity_noise_stddev);
+
+  impl.radar_settings_.point_dropout_probability = JsonUtils::GetNumber<float>(
+      json, Constant::Config::point_dropout_probability,
+      setting.point_dropout_probability);
+
+  impl.radar_settings_.continuous_coverage = JsonUtils::GetBoolean(
+      json, Constant::Config::continuous_coverage,
+      setting.continuous_coverage);
+
+  impl.radar_settings_.points_per_frame = JsonUtils::GetInteger(
+      json, Constant::Config::points_per_frame, setting.points_per_frame);
+
+  impl.radar_settings_.max_points_per_frame = JsonUtils::GetInteger(
+      json, Constant::Config::max_points_per_frame,
+      setting.max_points_per_frame);
+
+  impl.radar_settings_.quantize_azimuth = JsonUtils::GetBoolean(
+      json, Constant::Config::quantize_azimuth, setting.quantize_azimuth);
+
+  impl.radar_settings_.quantize_elevation = JsonUtils::GetBoolean(
+      json, Constant::Config::quantize_elevation,
+      setting.quantize_elevation);
+
+  impl.radar_settings_.quantize_range = JsonUtils::GetBoolean(
+      json, Constant::Config::quantize_range, setting.quantize_range);
+
+  impl.radar_settings_.quantize_velocity = JsonUtils::GetBoolean(
+      json, Constant::Config::quantize_velocity, setting.quantize_velocity);
+
+  impl.radar_settings_.cluster_by_resolution = JsonUtils::GetBoolean(
+      json, Constant::Config::cluster_by_resolution,
+      setting.cluster_by_resolution);
 
   impl.radar_settings_.draw_debug_points = JsonUtils::GetInteger(
       json, Constant::Config::draw_debug_points, setting.draw_debug_points);

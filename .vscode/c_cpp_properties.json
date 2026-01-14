@@ -5,7 +5,9 @@
             "configurationProvider": "ms-vscode.cmake-tools",
             "defines": [],
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/core_sim/include",
+                "${workspaceFolder}/thirdparty"
             ],
             "intelliSenseMode": "clang-x64",
             "cStandard": "c11",
@@ -13,10 +15,30 @@
         },
         {
             "name": "Win",
-            "configurationProvider": "ms-vscode.cmake-tools",
-            "defines": [],
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.37.32822/bin/Hostx64/x64/cl.exe",
+            "defines": [
+                "_WINDOWS",
+                "WIN32",
+                "_WIN32",
+                "NDEBUG",
+                "_UNICODE",
+                "UNICODE",
+                "MSGPACK_NO_BOOST"
+            ],
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/core_sim/include",
+                "${workspaceFolder}/core_sim/src",
+                "${workspaceFolder}/build/win64/Debug/_deps/nlohmann-install",
+                "${workspaceFolder}/build/win64/Debug/_deps/eigen3-src",
+                "${workspaceFolder}/build/win64/Debug/_deps/msgpack-src/include",
+                "${workspaceFolder}/build/win64/Debug/_deps/nng-install/include",
+                "${workspaceFolder}/build/win64/Debug/_deps/googletest-src/googletest/include",
+                "${workspaceFolder}/mavlinkcom/include",
+                "${workspaceFolder}/tools/lvmon/Lib/include",
+                "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.37.32822/include",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared"
             ],
             "intelliSenseMode": "msvc-x64",
             "cStandard": "c11",

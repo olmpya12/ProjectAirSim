@@ -8,13 +8,23 @@
         "xyz": "0.0 0.0 -4.0",
         "rpy-deg": "0 0 0"
       },
-      "robot-config": "robot_ardu_quadrotor.jsonc"
+      "robot-config": "E:\\Github\\ProjectAirSim\\client\\python\\example_user_scripts\\ardupilot\\sim_config\\mt-80_ardupilot.jsonc"
+    },
+    {
+      "type": "robot",
+      "name": "MapCameraRig",
+      "origin": {
+        "xyz": "0.0 0.0 0.0",
+        "rpy-deg": "0 0 0"
+      },
+      "robot-config": "E:/Github/ProjectAirSim/client/python/example_user_scripts/ardupilot/sim_config/robot_map_camera.jsonc",
+      "start-landed": true
     }
   ],
   "clock": {
     "type": "steppable",
-    "step-ns": 3000000,
-    "real-time-update-rate": 3000000,
+    "step-ns": 1500000,
+    "real-time-update-rate": 1500000,
     "pause-on-start": false
   },
   "home-geo-point": {

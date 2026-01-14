@@ -70,10 +70,13 @@ class ROS2Node(node.ROSNode):
             rectification_matrix,
             projection_matrix,
         ):
-            camera_info.d = distortion_params
-            camera_info.k = intrinsic_camera_matrix
-            camera_info.r = rectification_matrix
-            camera_info.p = projection_matrix
+            # Project AirSim camera info is msgpack decoded; integer-valued doubles
+            # (e.g. 0, 1) may arrive as `int`, but ROS2 message fields require
+            # `float` instances.
+            camera_info.d = [float(value) for value in distortion_params]
+            camera_info.k = [float(value) for value in intrinsic_camera_matrix]
+            camera_info.r = [float(value) for value in rectification_matrix]
+            camera_info.p = [float(value) for value in projection_matrix]
 
     class Subscriber(node.ROSNode.Subscriber):
         """

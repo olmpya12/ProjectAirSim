@@ -219,6 +219,41 @@ static const struct LidarKindEntry {
          1.1f,                       // angle_between_lasers_yaw_max (degrees)
          0.9f                        // angle_between_lasers_yaw_min (degrees)
          )},
+    {Constant::Config::livox_mid360,  // Default settings for Livox Mid-360
+                                      // (https://www.livoxtech.com/mid-360)
+                                      // Non-repetitive scan pattern
+     LidarSettings(
+         LidarKind::kGenericRosette,
+         Transform(Vector3(0, 0, -1),
+                   Quaternion::Identity()),  // origin
+         Quaternion::Identity(),  // scan_orientation (horizontal 360° pattern)
+         4,       // number_of_channels (4 independent scanning units)
+         70.0f,   // range (max detection range)
+         200000,  // points_per_second
+         10.0f,   // report_frequency
+         10.0f * (1.0f + 1.0f / static_cast<float>(M_PI)),  // horizontal_rotation_frequency:
+                             // irrational ratio (1+1/π) revolutions per 0.1 sec
+                             // creates non-repetitive pattern
+         0.0f,               // horizontal_fov_start_deg
+         360.0f,             // horizontal_fov_end_deg (full 360°)
+         10.0f * (static_cast<float>(std::sqrt(2.0)) * 11.0f),  // vertical_rotation_frequency:
+                             // irrational ratio (√2 * 11) creates
+                             // non-repeating rosette pattern
+         -52.5f,  // vertical_fov_lower_deg (59° total vertical FOV)
+         6.5f,    // vertical_fov_upper_deg
+         0.42f,   // radial_scaling: creates flower-like scan pattern
+         false,   // disable_self_hits
+         true,    // report_no_return_points
+         Vector3(0.0f, 0.0f, 0.0f),  // no_return_point_value
+         false,                      // draw_debug_points
+         0.0f,                       // distance_between_lasers (cm)
+         0.2f,                       // angle_between_lasers_pitch_max (degrees)
+         0.05f,                      // angle_between_lasers_pitch_min (degrees)
+         1.5f,                       // angle_between_lasers_yaw_max (degrees)
+         0.8f,                       // angle_between_lasers_yaw_min (degrees)
+         true,                       // report_point_cloud
+         false                       // report_azimuth_elevation_range
+         )},
 };
 
 // class Lidar

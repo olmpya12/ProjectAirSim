@@ -425,11 +425,11 @@ void UUnrealCamera::UpdateCaptureComponentSetting(
 
   if (!std::isnan(CaptureSettings.fov_degrees))
     Capture->FOVAngle = CaptureSettings.fov_degrees;
-  // TODO: projection mode
-  // if (Capture->ProjectionType == ECameraProjectionMode::Orthographic &&
-  // !std::isnan(CaptureSettings.ortho_Width))
-  //    Capture->OrthoWidth =
-  //    ned_transform.fromNed(CaptureSettings.ortho_Width);
+  if (Capture->ProjectionType == ECameraProjectionMode::Orthographic &&
+      !std::isnan(CaptureSettings.ortho_width)) {
+    Capture->OrthoWidth =
+        projectairsim::TransformUtils::ToCentimeters(CaptureSettings.ortho_width);
+  }
 
   UpdateCameraPostProcessingSetting(Capture->PostProcessSettings,
                                     CaptureSettings);
@@ -1065,7 +1065,7 @@ void UUnrealCamera::CalculateProjectionMatrix() {
   ViewInfo.AspectRatio =
       float(RenderTexture->SizeX) / float(RenderTexture->SizeY);
   ViewInfo.OrthoNearClipPlane = GNearClippingPlane;
-  ViewInfo.OrthoFarClipPlane = 10000;  // TODO
+  ViewInfo.OrthoFarClipPlane = 1000000.0f;
   ViewInfo.bConstrainAspectRatio = true;
 
   if (CaptureComp->bUseCustomProjectionMatrix == true) {

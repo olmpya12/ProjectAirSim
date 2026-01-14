@@ -1,0 +1,16 @@
+digraph G {
+"odom" -> "base_link"[label=" Broadcaster: default_authority\nAverage rate: 28.713\nBuffer length: 4.144\nMost recent transform: 1768390358.64077\nOldest transform: 1768390354.49627\n"];
+"map" -> "map_ned"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"odom" -> "odom_ned"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "base_link_frd"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "GPS_0"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"map" -> "Sim/SceneBasicDrone/robots/Drone1"[label=" Broadcaster: default_authority\nAverage rate: 20.234\nBuffer length: 4.25\nMost recent transform: 1768390598.719071\nOldest transform: 1768390594.468741\n"];
+"map" -> "Sim/SceneBasicDrone/robots/Drone1/sensors/DownCamera"[label=" Broadcaster: default_authority\nAverage rate: 20.234\nBuffer length: 4.25\nMost recent transform: 1768390598.719071\nOldest transform: 1768390594.468741\n"];
+"map" -> "Sim/SceneBasicDrone/robots/Drone1/sensors/livox_lidar"[label=" Broadcaster: default_authority\nAverage rate: 20.233\nBuffer length: 4.201\nMost recent transform: 1768390598.669786\nOldest transform: 1768390594.468741\n"];
+"map" -> "Sim/SceneBasicDrone/robots/MapCameraRig"[label=" Broadcaster: default_authority\nAverage rate: 20.233\nBuffer length: 4.201\nMost recent transform: 1768390598.669786\nOldest transform: 1768390594.468741\n"];
+"map" -> "Sim/SceneBasicDrone/robots/MapCameraRig/sensors/MapCamera"[label=" Broadcaster: default_authority\nAverage rate: 20.233\nBuffer length: 4.201\nMost recent transform: 1768390598.669786\nOldest transform: 1768390594.468741\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1768390598.7370207"[ shape=plaintext ] ;
+}->"map";
+}

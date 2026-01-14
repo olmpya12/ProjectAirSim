@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include <deque>
+#include <random>
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -13,6 +15,8 @@
 #include "CoreMinimal.h"
 #include "UnrealSensor.h"
 #include "core_sim/clock.hpp"
+#include "core_sim/message/radar_detection_message.hpp"
+#include "core_sim/message/radar_track_message.hpp"
 #include "core_sim/physics_common_types.hpp"
 #include "core_sim/sensors/radar.hpp"
 
@@ -45,6 +49,8 @@ UCLASS() class UUnrealRadar : public UUnrealSensor {
 
   std::vector<RadarBeamPoint> GenerateBeamsToShoot(TimeNano SimTime);
 
+  std::vector<RadarBeamPoint> GenerateContinuousBeams(int points_per_frame);
+
   FHitResult ShootSingleBeam(const FVector& RadarBodyLoc,
                              const FRotator& RadarBodyRot,
                              const RadarBeamPoint& BeamPoint);
@@ -60,17 +66,57 @@ UCLASS() class UUnrealRadar : public UUnrealSensor {
 
   microsoft::projectairsim::Kinematics GetKinematicsFromActor(const AActor* Actor);
 
+  float SampleNormal(float stddev);
+
+  float SampleUniform(float min_val, float max_val);
+
+  float QuantizeValue(float value, float resolution, float origin = 0.0f);
+
+  void FlushPendingMessages(TimeNano SimTime);
+
+  void QueueDetectionMessage(TimeNano SimTime,
+                             const microsoft::projectairsim::Pose& RadarPose,
+                             const std::vector<RadarDetection>& Detections);
+
+  void QueueTrackMessage(TimeNano SimTime,
+                         const microsoft::projectairsim::Pose& RadarPose,
+                         const std::vector<microsoft::projectairsim::RadarTrack>& Tracks);
+
   microsoft::projectairsim::Radar Radar;
   microsoft::projectairsim::RadarSettings Settings;
   AActor* OwnerActor;
   TimeNano DetectionInterval;
   TimeNano TrackInterval;
+  TimeNano DataLatency;
   TimeNano LastDetectionTime;
   TimeNano LastTrackTime;
   int NextTrackID;
   std::vector<RadarBeamPoint> FullFOVFrame;
   TArray<FHitResult> AccumulatedGroundTruthHits;
   std::vector<RadarDetection> AccumulatedDetections;
+
+  struct PendingDetectionMsg {
+    TimeNano publish_time = 0;
+    microsoft::projectairsim::RadarDetectionMessage message;
+
+    PendingDetectionMsg(
+        TimeNano time,
+        const microsoft::projectairsim::RadarDetectionMessage& msg)
+        : publish_time(time), message(msg) {}
+  };
+
+  struct PendingTrackMsg {
+    TimeNano publish_time = 0;
+    microsoft::projectairsim::RadarTrackMessage message;
+
+    PendingTrackMsg(TimeNano time,
+                    const microsoft::projectairsim::RadarTrackMessage& msg)
+        : publish_time(time), message(msg) {}
+  };
+
+  std::deque<PendingDetectionMsg> PendingDetectionMsgs;
+  std::deque<PendingTrackMsg> PendingTrackMsgs;
+  std::mt19937 Rng;
 
   // Track calculation data
   std::unordered_map<int, std::string> TrackIDToName;

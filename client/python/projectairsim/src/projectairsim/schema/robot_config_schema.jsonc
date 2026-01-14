@@ -154,7 +154,7 @@
           "accelerometer": { "$ref": "#/definitions/accelerometer" },
           "gyroscope": { "$ref": "#/definitions/gyroscope" },
           //Lidar Params
-          "lidar-type": { "enum": [ "generic_cylindrical", "generic_rosette", "livox_mid70", "livox_avia", "gpu_cylindrical" ] },
+          "lidar-type": { "enum": [ "generic_cylindrical", "generic_rosette", "livox_mid70", "livox_mid360", "livox_avia", "gpu_cylindrical" ] },
           "number-of-channels": {
             "type": "integer",
             "minimum": 1
@@ -198,12 +198,28 @@
           "fov": { "$ref": "#/definitions/fov" },
           "masks": { "$ref": "#/definitions/masks" },
           "range-max": { "type": "number" },
+          "range-min": { "type": "number" },
           "range-resolution": { "type": "number" },
           "velocity-max": { "type": "number" },
           "velocity-resolution": { "type": "number" },
           "detection-interval": { "type": "number" },
           "track-interval": { "type": "number" },
+          "data-latency": { "type": "number" },
           "rcs-adjust-factor": { "type": "number" },
+          "beam-radius": { "type": "number" },
+          "continuous-coverage": { "type": "boolean" },
+          "points-per-frame": { "type": "integer" },
+          "max-points-per-frame": { "type": "integer" },
+          "range-noise-stddev": { "type": "number" },
+          "azimuth-noise-stddev": { "type": "number" },
+          "elevation-noise-stddev": { "type": "number" },
+          "velocity-noise-stddev": { "type": "number" },
+          "point-dropout-probability": { "type": "number" },
+          "quantize-azimuth": { "type": "boolean" },
+          "quantize-elevation": { "type": "boolean" },
+          "quantize-range": { "type": "boolean" },
+          "quantize-velocity": { "type": "boolean" },
+          "cluster-by-resolution": { "type": "boolean" },
           //GPS Params
           "eph-time-constant": {
             "type": "number",
@@ -657,10 +673,12 @@
             "type": "number",
             "enum": [ 0, 1, 2, 3, 4, 5, 6 ]
           },
-          "width": { "type": "number" },
-          "height": { "type": "number" },
-          "fov-degrees": { "type": "number" },
-          "capture-enabled": { "type": "boolean" },
+            "width": { "type": "number" },
+            "height": { "type": "number" },
+            "fov-degrees": { "type": "number" },
+            "projection-mode": { "type": "integer" },
+            "ortho-width": { "type": "number" },
+            "capture-enabled": { "type": "boolean" },
           "streaming-enabled": { "type": "boolean" },
           "pixels-as-float": { "type": "boolean" },
           "compress": { "type": "boolean" },
@@ -859,7 +877,7 @@
     "lidar-required": { //make lidar-settings required for lidar
       "anyOf": [
         { "not": { "$ref": "#/definitions/is-lidar" } }, //not LIDAR
-        { "properties": { "lidar-type": { "enum": [ "livox_mid70", "livox_avia" ] } } }, //lidar_type livox_mid70
+        { "properties": { "lidar-type": { "enum": [ "livox_mid70", "livox_mid360", "livox_avia" ] } } }, //lidar_type livox_mid70
         {
           "allOf": [ //lidar_type generic_rosette
             { "properties": { "lidar-type": { "enum": [ "generic_rosette" ] } } },

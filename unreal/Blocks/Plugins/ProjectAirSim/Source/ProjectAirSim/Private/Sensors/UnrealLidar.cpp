@@ -323,10 +323,15 @@ void UUnrealLidar::Simulate(const float SimTimeDeltaSec) {
   TArray<LaserDirection> LasersToShoot;
 
   PointCloud.clear();
+  AzimuthElevationRangeCloud.clear();
   SegmentationCloud.clear();
   IntensityCloud.clear();
   LaserIndexCloud.clear();
   ReturnCloud.clear();
+
+  // If sim time didn't advance since the last tick, don't generate points.
+  // This can happen when Unreal ticks faster than the sim clock.
+  if (SimTimeDeltaSec <= 0.0f) return;
 
   // 1. Decide lasers to shoot for this tick
 
@@ -479,6 +484,7 @@ void UUnrealLidar::ScanPatternBase::Setup(
   auto quaternion = LidarSettings.scan_orientation.normalized();
 
   LidarSettings_ = LidarSettings;
+  PointsPerLaserAccumulator_ = 0.0f;
 }
 
 void UUnrealLidar::CylindricalScanPattern::EndScan(void) {
@@ -492,27 +498,26 @@ void UUnrealLidar::CylindricalScanPattern::EndScan(void) {
 bool UUnrealLidar::CylindricalScanPattern::GetLasersToShoot(
     TArray<LaserDirection>* prg_laser_direction_ret) {
   const uint32 num_channel = LidarSettings_.number_of_channels;
-  const uint32 num_points_per_laser =
-      FMath::RoundHalfFromZero(LidarSettings_.points_per_second * DSecSimTime_ /
-                               static_cast<float>(num_channel));
-
-  if (num_points_per_laser <= 0) {
-    UnrealLogger::Log(projectairsim::LogLevel::kWarning,
-                      TEXT("[UnrealLidar] No points requested this frame, "
-                           "try increasing the number of points per second."));
-    return (false);
-  }
+  if (num_channel == 0) return false;
 
   check(num_channel == LaserAnglesDeg_.size());
 
   AngleDistanceOfTickDeg_ =
       LidarSettings_.horizontal_rotation_frequency * 360.0f * DSecSimTime_;
 
+  PointsPerLaserAccumulator_ +=
+      static_cast<float>(LidarSettings_.points_per_second) * DSecSimTime_ /
+      static_cast<float>(num_channel);
+  const int num_points_per_laser = FMath::FloorToInt(PointsPerLaserAccumulator_);
+  if (num_points_per_laser <= 0) return true;
+  PointsPerLaserAccumulator_ -= static_cast<float>(num_points_per_laser);
+
   const float AngleDistanceOfLaserMeasureDeg =
-      AngleDistanceOfTickDeg_ / num_points_per_laser;
+      AngleDistanceOfTickDeg_ / static_cast<float>(num_points_per_laser);
 
   for (uint32 PointIdxSingleLaser = 0;
-       PointIdxSingleLaser < num_points_per_laser; ++PointIdxSingleLaser) {
+       PointIdxSingleLaser < static_cast<uint32>(num_points_per_laser);
+       ++PointIdxSingleLaser) {
     for (uint32 ChannelIdx = 0; ChannelIdx < num_channel; ++ChannelIdx) {
       const float HorizontalAngleDeg =
           std::fmod(CurrentHorizontalAngleDeg_ +
@@ -576,23 +581,22 @@ void UUnrealLidar::RosetteScanPattern::EndScan(void) {
 bool UUnrealLidar::RosetteScanPattern::GetLasersToShoot(
     TArray<LaserDirection>* prg_laser_direction_ret) {
   const int num_channels = LidarSettings_.number_of_channels;
+  if (num_channels <= 0) return false;
   const float vertical_offset_base =
       -distance_between_lasers_ * num_channels / 2.0 +
       distance_between_lasers_ / 2.0;
-  const int num_points_per_laser = FMath::RoundHalfFromZero(
-      LidarSettings_.points_per_second * DSecSimTime_ / num_channels);
-
-  if (num_points_per_laser <= 0) {
-    UnrealLogger::Log(projectairsim::LogLevel::kWarning,
-                      TEXT("[UnrealLidar] No points requested this frame, "
-                           "try increasing the number of points per second."));
-    return (false);
-  }
 
   // Calculate and save the change in major and minor angles based on elapsed
   // simulation time
   ddegree_scan_major_ = degree_per_sec_major_ * DSecSimTime_;
   ddegree_scan_minor_ = degree_per_sec_minor_ * DSecSimTime_;
+
+  PointsPerLaserAccumulator_ +=
+      static_cast<float>(LidarSettings_.points_per_second) * DSecSimTime_ /
+      static_cast<float>(num_channels);
+  const int num_points_per_laser = FMath::FloorToInt(PointsPerLaserAccumulator_);
+  if (num_points_per_laser <= 0) return true;
+  PointsPerLaserAccumulator_ -= static_cast<float>(num_points_per_laser);
 
   // Generate the laser beam directions to sample
   {

@@ -59,6 +59,35 @@ The radar sensor also does track processing at a separate sim time interval from
 | `origin`: `rpy` | string of 3 floats | Rotation offset "Roll Pitch Yaw" of the sensor relative to the parent link's origin in **radian** units. Defaults to all zero if no `origin` is specified. |
 | `masks` | [Mask settings](#mask-settings) | Array of mask settings. See below for details. |
 
+## Continuous coverage (optional)
+
+By default, the radar uses a fixed beam grid based on the FOV and angular
+resolution. To simulate continuous coverage (dense sampling) with coarser
+separability, enable `continuous-coverage` and provide a point budget per
+frame. When enabled, `fov-*-resolution` is used for quantization and
+clustering instead of beam spacing.
+
+Optional parameters:
+
+| Parameter | Value | Description |
+| --------- | ----- | ----------- |
+| `continuous-coverage` | bool | Enable continuous coverage sampling instead of fixed beam grid. |
+| `points-per-frame` | integer | Target number of rays to sample per detection interval. |
+| `max-points-per-frame` | integer | Optional cap on rays per frame (0 = no cap). |
+| `range-min` | float | Minimum detectable range in meters. |
+| `beam-radius` | float | Beam radius in meters for sweep traces (0 = line trace). |
+| `data-latency` | float | Output latency in seconds (buffered publish delay). |
+| `range-noise-stddev` | float | Range noise standard deviation in meters. |
+| `azimuth-noise-stddev` | float | Azimuth noise standard deviation in radians. |
+| `elevation-noise-stddev` | float | Elevation noise standard deviation in radians. |
+| `velocity-noise-stddev` | float | Velocity noise standard deviation in m/s. |
+| `point-dropout-probability` | float | Per-point dropout probability (0 to 1). |
+| `quantize-azimuth` | bool | Quantize reported azimuth to `fov.azimuth-resolution`. |
+| `quantize-elevation` | bool | Quantize reported elevation to `fov.elevation-resolution`. |
+| `quantize-range` | bool | Quantize reported range to `range-resolution`. |
+| `quantize-velocity` | bool | Quantize reported velocity to `velocity-resolution`. |
+| `cluster-by-resolution` | bool | Merge detections within the resolution bins. |
+
 ## FOV settings
 
 Field of view settings define the area that the beams will be sweeped across as a rectangular frame.

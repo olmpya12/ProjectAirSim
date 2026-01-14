@@ -1,0 +1,914 @@
+[
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS /GR  /Zi /Ob0 /Od /RTC1 -std:c++17 -MD -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /EHsc /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock.dir\\__\\googletest\\src\\gtest-all.cc.obj /Fdbin\\gmockpdb_debug_postfix-NOTFOUND.pdb /FS -c E:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "file": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/__/googletest/src/gtest-all.cc.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS /GR  /Zi /Ob0 /Od /RTC1 -std:c++17 -MD -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /EHsc /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj /Fdbin\\gmockpdb_debug_postfix-NOTFOUND.pdb /FS -c E:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
+  "file": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS /GR  /Zi /Ob0 /Od /RTC1 -std:c++17 -MD -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /EHsc /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\__\\googletest\\src\\gtest-all.cc.obj /Fdbin\\gmock_mainpdb_debug_postfix-NOTFOUND.pdb /FS -c E:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "file": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/__/googletest/src/gtest-all.cc.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS /GR  /Zi /Ob0 /Od /RTC1 -std:c++17 -MD -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /EHsc /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock-all.cc.obj /Fdbin\\gmock_mainpdb_debug_postfix-NOTFOUND.pdb /FS -c E:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
+  "file": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock-all.cc.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS /GR  /Zi /Ob0 /Od /RTC1 -std:c++17 -MD -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /EHsc /Fo_deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj /Fdbin\\gmock_mainpdb_debug_postfix-NOTFOUND.pdb /FS -c E:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googlemock\\src\\gmock_main.cc",
+  "file": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest /DWIN32 /D_WINDOWS /GR  /Zi /Ob0 /Od /RTC1 -std:c++17 -MD -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /EHsc /Fo_deps\\googletest-build\\googletest\\CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj /Fdbin\\gtestpdb_debug_postfix-NOTFOUND.pdb /FS -c E:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "file": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -external:IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\include -external:IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest -external:W0 /DWIN32 /D_WINDOWS /GR  /Zi /Ob0 /Od /RTC1 -std:c++17 -MD -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1  /EHsc /Fo_deps\\googletest-build\\googletest\\CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj /Fdbin\\gtest_mainpdb_debug_postfix-NOTFOUND.pdb /FS -c E:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\googletest-src\\googletest\\src\\gtest_main.cc",
+  "file": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\logger.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\logger.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/logger.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/logger.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\string_utils.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\string_utils.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/string_utils.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/string_utils.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\math_utils.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\math_utils.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/math_utils.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/math_utils.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\geodetic_converter.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\geodetic_converter.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/geodetic_converter.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/geodetic_converter.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\json_utils.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\json_utils.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/json_utils.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/json_utils.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\airspeed_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\airspeed_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/airspeed_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/airspeed_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\barometer_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\barometer_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/barometer_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/barometer_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\camera_info_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\camera_info_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/camera_info_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/camera_info_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\collision_info_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\collision_info_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/collision_info_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/collision_info_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\distance_sensor_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\distance_sensor_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/distance_sensor_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/distance_sensor_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\flight_control_setpoint_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\flight_control_setpoint_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/flight_control_setpoint_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/flight_control_setpoint_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\flight_control_rc_input_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\flight_control_rc_input_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/flight_control_rc_input_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/flight_control_rc_input_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\float_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\float_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/float_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/float_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\gps_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\gps_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/gps_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/gps_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\image_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\image_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/image_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/image_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\imu_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\imu_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/imu_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/imu_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\int_list_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\int_list_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/int_list_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/int_list_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\battery_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\battery_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/battery_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/battery_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\int8_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\int8_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/int8_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/int8_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\joint_state_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\joint_state_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/joint_state_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/joint_state_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\kinematics_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\kinematics_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/kinematics_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/kinematics_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\lidar_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\lidar_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/lidar_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/lidar_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\magnetometer_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\magnetometer_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/magnetometer_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/magnetometer_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\message_utils.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\message_utils.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/message_utils.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/message_utils.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\pose_stamped_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\pose_stamped_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/pose_stamped_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/pose_stamped_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\pose_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\pose_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/pose_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/pose_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\radar_detection_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\radar_detection_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/radar_detection_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/radar_detection_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\radar_track_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\radar_track_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/radar_track_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/radar_track_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\ready_state_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\ready_state_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/ready_state_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/ready_state_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\request_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\request_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/request_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/request_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\response_success_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\response_success_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/response_success_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/response_success_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\response_failure_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\response_failure_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/response_failure_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/response_failure_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\rotor_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\rotor_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/rotor_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/rotor_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\transform_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\transform_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/transform_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/transform_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\message\\physics_state_message.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\message\\physics_state_message.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/message/physics_state_message.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/message/physics_state_message.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\topic_manager.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\topic_manager.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/topic_manager.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/topic_manager.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\topic.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\topic.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/topic.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/topic.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\simulator.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\simulator.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/simulator.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/simulator.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\scene.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\scene.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/scene.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/scene.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actor.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actor.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actor.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actor.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actor\\robot.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actor\\robot.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actor/robot.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actor/robot.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actor\\env_actor.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actor\\env_actor.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actor/env_actor.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actor/env_actor.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\trajectory.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\trajectory.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/trajectory.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/trajectory.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\link.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\link.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/link.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/link.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\link\\inertial.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\link\\inertial.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/link/inertial.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/link/inertial.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\link\\collision.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\link\\collision.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/link/collision.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/link/collision.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\link\\visual.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\link\\visual.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/link/visual.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/link/visual.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\link\\material.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\link\\material.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/link/material.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/link/material.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\link\\geometry.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\link\\geometry.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/link/geometry.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/link/geometry.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\link\\geometry\\file_mesh.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\link\\geometry\\file_mesh.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/link/geometry/file_mesh.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/link/geometry/file_mesh.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\link\\geometry\\unreal_mesh.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\link\\geometry\\unreal_mesh.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/link/geometry/unreal_mesh.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/link/geometry/unreal_mesh.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\joint.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\joint.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/joint.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/joint.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\airspeed.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\airspeed.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/airspeed.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/airspeed.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\sensor.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\sensor.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/sensor.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/sensor.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\camera.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\camera.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/camera.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/camera.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\distance_sensor.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\distance_sensor.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/distance_sensor.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/distance_sensor.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\imu.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\imu.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/imu.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/imu.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\barometer.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\barometer.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/barometer.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/barometer.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\magnetometer.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\magnetometer.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/magnetometer.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/magnetometer.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\lidar.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\lidar.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/lidar.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/lidar.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\gps.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\gps.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/gps.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/gps.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\radar.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\radar.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/radar.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/radar.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\sensors\\battery.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\sensors\\battery.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/sensors/battery.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/sensors/battery.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\client_authorization.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\client_authorization.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/client_authorization.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/client_authorization.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\clock.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\clock.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/clock.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/clock.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actuators\\actuator.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actuators\\actuator.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actuators/actuator.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actuators/actuator.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actuators\\control_mapper.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actuators\\control_mapper.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actuators/control_mapper.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actuators/control_mapper.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actuators\\gimbal.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actuators\\gimbal.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actuators/gimbal.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actuators/gimbal.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actuators\\lift_drag_control_surface.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actuators\\lift_drag_control_surface.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actuators/lift_drag_control_surface.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actuators/lift_drag_control_surface.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actuators\\rotor.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actuators\\rotor.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actuators/rotor.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actuators/rotor.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actuators\\wheel.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actuators\\wheel.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actuators/wheel.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actuators/wheel.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\actuators\\tilt.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\actuators\\tilt.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/actuators/tilt.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/actuators/tilt.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\transforms\\transform_utils.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\transforms\\transform_utils.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/transforms/transform_utils.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/transforms/transform_utils.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\transforms\\transform_tree.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\transforms\\transform_tree.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/transforms/transform_tree.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/transforms/transform_tree.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\viewport_camera.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\viewport_camera.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/viewport_camera.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/viewport_camera.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\service.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\service.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/service.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/service.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\service_manager.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\service_manager.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/service_manager.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/service_manager.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\onnxruntime-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Focore_sim\\src\\CMakeFiles\\core_sim.dir\\state_manager.cpp.obj /Fdcore_sim\\src\\core_sim.pdb /FS -c E:\\Github\\ProjectAirSim\\core_sim\\src\\state_manager.cpp",
+  "file": "E:/Github/ProjectAirSim/core_sim/src/state_manager.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/core_sim/src/CMakeFiles/core_sim.dir/state_manager.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\simserver\\src\\..\\include -IE:\\Github\\ProjectAirSim\\simserver\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\physics\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fosimserver\\src\\CMakeFiles\\simserver.dir\\simserver.cpp.obj /Fdsimserver\\src\\simserver.pdb /FS -c E:\\Github\\ProjectAirSim\\simserver\\src\\simserver.cpp",
+  "file": "E:/Github/ProjectAirSim/simserver/src/simserver.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/simserver/src/CMakeFiles/simserver.dir/simserver.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\physics\\src\\..\\include -IE:\\Github\\ProjectAirSim\\physics\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fophysics\\src\\CMakeFiles\\physics.dir\\fast_physics.cpp.obj /Fdphysics\\src\\physics.pdb /FS -c E:\\Github\\ProjectAirSim\\physics\\src\\fast_physics.cpp",
+  "file": "E:/Github/ProjectAirSim/physics/src/fast_physics.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/physics/src/CMakeFiles/physics.dir/fast_physics.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\physics\\src\\..\\include -IE:\\Github\\ProjectAirSim\\physics\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fophysics\\src\\CMakeFiles\\physics.dir\\unreal_physics.cpp.obj /Fdphysics\\src\\physics.pdb /FS -c E:\\Github\\ProjectAirSim\\physics\\src\\unreal_physics.cpp",
+  "file": "E:/Github/ProjectAirSim/physics/src/unreal_physics.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/physics/src/CMakeFiles/physics.dir/unreal_physics.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\physics\\src\\..\\include -IE:\\Github\\ProjectAirSim\\physics\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fophysics\\src\\CMakeFiles\\physics.dir\\physics_world.cpp.obj /Fdphysics\\src\\physics.pdb /FS -c E:\\Github\\ProjectAirSim\\physics\\src\\physics_world.cpp",
+  "file": "E:/Github/ProjectAirSim/physics/src/physics_world.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/physics/src/CMakeFiles/physics.dir/physics_world.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\physics\\src\\..\\include -IE:\\Github\\ProjectAirSim\\physics\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fophysics\\src\\CMakeFiles\\physics.dir\\matlab_physics.cpp.obj /Fdphysics\\src\\physics.pdb /FS -c E:\\Github\\ProjectAirSim\\physics\\src\\matlab_physics.cpp",
+  "file": "E:/Github/ProjectAirSim/physics/src/matlab_physics.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/physics/src/CMakeFiles/physics.dir/matlab_physics.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\__\\common_utils\\FileSystem.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\common_utils\\FileSystem.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/common_utils/FileSystem.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/__/common_utils/FileSystem.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\__\\common_utils\\ThreadUtils.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\common_utils\\ThreadUtils.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/common_utils/ThreadUtils.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/__/common_utils/ThreadUtils.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\AdHocConnection.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\AdHocConnection.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/AdHocConnection.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/AdHocConnection.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\MavLinkConnection.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\MavLinkConnection.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/MavLinkConnection.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/MavLinkConnection.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\MavLinkFtpClient.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\MavLinkFtpClient.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/MavLinkFtpClient.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/MavLinkFtpClient.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\MavLinkLog.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\MavLinkLog.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/MavLinkLog.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/MavLinkLog.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\MavLinkMessageBase.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\MavLinkMessageBase.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/MavLinkMessageBase.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/MavLinkMessageBase.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\MavLinkMessages.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\MavLinkMessages.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/MavLinkMessages.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/MavLinkMessages.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\MavLinkNode.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\MavLinkNode.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/MavLinkNode.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/MavLinkNode.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\MavLinkTcpServer.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\MavLinkTcpServer.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/MavLinkTcpServer.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/MavLinkTcpServer.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\MavLinkVehicle.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\MavLinkVehicle.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/MavLinkVehicle.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/MavLinkVehicle.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\MavLinkVideoStream.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\MavLinkVideoStream.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/MavLinkVideoStream.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/MavLinkVideoStream.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\Semaphore.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\Semaphore.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/Semaphore.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/Semaphore.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\UdpSocket.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\UdpSocket.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/UdpSocket.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/UdpSocket.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\impl\\AdHocConnectionImpl.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\impl\\AdHocConnectionImpl.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/impl/AdHocConnectionImpl.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/impl/AdHocConnectionImpl.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\impl\\MavLinkConnectionImpl.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\impl\\MavLinkConnectionImpl.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/impl/MavLinkConnectionImpl.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/impl/MavLinkConnectionImpl.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\impl\\MavLinkFtpClientImpl.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\impl\\MavLinkFtpClientImpl.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/impl/MavLinkFtpClientImpl.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/impl/MavLinkFtpClientImpl.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\impl\\MavLinkNodeImpl.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\impl\\MavLinkNodeImpl.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/impl/MavLinkNodeImpl.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/impl/MavLinkNodeImpl.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\impl\\MavLinkTcpServerImpl.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\impl\\MavLinkTcpServerImpl.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/impl/MavLinkTcpServerImpl.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/impl/MavLinkTcpServerImpl.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\impl\\MavLinkVehicleImpl.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\impl\\MavLinkVehicleImpl.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/impl/MavLinkVehicleImpl.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/impl/MavLinkVehicleImpl.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\impl\\MavLinkVideoStreamImpl.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\impl\\MavLinkVideoStreamImpl.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/impl/MavLinkVideoStreamImpl.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/impl/MavLinkVideoStreamImpl.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\impl\\UdpSocketImpl.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\impl\\UdpSocketImpl.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/impl/UdpSocketImpl.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/impl/UdpSocketImpl.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\serial_com\\SerialPort.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\serial_com\\SerialPort.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/serial_com/SerialPort.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/serial_com/SerialPort.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\serial_com\\TcpClientPort.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\serial_com\\TcpClientPort.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/serial_com/TcpClientPort.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/serial_com/TcpClientPort.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\serial_com\\UdpClientPort.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\serial_com\\UdpClientPort.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/serial_com/UdpClientPort.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/serial_com/UdpClientPort.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\serial_com\\SocketInit.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\serial_com\\SocketInit.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/serial_com/SocketInit.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/serial_com/SocketInit.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\serial_com\\wifi.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\serial_com\\wifi.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/serial_com/wifi.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/serial_com/wifi.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUNICODE -DUSE_CUDA -DUSE_TENSORRT -D_UNICODE -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\lvmon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\src\\CMakeFiles\\mavlinkcom.dir\\impl\\windows\\WindowsFindSerialPorts.cpp.obj /Fdmavlinkcom\\src\\mavlinkcom.pdb /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\src\\impl\\windows\\WindowsFindSerialPorts.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/src/impl/windows/WindowsFindSerialPorts.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/src/CMakeFiles/mavlinkcom.dir/impl/windows/WindowsFindSerialPorts.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\mavlinkcom\\test\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\test\\..\\common_utils -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\test\\CMakeFiles\\MavLinkTest.dir\\Commands.cpp.obj /Fdmavlinkcom\\test\\CMakeFiles\\MavLinkTest.dir\\ /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\test\\Commands.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/test/Commands.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/test/CMakeFiles/MavLinkTest.dir/Commands.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\mavlinkcom\\test\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\test\\..\\common_utils -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\test\\CMakeFiles\\MavLinkTest.dir\\UnitTests.cpp.obj /Fdmavlinkcom\\test\\CMakeFiles\\MavLinkTest.dir\\ /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\test\\UnitTests.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/test/UnitTests.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/test/CMakeFiles/MavLinkTest.dir/UnitTests.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\mavlinkcom\\test\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\test\\..\\common_utils -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fomavlinkcom\\test\\CMakeFiles\\MavLinkTest.dir\\main.cpp.obj /Fdmavlinkcom\\test\\CMakeFiles\\MavLinkTest.dir\\ /FS -c E:\\Github\\ProjectAirSim\\mavlinkcom\\test\\main.cpp",
+  "file": "E:/Github/ProjectAirSim/mavlinkcom/test/main.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/mavlinkcom/test/CMakeFiles/MavLinkTest.dir/main.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src\\..\\include -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\tinygltf-src -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Forendering\\scene\\src\\CMakeFiles\\rendering_scene.dir\\gltf_data_provider.cpp.obj /Fdrendering\\scene\\src\\rendering_scene.pdb /FS -c E:\\Github\\ProjectAirSim\\rendering\\scene\\src\\gltf_data_provider.cpp",
+  "file": "E:/Github/ProjectAirSim/rendering/scene/src/gltf_data_provider.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/rendering/scene/src/CMakeFiles/rendering_scene.dir/gltf_data_provider.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src\\..\\include -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\tinygltf-src -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Forendering\\scene\\src\\CMakeFiles\\rendering_scene.dir\\tile_manager.cpp.obj /Fdrendering\\scene\\src\\rendering_scene.pdb /FS -c E:\\Github\\ProjectAirSim\\rendering\\scene\\src\\tile_manager.cpp",
+  "file": "E:/Github/ProjectAirSim/rendering/scene/src/tile_manager.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/rendering/scene/src/CMakeFiles/rendering_scene.dir/tile_manager.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src\\..\\include -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\tinygltf-src -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Forendering\\scene\\src\\CMakeFiles\\rendering_scene.dir\\bing_maps_utils.cpp.obj /Fdrendering\\scene\\src\\rendering_scene.pdb /FS -c E:\\Github\\ProjectAirSim\\rendering\\scene\\src\\bing_maps_utils.cpp",
+  "file": "E:/Github/ProjectAirSim/rendering/scene/src/bing_maps_utils.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/rendering/scene/src/CMakeFiles/rendering_scene.dir/bing_maps_utils.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src\\..\\include -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\tinygltf-src -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Forendering\\scene\\src\\CMakeFiles\\rendering_scene.dir\\tile_divider.cpp.obj /Fdrendering\\scene\\src\\rendering_scene.pdb /FS -c E:\\Github\\ProjectAirSim\\rendering\\scene\\src\\tile_divider.cpp",
+  "file": "E:/Github/ProjectAirSim/rendering/scene/src/tile_divider.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/rendering/scene/src/CMakeFiles/rendering_scene.dir/tile_divider.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src\\..\\include -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\tinygltf-src -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Forendering\\scene\\src\\CMakeFiles\\rendering_scene.dir\\tile_cache.cpp.obj /Fdrendering\\scene\\src\\rendering_scene.pdb /FS -c E:\\Github\\ProjectAirSim\\rendering\\scene\\src\\tile_cache.cpp",
+  "file": "E:/Github/ProjectAirSim/rendering/scene/src/tile_cache.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/rendering/scene/src/CMakeFiles/rendering_scene.dir/tile_cache.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include\\LVMon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fotools\\lvmon\\Lib\\src\\CMakeFiles\\lvmon.dir\\events.cpp.obj /Fdtools\\lvmon\\Lib\\src\\lvmon.pdb /FS -c E:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\events.cpp",
+  "file": "E:/Github/ProjectAirSim/tools/lvmon/Lib/src/events.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/tools/lvmon/Lib/src/CMakeFiles/lvmon.dir/events.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include\\LVMon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fotools\\lvmon\\Lib\\src\\CMakeFiles\\lvmon.dir\\lvmon.cpp.obj /Fdtools\\lvmon\\Lib\\src\\lvmon.pdb /FS -c E:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\lvmon.cpp",
+  "file": "E:/Github/ProjectAirSim/tools/lvmon/Lib/src/lvmon.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/tools/lvmon/Lib/src/CMakeFiles/lvmon.dir/lvmon.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include\\LVMon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fotools\\lvmon\\Lib\\src\\CMakeFiles\\lvmon.dir\\lvmonmessage.cpp.obj /Fdtools\\lvmon\\Lib\\src\\lvmon.pdb /FS -c E:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\lvmonmessage.cpp",
+  "file": "E:/Github/ProjectAirSim/tools/lvmon/Lib/src/lvmonmessage.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/tools/lvmon/Lib/src/CMakeFiles/lvmon.dir/lvmonmessage.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include\\LVMon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fotools\\lvmon\\Lib\\src\\CMakeFiles\\lvmon.dir\\lvmonprotocol.cpp.obj /Fdtools\\lvmon\\Lib\\src\\lvmon.pdb /FS -c E:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\lvmonprotocol.cpp",
+  "file": "E:/Github/ProjectAirSim/tools/lvmon/Lib/src/lvmonprotocol.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/tools/lvmon/Lib/src/CMakeFiles/lvmon.dir/lvmonprotocol.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include\\LVMon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fotools\\lvmon\\Lib\\src\\CMakeFiles\\lvmon.dir\\lvmonserver.cpp.obj /Fdtools\\lvmon\\Lib\\src\\lvmon.pdb /FS -c E:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\lvmonserver.cpp",
+  "file": "E:/Github/ProjectAirSim/tools/lvmon/Lib/src/lvmonserver.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/tools/lvmon/Lib/src/CMakeFiles/lvmon.dir/lvmonserver.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include\\LVMon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fotools\\lvmon\\Lib\\src\\CMakeFiles\\lvmon.dir\\serverconnectiontcp.cpp.obj /Fdtools\\lvmon\\Lib\\src\\lvmon.pdb /FS -c E:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\serverconnectiontcp.cpp",
+  "file": "E:/Github/ProjectAirSim/tools/lvmon/Lib/src/serverconnectiontcp.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/tools/lvmon/Lib/src/CMakeFiles/lvmon.dir/serverconnectiontcp.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include\\LVMon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fotools\\lvmon\\Lib\\src\\CMakeFiles\\lvmon.dir\\thread.cpp.obj /Fdtools\\lvmon\\Lib\\src\\lvmon.pdb /FS -c E:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\thread.cpp",
+  "file": "E:/Github/ProjectAirSim/tools/lvmon/Lib/src/thread.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/tools/lvmon/Lib/src/CMakeFiles/lvmon.dir/thread.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include\\LVMon /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fotools\\lvmon\\Lib\\src\\CMakeFiles\\lvmon.dir\\serverconnectionpipe.cpp.obj /Fdtools\\lvmon\\Lib\\src\\lvmon.pdb /FS -c E:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\serverconnectionpipe.cpp",
+  "file": "E:/Github/ProjectAirSim/tools/lvmon/Lib/src/serverconnectionpipe.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/tools/lvmon/Lib/src/CMakeFiles/lvmon.dir/serverconnectionpipe.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -Dsim_unity_wrapper_EXPORTS -IE:\\Github\\ProjectAirSim\\unity\\sim_unity_wrapper\\src\\..\\include -IE:\\Github\\ProjectAirSim\\unity\\sim_unity_wrapper\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\simserver\\src\\..\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\physics\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\rendering\\scene\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Founity\\sim_unity_wrapper\\src\\CMakeFiles\\sim_unity_wrapper.dir\\sim_unity_wrapper.cpp.obj /Fdunity\\sim_unity_wrapper\\src\\CMakeFiles\\sim_unity_wrapper.dir\\ /FS -c E:\\Github\\ProjectAirSim\\unity\\sim_unity_wrapper\\src\\sim_unity_wrapper.cpp",
+  "file": "E:/Github/ProjectAirSim/unity/sim_unity_wrapper/src/sim_unity_wrapper.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/unity/sim_unity_wrapper/src/CMakeFiles/sim_unity_wrapper.dir/sim_unity_wrapper.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\multirotor_api\\src\\CMakeFiles\\multirotor_api.dir\\mavlink_api.cpp.obj /Fdvehicle_apis\\multirotor_api\\src\\multirotor_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\mavlink_api.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/multirotor_api/src/mavlink_api.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/multirotor_api/src/CMakeFiles/multirotor_api.dir/mavlink_api.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\multirotor_api\\src\\CMakeFiles\\multirotor_api.dir\\manual_controller_api.cpp.obj /Fdvehicle_apis\\multirotor_api\\src\\multirotor_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\manual_controller_api.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/multirotor_api/src/manual_controller_api.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/multirotor_api/src/CMakeFiles/multirotor_api.dir/manual_controller_api.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\multirotor_api\\src\\CMakeFiles\\multirotor_api.dir\\matlab_controller_api.cpp.obj /Fdvehicle_apis\\multirotor_api\\src\\multirotor_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\matlab_controller_api.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/multirotor_api/src/matlab_controller_api.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/multirotor_api/src/CMakeFiles/multirotor_api.dir/matlab_controller_api.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\multirotor_api\\src\\CMakeFiles\\multirotor_api.dir\\multirotor_api_base.cpp.obj /Fdvehicle_apis\\multirotor_api\\src\\multirotor_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\multirotor_api_base.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/multirotor_api/src/multirotor_api_base.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/multirotor_api/src/CMakeFiles/multirotor_api.dir/multirotor_api_base.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\multirotor_api\\src\\CMakeFiles\\multirotor_api.dir\\simple_flight_api.cpp.obj /Fdvehicle_apis\\multirotor_api\\src\\multirotor_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\simple_flight_api.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/multirotor_api/src/simple_flight_api.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/multirotor_api/src/CMakeFiles/multirotor_api.dir/simple_flight_api.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\multirotor_api\\src\\CMakeFiles\\multirotor_api.dir\\vtolfw_api_base.cpp.obj /Fdvehicle_apis\\multirotor_api\\src\\multirotor_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\vtolfw_api_base.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/multirotor_api/src/vtolfw_api_base.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/multirotor_api/src/CMakeFiles/multirotor_api.dir/vtolfw_api_base.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DNNG_STATIC_LIB=ON -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nng-install\\include -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\msgpack-src\\include -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\include -IE:\\Github\\ProjectAirSim\\mavlinkcom\\src\\..\\common_utils -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\multirotor_api\\src\\CMakeFiles\\multirotor_api.dir\\arducopter_api.cpp.obj /Fdvehicle_apis\\multirotor_api\\src\\multirotor_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\multirotor_api\\src\\arducopter_api.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/multirotor_api/src/arducopter_api.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/multirotor_api/src/CMakeFiles/multirotor_api.dir/arducopter_api.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\rover_api\\src\\CMakeFiles\\rover_api.dir\\ackermann_api_base.cpp.obj /Fdvehicle_apis\\rover_api\\src\\rover_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\ackermann_api_base.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/rover_api/src/ackermann_api_base.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/rover_api/src/CMakeFiles/rover_api.dir/ackermann_api_base.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\rover_api\\src\\CMakeFiles\\rover_api.dir\\rover_api_base.cpp.obj /Fdvehicle_apis\\rover_api\\src\\rover_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\rover_api_base.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/rover_api/src/rover_api_base.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/rover_api/src/CMakeFiles/rover_api.dir/rover_api_base.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\rover_api\\src\\CMakeFiles\\rover_api.dir\\simple_drive\\ackermann_controller.cpp.obj /Fdvehicle_apis\\rover_api\\src\\rover_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\simple_drive\\ackermann_controller.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/rover_api/src/simple_drive/ackermann_controller.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/rover_api/src/CMakeFiles/rover_api.dir/simple_drive/ackermann_controller.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\rover_api\\src\\CMakeFiles\\rover_api.dir\\simple_drive\\braking_controller.cpp.obj /Fdvehicle_apis\\rover_api\\src\\rover_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\simple_drive\\braking_controller.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/rover_api/src/simple_drive/braking_controller.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/rover_api/src/CMakeFiles/rover_api.dir/simple_drive/braking_controller.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\rover_api\\src\\CMakeFiles\\rover_api.dir\\simple_drive\\channel_controller_base.cpp.obj /Fdvehicle_apis\\rover_api\\src\\rover_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\simple_drive\\channel_controller_base.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/rover_api/src/simple_drive/channel_controller_base.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/rover_api/src/CMakeFiles/rover_api.dir/simple_drive/channel_controller_base.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\rover_api\\src\\CMakeFiles\\rover_api.dir\\simple_drive\\common.cpp.obj /Fdvehicle_apis\\rover_api\\src\\rover_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\simple_drive\\common.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/rover_api/src/simple_drive/common.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/rover_api/src/CMakeFiles/rover_api.dir/simple_drive/common.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\rover_api\\src\\CMakeFiles\\rover_api.dir\\simple_drive\\simple_drive_api.cpp.obj /Fdvehicle_apis\\rover_api\\src\\rover_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\simple_drive\\simple_drive_api.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/rover_api/src/simple_drive/simple_drive_api.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/rover_api/src/CMakeFiles/rover_api.dir/simple_drive/simple_drive_api.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\rover_api\\src\\CMakeFiles\\rover_api.dir\\simple_drive\\steering_controller.cpp.obj /Fdvehicle_apis\\rover_api\\src\\rover_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\simple_drive\\steering_controller.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/rover_api/src/simple_drive/steering_controller.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/rover_api/src/CMakeFiles/rover_api.dir/simple_drive/steering_controller.cpp.obj"
+},
+{
+  "directory": "E:/Github/ProjectAirSim/build/win64/Debug",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1437~1.328\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DMSGPACK_NO_BOOST -DUSE_CUDA -DUSE_TENSORRT -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\..\\..\\include -IE:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\eigen3-src -IE:\\Github\\ProjectAirSim\\build\\win64\\Debug\\_deps\\nlohmann-install -IE:\\Github\\ProjectAirSim\\core_sim\\src\\..\\include -IE:\\Github\\ProjectAirSim\\tools\\lvmon\\Lib\\src\\..\\include /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MD /EHsc /Fovehicle_apis\\rover_api\\src\\CMakeFiles\\rover_api.dir\\simple_drive\\throttle_controller.cpp.obj /Fdvehicle_apis\\rover_api\\src\\rover_api.pdb /FS -c E:\\Github\\ProjectAirSim\\vehicle_apis\\rover_api\\src\\simple_drive\\throttle_controller.cpp",
+  "file": "E:/Github/ProjectAirSim/vehicle_apis/rover_api/src/simple_drive/throttle_controller.cpp",
+  "output": "E:/Github/ProjectAirSim/build/win64/Debug/vehicle_apis/rover_api/src/CMakeFiles/rover_api.dir/simple_drive/throttle_controller.cpp.obj"
+}
+]

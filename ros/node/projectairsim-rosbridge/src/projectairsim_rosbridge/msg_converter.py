@@ -364,18 +364,18 @@ class MsgConverter:
         rdProjectAirSim = projectairsim_radar_detections["radar_detections"]
         for i in range(len(rdProjectAirSim)):
             radar_detection = rdProjectAirSim[i]
-            range_target = radar_detection["range"]
+            range_target = float(radar_detection["range"])
 
             radar_return = rosradarmsg.RadarReturn()
             radar_return.range = range_target
-            radar_return.azimuth = radar_detection["azimuth"]
-            radar_return.elevation = radar_detection["elevation"]
-            radar_return.doppler_velocity = radar_detection["velocity"]
+            radar_return.azimuth = float(radar_detection["azimuth"])
+            radar_return.elevation = float(radar_detection["elevation"])
+            radar_return.doppler_velocity = float(radar_detection["velocity"])
 
             # Attempt to convert the radar cross-section to a signal amplitude
             # See: https://en.wikipedia.org/wiki/Radar_cross-section#Measurement
             radar_return.amplitude = 10 * math.log10(
-                radar_detection["rcs_sqm"]
+                float(radar_detection["rcs_sqm"])
                 * 1000  # Typical antenna gain (30 dB)
                 / (
                     16.0
@@ -418,21 +418,18 @@ class MsgConverter:
 
             radartrack = rosradarmsg.RadarTrack()
 
-            (
-                radartrack.position.x,
-                radartrack.position.y,
-                radartrack.position.z,
-            ) = utils.to_ros_position_list(radar_track["position_est"])
-            (
-                radartrack.velocity.x,
-                radartrack.velocity.y,
-                radartrack.velocity.z,
-            ) = utils.to_ros_position_list(radar_track["velocity_est"])
-            (
-                radartrack.acceleration.x,
-                radartrack.acceleration.y,
-                radartrack.acceleration.z,
-            ) = utils.to_ros_position_list(radar_track["accel_est"])
+            pos_x, pos_y, pos_z = utils.to_ros_position_list(radar_track["position_est"])
+            radartrack.position.x = float(pos_x)
+            radartrack.position.y = float(pos_y)
+            radartrack.position.z = float(pos_z)
+            vel_x, vel_y, vel_z = utils.to_ros_position_list(radar_track["velocity_est"])
+            radartrack.velocity.x = float(vel_x)
+            radartrack.velocity.y = float(vel_y)
+            radartrack.velocity.z = float(vel_z)
+            acc_x, acc_y, acc_z = utils.to_ros_position_list(radar_track["accel_est"])
+            radartrack.acceleration.x = float(acc_x)
+            radartrack.acceleration.y = float(acc_y)
+            radartrack.acceleration.z = float(acc_z)
 
             tracks.append(radartrack)
 

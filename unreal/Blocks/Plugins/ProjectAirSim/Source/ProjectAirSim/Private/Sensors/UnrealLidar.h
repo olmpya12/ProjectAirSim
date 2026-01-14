@@ -62,23 +62,26 @@ UCLASS() class UUnrealLidar : public UUnrealSensor {
   };  // class IScanPattern
 
   // Scan pattern base class.
-  class ScanPatternBase : public IScanPattern {
-   public:
-    ScanPatternBase(void) : IScanPattern() {}
+	  class ScanPatternBase : public IScanPattern {
+	   public:
+	    ScanPatternBase(void) : IScanPattern() {}
 
-    void BeginScan(float SimTimeDeltaSec) override {
-      DSecSimTime_ = SimTimeDeltaSec;
-    }
-    void EndScan(void) override {}
-    void Setup(
-        const microsoft::projectairsim::LidarSettings& LidarSettings) override;
+	    void BeginScan(float SimTimeDeltaSec) override {
+	      DSecSimTime_ = SimTimeDeltaSec;
+	    }
+	    void EndScan(void) override {}
+	    void Setup(
+	        const microsoft::projectairsim::LidarSettings& LidarSettings) override;
 
-   protected:
-    float DSecSimTime_ = 0.0f;  // Time passed since last scan update
-                                // (seconds)
-    microsoft::projectairsim::LidarSettings
-        LidarSettings_;  // Lidar sensor settings
-  };                     // class ScanPatternBase
+	   protected:
+	    float DSecSimTime_ = 0.0f;  // Time passed since last scan update
+	                                // (seconds)
+	    float PointsPerLaserAccumulator_ = 0.0f;  // Fractional point count to
+	                                              // maintain points/sec across
+	                                              // small timesteps
+	    microsoft::projectairsim::LidarSettings
+	        LidarSettings_;  // Lidar sensor settings
+	  };                     // class ScanPatternBase
 
   // Cylindrical scan pattern.  Each laser beam traces a horizontal flat cone
   // with respect to the sensor.  The number of channels specify the number

@@ -391,9 +391,9 @@
       "rotor-settings": {
         "turning-direction": "counter-clock-wise",
         "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
+        "coeff-of-thrust": 0.061994,
+        "coeff-of-torque": 0.017270,
+        "max-rpm": 2474.11,
         "propeller-diameter": 1.4732,
         "smoothing-tc": 0.005
       }
@@ -411,9 +411,9 @@
       "rotor-settings": {
         "turning-direction": "clock-wise",
         "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
+        "coeff-of-thrust": 0.061994,
+        "coeff-of-torque": 0.017270,
+        "max-rpm": 2474.11,
         "propeller-diameter": 1.4732,
         "smoothing-tc": 0.005
       }
@@ -431,9 +431,9 @@
       "rotor-settings": {
         "turning-direction": "counter-clock-wise",
         "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
+        "coeff-of-thrust": 0.061994,
+        "coeff-of-torque": 0.017270,
+        "max-rpm": 2474.11,
         "propeller-diameter": 1.4732,
         "smoothing-tc": 0.005
       }
@@ -451,9 +451,9 @@
       "rotor-settings": {
         "turning-direction": "clock-wise",
         "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
+        "coeff-of-thrust": 0.061994,
+        "coeff-of-torque": 0.017270,
+        "max-rpm": 2474.11,
         "propeller-diameter": 1.4732,
         "smoothing-tc": 0.005
       }
@@ -471,9 +471,9 @@
       "rotor-settings": {
         "turning-direction": "counter-clock-wise",
         "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
+        "coeff-of-thrust": 0.043638,
+        "coeff-of-torque": 0.017377,
+        "max-rpm": 2474.11,
         "propeller-diameter": 1.4732,
         "smoothing-tc": 0.005
       }
@@ -491,9 +491,9 @@
       "rotor-settings": {
         "turning-direction": "clock-wise",
         "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
+        "coeff-of-thrust": 0.043638,
+        "coeff-of-torque": 0.017377,
+        "max-rpm": 2474.11,
         "propeller-diameter": 1.4732,
         "smoothing-tc": 0.005
       }
@@ -511,9 +511,9 @@
       "rotor-settings": {
         "turning-direction": "counter-clock-wise",
         "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
+        "coeff-of-thrust": 0.043638,
+        "coeff-of-torque": 0.017377,
+        "max-rpm": 2474.11,
         "propeller-diameter": 1.4732,
         "smoothing-tc": 0.005
       }
@@ -531,9 +531,9 @@
       "rotor-settings": {
         "turning-direction": "clock-wise",
         "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
+        "coeff-of-thrust": 0.043638,
+        "coeff-of-torque": 0.017377,
+        "max-rpm": 2474.11,
         "propeller-diameter": 1.4732,
         "smoothing-tc": 0.005
       }
@@ -547,11 +547,54 @@
       "enabled": true,
       "parent-link": "Frame",
       "disable-self-hits": true,
-      "draw-debug-points": false,
+      "draw-debug-points": true,
       "origin": {
         "xyz": "0.10 -0.10 0.0",
-        "rpy-deg": "0 0 -30"
+        "rpy-deg": "0 90 -60"
       }
+    },
+    {
+      "id": "Radar1",
+      "type": "radar",
+      "enabled": true,
+      "parent-link": "Frame",
+      "fov": {
+        "azimuth-max": 3.141593,
+        "azimuth-min": -3.141593,
+        "elevation-max": 1.570796,
+        "elevation-min": -0.698132,
+        "azimuth-resolution": 0.034907,
+        "elevation-resolution": 0.436332
+      },
+      "continuous-coverage": true,
+      "points-per-frame": 30000,
+      "max-points-per-frame": 50000,
+      "range-max": 40.0,
+      "range-min": 2.0,
+      "range-resolution": 0.4,
+      "velocity-max": 50.0,
+      "velocity-resolution": 0.5,
+      "detection-interval": 0.1,
+      "track-interval": 0.2,
+      "data-latency": 0.2,
+      "range-noise-stddev": 0.1,
+      "azimuth-noise-stddev": 0.034907,
+      "elevation-noise-stddev": 0.017453,
+      "velocity-noise-stddev": 0.0,
+      "point-dropout-probability": 0.0,
+      "quantize-azimuth": true,
+      "quantize-elevation": false,
+      "quantize-range": true,
+      "quantize-velocity": true,
+      "cluster-by-resolution": true,
+      "rcs-adjust-factor": 0.1,
+      "beam-radius": 0.005,
+      "draw-debug-points": true,
+      "origin": {
+        "xyz": "0.10 0.0 0.0",
+        "rpy-deg": "0 0 0"
+      },
+      "masks": []
     },
     {
       "id": "Chase",

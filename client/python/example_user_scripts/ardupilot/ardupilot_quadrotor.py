@@ -31,41 +31,11 @@ async def main():
         client.connect()
 
         # Create a World object to interact with the sim world and load a scene
-        world = World(client, "scene_ardu_quadrotor.jsonc", delay_after_load_sec=2)
+        world = World(client, "E:/Github/ProjectAirSim/client/python/example_user_scripts/ardupilot/sim_config/scene_ardu_quadrotor.jsonc", delay_after_load_sec=2)
 
         # Create a Drone object to interact with a drone in the loaded sim world
         drone = Drone(client, world, "Drone1")
 
-    # ------------------------------------------------------------------------------
-    # Subscribe to chase camera sensor
-        chase_cam_window = "ChaseCam"
-        image_display.add_chase_cam(chase_cam_window)
-        client.subscribe(
-            drone.sensors["Chase"]["scene_camera"],
-            lambda _, chase: image_display.receive(chase, chase_cam_window),
-        )
-
-        # Subscribe to the drone's sensors with a callback to receive the sensor data
-        rgb_name = "RGB-Image"
-        image_display.add_image(rgb_name, subwin_idx=0)
-        client.subscribe(
-            drone.sensors["DownCamera"]["scene_camera"],
-            lambda _, rgb: image_display.receive(rgb, rgb_name),
-        )
-
-        depth_name = "Depth-Image"
-        image_display.add_image(depth_name, subwin_idx=2)
-        client.subscribe(
-            drone.sensors["DownCamera"]["depth_camera"],
-            lambda _, depth: image_display.receive(depth, depth_name),
-        )
-
-        image_display.start()
-
-        # ------------------------------------------------------------------------------
-        # Currently control APIs like arm, takeoff, move, etc. are not supported.
-        # Wait for a user input while Ardupilot is controlled externally
-        input("Press any key to stop seeing the drone's camera images...")
 
 
         # ------------------------------------------------------------------------------

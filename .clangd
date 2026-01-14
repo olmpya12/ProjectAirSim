@@ -1,0 +1,53 @@
+CompileFlags:
+  CompilationDatabase: build/win64/Debug
+  Add:
+    - --target=x86_64-pc-windows-msvc
+    - -std=c++17
+    - -IC:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.37.32822/include
+    - -IC:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt
+    - -IC:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um
+    - -IC:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared
+  Remove:
+    - /nologo
+    - /TP
+    - /EHsc
+    - /Zi
+    - /Ob0
+    - /Od
+    - /RTC1
+    - /GR
+    - /MD
+    - /GS
+    - /W4
+    - /WX
+    - -wd*
+    - /wd*
+    - /Fo*
+    - /Fd*
+    - /FS
+    - -nologo
+    - -J
+    - -utf-8
+    - -external:*
+    - /external:*
+    - -std:c++17
+
+Diagnostics:
+  UnusedIncludes: Strict
+  Suppress:
+    - temp_copy_deleted
+  ClangTidy:
+    Remove:
+      - modernize-use-trailing-return-type
+      - readability-identifier-length
+      - misc-non-private-member-variables-in-classes
+      - readability-magic-numbers
+      - cppcoreguidelines-avoid-magic-numbers
+
+InlayHints:
+  Enabled: No
+  ParameterNames: No
+  DeducedTypes: No
+
+Index:
+  Background: Build

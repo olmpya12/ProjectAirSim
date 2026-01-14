@@ -4,12 +4,12 @@
     {
       "name": "Frame",
       "inertial": {
-        "mass": 130.0,
+        "mass": 1.0,
         "inertia": {
           "type": "geometry",
           "geometry": {
             "box": {
-              "size": "1.800 1.800 0.850"
+              "size": "0.180 0.110 0.040"
             }
           }
         },
@@ -18,7 +18,7 @@
           "type": "geometry",
           "geometry": {
             "box": {
-              "size": "1.800 1.800 0.850"
+              "size": "0.180 0.110 0.040"
             }
           }
         }
@@ -30,15 +30,15 @@
       "visual": {
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/EFT_X2300.EFT_X2300"
+          "name": "/Drone/Quadrotor1"
         }
       }
     },
     {
-      "name": "Prop_FR_T",
+      "name": "Prop_FL",
       "inertial": {
         "origin": {
-          "xyz": "0.900 0.900 -0.165",
+          "xyz": "0.253 -0.253 -0.01",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -50,28 +50,28 @@
           "type": "geometry",
           "geometry": {
             "cylinder": {
-              "radius": 0.7366,
-              "length": 0.06
+              "radius": 0.1143,
+              "length": 0.01
             }
           }
         }
       },
       "visual": {
         "origin": {
-          "xyz": "0.900 0.900 -0.165",
+          "xyz": "0.253 -0.253 -0.01",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CCW.X-A14B-Propeller_CCW"
+          "name": "/Drone/PropellerRed"
         }
       }
     },
     {
-      "name": "Prop_FL_T",
+      "name": "Prop_FR",
       "inertial": {
         "origin": {
-          "xyz": "0.900 -0.900 -0.165",
+          "xyz": "0.253 0.253 -0.01",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -83,28 +83,28 @@
           "type": "geometry",
           "geometry": {
             "cylinder": {
-              "radius": 0.7366,
-              "length": 0.06
+              "radius": 0.1143,
+              "length": 0.01
             }
           }
         }
       },
       "visual": {
         "origin": {
-          "xyz": "0.900 -0.900 -0.165",
+          "xyz": "0.253 0.253 -0.01",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CW.X-A14B-Propeller_CW"
+          "name": "/Drone/PropellerRed"
         }
       }
     },
     {
-      "name": "Prop_BL_T",
+      "name": "Prop_RL",
       "inertial": {
         "origin": {
-          "xyz": "-0.900 -0.900 -0.165",
+          "xyz": "-0.253 -0.253 -0.01",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -116,28 +116,28 @@
           "type": "geometry",
           "geometry": {
             "cylinder": {
-              "radius": 0.7366,
-              "length": 0.06
+              "radius": 0.1143,
+              "length": 0.01
             }
           }
         }
       },
       "visual": {
         "origin": {
-          "xyz": "-0.900 -0.900 -0.165",
+          "xyz": "-0.253 -0.253 -0.01",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CCW.X-A14B-Propeller_CCW"
+          "name": "/Drone/PropellerWhite"
         }
       }
     },
     {
-      "name": "Prop_BR_T",
+      "name": "Prop_RR",
       "inertial": {
         "origin": {
-          "xyz": "-0.900 0.900 -0.165",
+          "xyz": "-0.253 0.253 -0.01",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -149,211 +149,51 @@
           "type": "geometry",
           "geometry": {
             "cylinder": {
-              "radius": 0.7366,
-              "length": 0.06
+              "radius": 0.1143,
+              "length": 0.01
             }
           }
         }
       },
       "visual": {
         "origin": {
-          "xyz": "-0.900 0.900 -0.165",
+          "xyz": "-0.253 0.253 -0.01",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CW.X-A14B-Propeller_CW"
-        }
-      }
-    },
-    {
-      "name": "Prop_FL_B",
-      "inertial": {
-        "origin": {
-          "xyz": "0.900 -0.900 0.165",
-          "rpy-deg": "0 0 0"
-        },
-        "mass": 0.055,
-        "inertia": {
-          "type": "point-mass"
-        },
-        "aerodynamics": {
-          "drag-coefficient": 0.325,
-          "type": "geometry",
-          "geometry": {
-            "cylinder": {
-              "radius": 0.7366,
-              "length": 0.06
-            }
-          }
-        }
-      },
-      "visual": {
-        "origin": {
-          "xyz": "0.900 -0.900 0.165",
-          "rpy-deg": "0 0 0"
-        },
-        "geometry": {
-          "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CCW.X-A14B-Propeller_CCW"
-        }
-      }
-    },
-    {
-      "name": "Prop_FR_B",
-      "inertial": {
-        "origin": {
-          "xyz": "0.900 0.900 0.165",
-          "rpy-deg": "0 0 0"
-        },
-        "mass": 0.055,
-        "inertia": {
-          "type": "point-mass"
-        },
-        "aerodynamics": {
-          "drag-coefficient": 0.325,
-          "type": "geometry",
-          "geometry": {
-            "cylinder": {
-              "radius": 0.7366,
-              "length": 0.06
-            }
-          }
-        }
-      },
-      "visual": {
-        "origin": {
-          "xyz": "0.900 0.900 0.165",
-          "rpy-deg": "0 0 0"
-        },
-        "geometry": {
-          "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CW.X-A14B-Propeller_CW"
-        }
-      }
-    },
-    {
-      "name": "Prop_BR_B",
-      "inertial": {
-        "origin": {
-          "xyz": "-0.900 0.900 0.165",
-          "rpy-deg": "0 0 0"
-        },
-        "mass": 0.055,
-        "inertia": {
-          "type": "point-mass"
-        },
-        "aerodynamics": {
-          "drag-coefficient": 0.325,
-          "type": "geometry",
-          "geometry": {
-            "cylinder": {
-              "radius": 0.7366,
-              "length": 0.06
-            }
-          }
-        }
-      },
-      "visual": {
-        "origin": {
-          "xyz": "-0.900 0.900 0.165",
-          "rpy-deg": "0 0 0"
-        },
-        "geometry": {
-          "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CCW.X-A14B-Propeller_CCW"
-        }
-      }
-    },
-    {
-      "name": "Prop_BL_B",
-      "inertial": {
-        "origin": {
-          "xyz": "-0.900 -0.900 0.165",
-          "rpy-deg": "0 0 0"
-        },
-        "mass": 0.055,
-        "inertia": {
-          "type": "point-mass"
-        },
-        "aerodynamics": {
-          "drag-coefficient": 0.325,
-          "type": "geometry",
-          "geometry": {
-            "cylinder": {
-              "radius": 0.7366,
-              "length": 0.06
-            }
-          }
-        }
-      },
-      "visual": {
-        "origin": {
-          "xyz": "-0.900 -0.900 0.165",
-          "rpy-deg": "0 0 0"
-        },
-        "geometry": {
-          "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CW.X-A14B-Propeller_CW"
+          "name": "/Drone/PropellerWhite"
         }
       }
     }
   ],
   "joints": [
     {
-      "id": "Frame_Prop_FR_T",
+      "id": "Frame_Prop_FL",
       "type": "fixed",
       "parent-link": "Frame",
-      "child-link": "Prop_FR_T",
+      "child-link": "Prop_FL",
       "axis": "0 0 1"
     },
     {
-      "id": "Frame_Prop_FL_T",
+      "id": "Frame_Prop_FR",
       "type": "fixed",
       "parent-link": "Frame",
-      "child-link": "Prop_FL_T",
+      "child-link": "Prop_FR",
       "axis": "0 0 1"
     },
     {
-      "id": "Frame_Prop_BL_T",
+      "id": "Frame_Prop_RL",
       "type": "fixed",
       "parent-link": "Frame",
-      "child-link": "Prop_BL_T",
+      "child-link": "Prop_RL",
       "axis": "0 0 1"
     },
     {
-      "id": "Frame_Prop_BR_T",
+      "id": "Frame_Prop_RR",
       "type": "fixed",
       "parent-link": "Frame",
-      "child-link": "Prop_BR_T",
-      "axis": "0 0 1"
-    },
-    {
-      "id": "Frame_Prop_FL_B",
-      "type": "fixed",
-      "parent-link": "Frame",
-      "child-link": "Prop_FL_B",
-      "axis": "0 0 1"
-    },
-    {
-      "id": "Frame_Prop_FR_B",
-      "type": "fixed",
-      "parent-link": "Frame",
-      "child-link": "Prop_FR_B",
-      "axis": "0 0 1"
-    },
-    {
-      "id": "Frame_Prop_BR_B",
-      "type": "fixed",
-      "parent-link": "Frame",
-      "child-link": "Prop_BR_B",
-      "axis": "0 0 1"
-    },
-    {
-      "id": "Frame_Prop_BL_B",
-      "type": "fixed",
-      "parent-link": "Frame",
-      "child-link": "Prop_BL_B",
+      "child-link": "Prop_RR",
       "axis": "0 0 1"
     }
   ],
@@ -366,46 +206,22 @@
     "ardupilot-ip": "127.0.0.1",       // WSL IP
     "ardupilot-udp-port": 9003,             // ArduPilot listens for sensor JSON here
     "actuator-order": [
-      { "id": "Prop_FR_T_actuator" },
-      { "id": "Prop_FL_T_actuator" },
-      { "id": "Prop_BL_T_actuator" },
-      { "id": "Prop_BR_T_actuator" },
-      { "id": "Prop_FL_B_actuator" },
-      { "id": "Prop_FR_B_actuator" },
-      { "id": "Prop_BR_B_actuator" },
-      { "id": "Prop_BL_B_actuator" }
+      { "id": "Prop_FR_actuator" },
+      { "id": "Prop_RL_actuator" },
+      { "id": "Prop_FL_actuator" },
+      { "id": "Prop_RR_actuator" }
     ]
   }
 },
   "actuators": [
     {
-      "name": "Prop_FR_T_actuator",
+      "name": "Prop_FL_actuator",
       "type": "rotor",
       "enabled": true,
       "parent-link": "Frame",
-      "child-link": "Prop_FR_T",
+      "child-link": "Prop_FL",
       "origin": {
-        "xyz": "0.900 0.900 -0.165",
-        "rpy-deg": "0 0 0"
-      },
-      "rotor-settings": {
-        "turning-direction": "counter-clock-wise",
-        "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
-        "propeller-diameter": 1.4732,
-        "smoothing-tc": 0.005
-      }
-    },
-    {
-      "name": "Prop_FL_T_actuator",
-      "type": "rotor",
-      "enabled": true,
-      "parent-link": "Frame",
-      "child-link": "Prop_FL_T",
-      "origin": {
-        "xyz": "0.900 -0.900 -0.165",
+        "xyz": "0.253 -0.253 -0.01",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -414,18 +230,18 @@
         "coeff-of-thrust": 0.109919,
         "coeff-of-torque": 0.040164,
         "max-rpm": 6396.667,
-        "propeller-diameter": 1.4732,
+        "propeller-diameter": 0.2286,
         "smoothing-tc": 0.005
       }
     },
     {
-      "name": "Prop_BL_T_actuator",
+      "name": "Prop_FR_actuator",
       "type": "rotor",
       "enabled": true,
       "parent-link": "Frame",
-      "child-link": "Prop_BL_T",
+      "child-link": "Prop_FR",
       "origin": {
-        "xyz": "-0.900 -0.900 -0.165",
+        "xyz": "0.253 0.253 -0.01",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -434,38 +250,18 @@
         "coeff-of-thrust": 0.109919,
         "coeff-of-torque": 0.040164,
         "max-rpm": 6396.667,
-        "propeller-diameter": 1.4732,
+        "propeller-diameter": 0.2286,
         "smoothing-tc": 0.005
       }
     },
     {
-      "name": "Prop_BR_T_actuator",
+      "name": "Prop_RL_actuator",
       "type": "rotor",
       "enabled": true,
       "parent-link": "Frame",
-      "child-link": "Prop_BR_T",
+      "child-link": "Prop_RL",
       "origin": {
-        "xyz": "-0.900 0.900 -0.165",
-        "rpy-deg": "0 0 0"
-      },
-      "rotor-settings": {
-        "turning-direction": "clock-wise",
-        "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
-        "propeller-diameter": 1.4732,
-        "smoothing-tc": 0.005
-      }
-    },
-    {
-      "name": "Prop_FL_B_actuator",
-      "type": "rotor",
-      "enabled": true,
-      "parent-link": "Frame",
-      "child-link": "Prop_FL_B",
-      "origin": {
-        "xyz": "0.900 -0.900 0.165",
+        "xyz": "-0.253 -0.253 -0.01",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -474,18 +270,18 @@
         "coeff-of-thrust": 0.109919,
         "coeff-of-torque": 0.040164,
         "max-rpm": 6396.667,
-        "propeller-diameter": 1.4732,
+        "propeller-diameter": 0.2286,
         "smoothing-tc": 0.005
       }
     },
     {
-      "name": "Prop_FR_B_actuator",
+      "name": "Prop_RR_actuator",
       "type": "rotor",
       "enabled": true,
       "parent-link": "Frame",
-      "child-link": "Prop_FR_B",
+      "child-link": "Prop_RR",
       "origin": {
-        "xyz": "0.900 0.900 0.165",
+        "xyz": "-0.253 0.253 -0.01",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -494,47 +290,7 @@
         "coeff-of-thrust": 0.109919,
         "coeff-of-torque": 0.040164,
         "max-rpm": 6396.667,
-        "propeller-diameter": 1.4732,
-        "smoothing-tc": 0.005
-      }
-    },
-    {
-      "name": "Prop_BR_B_actuator",
-      "type": "rotor",
-      "enabled": true,
-      "parent-link": "Frame",
-      "child-link": "Prop_BR_B",
-      "origin": {
-        "xyz": "-0.900 0.900 0.165",
-        "rpy-deg": "0 0 0"
-      },
-      "rotor-settings": {
-        "turning-direction": "counter-clock-wise",
-        "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
-        "propeller-diameter": 1.4732,
-        "smoothing-tc": 0.005
-      }
-    },
-    {
-      "name": "Prop_BL_B_actuator",
-      "type": "rotor",
-      "enabled": true,
-      "parent-link": "Frame",
-      "child-link": "Prop_BL_B",
-      "origin": {
-        "xyz": "-0.900 -0.900 0.165",
-        "rpy-deg": "0 0 0"
-      },
-      "rotor-settings": {
-        "turning-direction": "clock-wise",
-        "normal-vector": "0.0 0.0 -1.0",
-        "coeff-of-thrust": 0.109919,
-        "coeff-of-torque": 0.040164,
-        "max-rpm": 6396.667,
-        "propeller-diameter": 1.4732,
+        "propeller-diameter": 0.2286,
         "smoothing-tc": 0.005
       }
     }

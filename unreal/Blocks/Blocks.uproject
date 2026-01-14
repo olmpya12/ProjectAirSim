@@ -39,6 +39,7 @@
 	],
 	"TargetPlatforms": [
 		"LinuxNoEditor",
-		"WindowsNoEditor"
+		"WindowsNoEditor",
+		"Windows"
 	]
 }

@@ -129,3 +129,50 @@ class StaticSensorActor(object):
             get_images_data[int(key)] = get_images_data.pop(key)
 
         return get_images_data
+
+    def set_projection_mode(
+        self, camera_id: str, image_type_id: int, projection_mode: int
+    ) -> bool:
+        """Sets the projection mode of a static camera
+
+        Args:
+            camera_id (str): the name of the camera
+            image_type_id (int): the ImageType for which to set the projection mode
+            projection_mode (int): 0 = perspective, 1 = orthographic
+
+        Returns:
+            bool: true if projection mode successfully set
+        """
+        req_camera_path = f"{self.sensors_topic}/{camera_id}"
+        set_projection_mode_req = {
+            "method": f"{req_camera_path}/SetProjectionMode",
+            "params": {
+                "image_type_id": image_type_id,
+                "projection_mode": projection_mode,
+            },
+            "version": 1.0,
+        }
+        projection_mode_set = self.client.request(set_projection_mode_req)
+        return projection_mode_set
+
+    def set_ortho_width(
+        self, camera_id: str, image_type_id: int, ortho_width: float
+    ) -> bool:
+        """Sets the orthographic width (meters) of a static camera
+
+        Args:
+            camera_id (str): the name of the camera
+            image_type_id (int): the ImageType for which to set the ortho width
+            ortho_width (float): width in meters for orthographic projection
+
+        Returns:
+            bool: true if ortho width successfully set
+        """
+        req_camera_path = f"{self.sensors_topic}/{camera_id}"
+        set_ortho_width_req = {
+            "method": f"{req_camera_path}/SetOrthoWidth",
+            "params": {"image_type_id": image_type_id, "ortho_width": ortho_width},
+            "version": 1.0,
+        }
+        ortho_width_set = self.client.request(set_ortho_width_req)
+        return ortho_width_set

@@ -182,6 +182,8 @@ class Constant {
     static constexpr const char* width = "width";
     static constexpr const char* height = "height";
     static constexpr const char* fov_degrees = "fov-degrees";
+    static constexpr const char* projection_mode = "projection-mode";
+    static constexpr const char* ortho_width = "ortho-width";
     static constexpr const char* pixels_as_float = "pixels-as-float";
     static constexpr const char* compress = "compress";
     static constexpr const char* auto_exposure_method = "auto-exposure-method";
@@ -343,6 +345,7 @@ class Constant {
     static constexpr const char* gpu_cylindrical = "gpu_cylindrical";
     static constexpr const char* livox_avia = "livox_avia";
     static constexpr const char* livox_mid70 = "livox_mid70";
+    static constexpr const char* livox_mid360 = "livox_mid360";
     static constexpr const char* report_point_cloud = "report-point-cloud";
     static constexpr const char* report_azimuth_elevation_range = "report-azimuth-elevation-range";
     // Distance sensor related config parameters
@@ -371,7 +374,26 @@ class Constant {
     static constexpr const char* velocity_resolution = "velocity-resolution";
     static constexpr const char* detection_interval = "detection-interval";
     static constexpr const char* track_interval = "track-interval";
+    static constexpr const char* data_latency = "data-latency";
     static constexpr const char* rcs_adjust_factor = "rcs-adjust-factor";
+    static constexpr const char* beam_radius = "beam-radius";
+    static constexpr const char* continuous_coverage = "continuous-coverage";
+    static constexpr const char* points_per_frame = "points-per-frame";
+    static constexpr const char* max_points_per_frame = "max-points-per-frame";
+    static constexpr const char* range_noise_stddev = "range-noise-stddev";
+    static constexpr const char* azimuth_noise_stddev = "azimuth-noise-stddev";
+    static constexpr const char* elevation_noise_stddev =
+        "elevation-noise-stddev";
+    static constexpr const char* velocity_noise_stddev =
+        "velocity-noise-stddev";
+    static constexpr const char* point_dropout_probability =
+        "point-dropout-probability";
+    static constexpr const char* quantize_azimuth = "quantize-azimuth";
+    static constexpr const char* quantize_elevation = "quantize-elevation";
+    static constexpr const char* quantize_range = "quantize-range";
+    static constexpr const char* quantize_velocity = "quantize-velocity";
+    static constexpr const char* cluster_by_resolution =
+        "cluster-by-resolution";
     static constexpr const char* masks = "masks";
     static constexpr const char* rcs_sqm_max = "rcs-sqm-max";
     static constexpr const char* rcs_sqm_min = "rcs-sqm-min";

@@ -288,6 +288,9 @@ void Rotor::Impl::SetTilt(Quaternion quat) { quat_tilt_ = quat; }
 void Rotor::Impl::UpdateActuatorOutput(std::vector<float> && control_signals,
                             const TimeNano sim_dt_nanos){
   // This actuator uses one control signal
+  if (control_signals.size() < 1) {
+    return;
+  }
   auto control_signal = control_signals[0];
   // Apply first order filter to simulate actuator hardware dynamics
   TimeSec dt_sec = sim_dt_nanos / 1.0e9;

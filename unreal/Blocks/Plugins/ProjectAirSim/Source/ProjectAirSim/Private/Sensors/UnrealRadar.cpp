@@ -6,6 +6,10 @@
 
 #include "UnrealRadar.h"
 
+#include <algorithm>
+#include <cmath>
+
+#include "CollisionShape.h"
 #include "DrawDebugHelpers.h"
 #include "Engine/StaticMeshActor.h"
 #include "Robot/UnrealEnvActor.h"
@@ -28,6 +32,7 @@ UUnrealRadar::UUnrealRadar(const FObjectInitializer& ObjectInitializer)
     : UUnrealSensor(ObjectInitializer),
       DetectionInterval(0),
       TrackInterval(0),
+      DataLatency(0),
       LastDetectionTime(0),
       LastTrackTime(0),
       NextTrackID(0) {
@@ -38,6 +43,9 @@ UUnrealRadar::UUnrealRadar(const FObjectInitializer& ObjectInitializer)
   PrimaryComponentTick.TickGroup = TG_PostUpdateWork;
   PrimaryComponentTick.bCanEverTick = true;
   PrimaryComponentTick.bStartWithTickEnabled = true;
+
+  std::random_device rd;
+  Rng.seed(rd());
 }
 
 void UUnrealRadar::Initialize(const projectairsim::Radar& SimRadar) {
@@ -49,6 +57,10 @@ void UUnrealRadar::Initialize(const projectairsim::Radar& SimRadar) {
       projectairsim::SimClock::Get()->SecToNanos(Settings.detection_interval);
   TrackInterval =
       projectairsim::SimClock::Get()->SecToNanos(Settings.track_interval);
+  DataLatency = Settings.data_latency <= 0.0f
+                    ? 0
+                    : projectairsim::SimClock::Get()->SecToNanos(
+                          Settings.data_latency);
 
   AccumulatedGroundTruthHits.Empty();
   AccumulatedDetections.clear();
@@ -58,6 +70,8 @@ void UUnrealRadar::Initialize(const projectairsim::Radar& SimRadar) {
   TrackIDToTrack.clear();
   TrackIDToAssocCnt.clear();
   TrackIDToConfirmation.clear();
+  PendingDetectionMsgs.clear();
+  PendingTrackMsgs.clear();
 
   InitializePose(Settings.origin_setting);
   GenerateFullFOVFrame();
@@ -71,6 +85,7 @@ void UUnrealRadar::TickComponent(
 
   // Use sim clock time instead of Unreal DeltaTime
   const TimeNano CurSimTime = projectairsim::SimClock::Get()->NowSimNanos();
+  FlushPendingMessages(CurSimTime);
   const TimeNano DetectionElapsedTime = CurSimTime - LastDetectionTime;
 
   if (DetectionElapsedTime >= DetectionInterval) {
@@ -149,9 +164,82 @@ void UUnrealRadar::GenerateFullFOVFrame() {
   }
 }
 
+RadarBeamPoints UUnrealRadar::GenerateContinuousBeams(int points_per_frame) {
+  RadarBeamPoints beams;
+  if (points_per_frame <= 0) {
+    return beams;
+  }
+
+  beams.reserve(static_cast<size_t>(points_per_frame));
+
+  const float az_min = Settings.fov_azimuth_min;
+  const float az_max = Settings.fov_azimuth_max;
+  const float el_min = Settings.fov_elevation_min;
+  const float el_max = Settings.fov_elevation_max;
+  const float az_span = az_max - az_min;
+
+  int az_bins = 1;
+  if (Settings.fov_azimuth_resolution > 0.0f && az_span > 0.0f) {
+    az_bins = static_cast<int>(std::floor(az_span /
+                                          Settings.fov_azimuth_resolution)) + 1;
+    az_bins = std::max(az_bins, 1);
+  }
+
+  const int base_count = points_per_frame / az_bins;
+  const int remainder = points_per_frame % az_bins;
+
+  for (int bin_idx = 0; bin_idx < az_bins; ++bin_idx) {
+    const int bin_count = base_count + (bin_idx < remainder ? 1 : 0);
+    if (bin_count <= 0) {
+      continue;
+    }
+
+    float bin_start = az_min;
+    float bin_end = az_max;
+    if (Settings.fov_azimuth_resolution > 0.0f && az_bins > 1) {
+      bin_start = az_min + bin_idx * Settings.fov_azimuth_resolution;
+      bin_end = bin_start + Settings.fov_azimuth_resolution;
+      if (bin_end > az_max || bin_idx == az_bins - 1) {
+        bin_end = az_max;
+      }
+    }
+
+    for (int i = 0; i < bin_count; ++i) {
+      const float azim = SampleUniform(bin_start, bin_end);
+      const float elev = SampleUniform(el_min, el_max);
+
+      std::vector<projectairsim::RadarMask> beam_masks;
+      for (const auto& cur_mask : Settings.masks) {
+        if (azim >= cur_mask.azimuth_min && azim <= cur_mask.azimuth_max &&
+            elev >= cur_mask.elevation_min &&
+            elev <= cur_mask.elevation_max) {
+          beam_masks.push_back(cur_mask);
+        }
+      }
+
+      beams.emplace_back(azim, elev, beam_masks);
+    }
+  }
+
+  return beams;
+}
+
 RadarBeamPoints UUnrealRadar::GenerateBeamsToShoot(TimeNano SimTime) {
-  // For now, use the full FOV frame sweep of beam points for every round
-  return FullFOVFrame;
+  if (!Settings.continuous_coverage) {
+    // Use the full FOV frame sweep of beam points for every round
+    return FullFOVFrame;
+  }
+
+  int points_per_frame = Settings.points_per_frame;
+  if (points_per_frame <= 0) {
+    points_per_frame = static_cast<int>(FullFOVFrame.size());
+  }
+  if (Settings.max_points_per_frame > 0 &&
+      points_per_frame > Settings.max_points_per_frame) {
+    points_per_frame = Settings.max_points_per_frame;
+  }
+
+  return GenerateContinuousBeams(points_per_frame);
 }
 
 // Simulate shooting a radar beam via Unreal line-tracing.
@@ -185,9 +273,20 @@ FHitResult UUnrealRadar::ShootSingleBeam(const FVector& RadarBodyLoc,
 
   FHitResult HitInfo(ForceInit);
 
-  UnrealWorld->LineTraceSingleByChannel(
-      HitInfo, RadarBodyLoc, EndTrace, ECC_Visibility, TraceParams,
-      FCollisionResponseParams::DefaultResponseParam);
+  const float BeamRadiusCm =
+      projectairsim::TransformUtils::ToCentimeters(Settings.beam_radius);
+  if (BeamRadiusCm > 0.0f) {
+    const FCollisionShape BeamShape =
+        FCollisionShape::MakeSphere(BeamRadiusCm);
+    UnrealWorld->SweepSingleByChannel(
+        HitInfo, RadarBodyLoc, EndTrace, FQuat::Identity, ECC_Visibility,
+        BeamShape, TraceParams,
+        FCollisionResponseParams::DefaultResponseParam);
+  } else {
+    UnrealWorld->LineTraceSingleByChannel(
+        HitInfo, RadarBodyLoc, EndTrace, ECC_Visibility, TraceParams,
+        FCollisionResponseParams::DefaultResponseParam);
+  }
 
   return HitInfo;
 }
@@ -200,8 +299,8 @@ void UUnrealRadar::SimulateRadarDetections(const TimeNano SimTime) {
   FVector RadarBodyLoc = GetComponentLocation();
   FRotator RadarBodyRot = GetComponentRotation();
 
-  RadarDetections Detections;
-  TArray<FHitResult> GroundTruthHits;
+  RadarDetections RawDetections;
+  TArray<FHitResult> RawGroundTruthHits;
   FCriticalSection Mutex;
 
   ParallelFor(BeamsToShoot.size(), [&](int32 Idx) {
@@ -253,10 +352,131 @@ void UUnrealRadar::SimulateRadarDetections(const TimeNano SimTime) {
 
     // Passed all masks, keep detection
     Mutex.Lock();
-    Detections.push_back(Detection);
-    GroundTruthHits.Add(HitInfo);
+    RawDetections.push_back(Detection);
+    RawGroundTruthHits.Add(HitInfo);
     Mutex.Unlock();
   });
+
+  RadarDetections Detections;
+  TArray<FHitResult> GroundTruthHits;
+  Detections.reserve(RawDetections.size());
+  GroundTruthHits.Reserve(RawGroundTruthHits.Num());
+
+  struct BinKey {
+    int azimuth_bin;
+    int elevation_bin;
+    int range_bin;
+
+    bool operator==(const BinKey& other) const {
+      return azimuth_bin == other.azimuth_bin &&
+             elevation_bin == other.elevation_bin &&
+             range_bin == other.range_bin;
+    }
+  };
+
+  struct BinKeyHash {
+    size_t operator()(const BinKey& key) const {
+      size_t h1 = std::hash<int>{}(key.azimuth_bin);
+      size_t h2 = std::hash<int>{}(key.elevation_bin);
+      size_t h3 = std::hash<int>{}(key.range_bin);
+      return h1 ^ (h2 << 1) ^ (h3 << 2);
+    }
+  };
+
+  std::unordered_map<BinKey, size_t, BinKeyHash> BinToIndex;
+  const bool use_clustering = Settings.cluster_by_resolution;
+  const float az_res = Settings.fov_azimuth_resolution;
+  const float el_res = Settings.fov_elevation_resolution;
+  const float range_res = Settings.range_resolution;
+  const float range_min = Settings.range_min;
+  const float range_max = Settings.range_max;
+
+  for (size_t idx = 0; idx < RawDetections.size(); ++idx) {
+    RadarDetection Detection = RawDetections[idx];
+    const FHitResult& HitInfo = RawGroundTruthHits[static_cast<int32>(idx)];
+
+    if (Settings.point_dropout_probability > 0.0f &&
+        SampleUniform(0.0f, 1.0f) < Settings.point_dropout_probability) {
+      continue;
+    }
+
+    if (Settings.range_noise_stddev > 0.0f)
+      Detection.range += SampleNormal(Settings.range_noise_stddev);
+    if (Settings.azimuth_noise_stddev > 0.0f)
+      Detection.azimuth += SampleNormal(Settings.azimuth_noise_stddev);
+    if (Settings.elevation_noise_stddev > 0.0f)
+      Detection.elevation += SampleNormal(Settings.elevation_noise_stddev);
+    if (Settings.velocity_noise_stddev > 0.0f)
+      Detection.velocity += SampleNormal(Settings.velocity_noise_stddev);
+
+    if (Settings.quantize_azimuth) {
+      Detection.azimuth =
+          QuantizeValue(Detection.azimuth, az_res, Settings.fov_azimuth_min);
+    }
+    if (Settings.quantize_elevation) {
+      Detection.elevation = QuantizeValue(Detection.elevation, el_res,
+                                          Settings.fov_elevation_min);
+    }
+    if (Settings.quantize_range) {
+      Detection.range = QuantizeValue(Detection.range, range_res, range_min);
+    }
+    if (Settings.quantize_velocity) {
+      Detection.velocity = QuantizeValue(
+          Detection.velocity, Settings.velocity_resolution, 0.0f);
+    }
+
+    Detection.azimuth = std::clamp(Detection.azimuth,
+                                   Settings.fov_azimuth_min,
+                                   Settings.fov_azimuth_max);
+    Detection.elevation = std::clamp(Detection.elevation,
+                                     Settings.fov_elevation_min,
+                                     Settings.fov_elevation_max);
+    Detection.range = std::clamp(Detection.range, range_min, range_max);
+    Detection.velocity = std::clamp(Detection.velocity, -Settings.velocity_max,
+                                    Settings.velocity_max);
+
+    if (Detection.range < range_min || Detection.range > range_max) {
+      continue;
+    }
+
+    if (use_clustering) {
+      int az_bin = 0;
+      int el_bin = 0;
+      int r_bin = 0;
+      if (az_res > 0.0f) {
+        az_bin = static_cast<int>(
+            std::floor((Detection.azimuth - Settings.fov_azimuth_min) /
+                       az_res));
+      }
+      if (el_res > 0.0f) {
+        el_bin = static_cast<int>(
+            std::floor((Detection.elevation - Settings.fov_elevation_min) /
+                       el_res));
+      }
+      if (range_res > 0.0f) {
+        r_bin = static_cast<int>(
+            std::floor((Detection.range - range_min) / range_res));
+      }
+
+      BinKey key{az_bin, el_bin, r_bin};
+      auto itr = BinToIndex.find(key);
+      if (itr == BinToIndex.end()) {
+        const size_t new_index = Detections.size();
+        BinToIndex.emplace(key, new_index);
+        Detections.push_back(Detection);
+        GroundTruthHits.Add(HitInfo);
+      } else {
+        const size_t existing_index = itr->second;
+        if (Detection.range < Detections[existing_index].range) {
+          Detections[existing_index] = Detection;
+          GroundTruthHits[static_cast<int32>(existing_index)] = HitInfo;
+        }
+      }
+    } else {
+      Detections.push_back(Detection);
+      GroundTruthHits.Add(HitInfo);
+    }
+  }
 
   // Optional - draw debug hit points on Unreal scene
   if (Settings.draw_debug_points && UnrealWorld) {
@@ -275,9 +495,7 @@ void UUnrealRadar::SimulateRadarDetections(const TimeNano SimTime) {
   auto RadarTransformStamped = UnrealTransform::GetPoseNed(this);
   projectairsim::Pose RadarPose(RadarTransformStamped.translation_,
                               RadarTransformStamped.rotation_);
-  projectairsim::RadarDetectionMessage DetectionMsg(SimTime, Detections,
-                                                  RadarPose);
-  Radar.PublishRadarDetectionMsg(DetectionMsg);
+  QueueDetectionMessage(SimTime, RadarPose, Detections);
 
   // 4. Accumulate detections until the next track update
   AccumulatedGroundTruthHits.Append(GroundTruthHits);
@@ -429,8 +647,7 @@ void UUnrealRadar::SimulateRadarTracks(const TimeNano SimTime) {
   auto RadarTransformStamped = UnrealTransform::GetPoseNed(this);
   projectairsim::Pose RadarPose(RadarTransformStamped.translation_,
                               RadarTransformStamped.rotation_);
-  projectairsim::RadarTrackMessage TrackMsg(SimTime, CurTracks, RadarPose);
-  Radar.PublishRadarTrackMsg(TrackMsg);
+  QueueTrackMessage(SimTime, RadarPose, CurTracks);
 
   // Reset accumulated detection data to start batch for next track update
   AccumulatedGroundTruthHits.Empty();
@@ -501,4 +718,66 @@ inline projectairsim::Kinematics UUnrealRadar::GetKinematicsFromActor(
   }
 
   return Kin;
+}
+
+float UUnrealRadar::SampleNormal(float stddev) {
+  if (stddev <= 0.0f) {
+    return 0.0f;
+  }
+  std::normal_distribution<float> dist(0.0f, stddev);
+  return dist(Rng);
+}
+
+float UUnrealRadar::SampleUniform(float min_val, float max_val) {
+  if (min_val > max_val) {
+    std::swap(min_val, max_val);
+  }
+  std::uniform_real_distribution<float> dist(min_val, max_val);
+  return dist(Rng);
+}
+
+float UUnrealRadar::QuantizeValue(float value, float resolution, float origin) {
+  if (resolution <= 0.0f) {
+    return value;
+  }
+  const float normalized = (value - origin) / resolution;
+  const float rounded = std::round(normalized);
+  return origin + rounded * resolution;
+}
+
+void UUnrealRadar::FlushPendingMessages(TimeNano SimTime) {
+  while (!PendingDetectionMsgs.empty() &&
+         PendingDetectionMsgs.front().publish_time <= SimTime) {
+    Radar.PublishRadarDetectionMsg(PendingDetectionMsgs.front().message);
+    PendingDetectionMsgs.pop_front();
+  }
+
+  while (!PendingTrackMsgs.empty() &&
+         PendingTrackMsgs.front().publish_time <= SimTime) {
+    Radar.PublishRadarTrackMsg(PendingTrackMsgs.front().message);
+    PendingTrackMsgs.pop_front();
+  }
+}
+
+void UUnrealRadar::QueueDetectionMessage(
+    TimeNano SimTime, const projectairsim::Pose& RadarPose,
+    const std::vector<RadarDetection>& Detections) {
+  projectairsim::RadarDetectionMessage DetectionMsg(SimTime, Detections,
+                                                    RadarPose);
+  if (DataLatency <= 0) {
+    Radar.PublishRadarDetectionMsg(DetectionMsg);
+    return;
+  }
+  PendingDetectionMsgs.emplace_back(SimTime + DataLatency, DetectionMsg);
+}
+
+void UUnrealRadar::QueueTrackMessage(
+    TimeNano SimTime, const projectairsim::Pose& RadarPose,
+    const std::vector<microsoft::projectairsim::RadarTrack>& Tracks) {
+  projectairsim::RadarTrackMessage TrackMsg(SimTime, Tracks, RadarPose);
+  if (DataLatency <= 0) {
+    Radar.PublishRadarTrackMsg(TrackMsg);
+    return;
+  }
+  PendingTrackMsgs.emplace_back(SimTime + DataLatency, TrackMsg);
 }
