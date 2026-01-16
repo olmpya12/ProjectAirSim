@@ -38,7 +38,7 @@
       "name": "Prop_FR_T",
       "inertial": {
         "origin": {
-          "xyz": "0.900 0.900 -0.165",
+          "xyz": "0.837 0.837 -0.145",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -58,12 +58,12 @@
       },
       "visual": {
         "origin": {
-          "xyz": "0.900 0.900 -0.165",
+          "xyz": "0.837 0.837 -0.145",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CCW.X-A14B-Propeller_CCW"
+          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
         }
       }
     },
@@ -71,7 +71,7 @@
       "name": "Prop_FL_T",
       "inertial": {
         "origin": {
-          "xyz": "0.900 -0.900 -0.165",
+          "xyz": "0.837 -0.837 -0.145",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -91,12 +91,12 @@
       },
       "visual": {
         "origin": {
-          "xyz": "0.900 -0.900 -0.165",
+          "xyz": "0.837 -0.837 -0.145",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CW.X-A14B-Propeller_CW"
+          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
         }
       }
     },
@@ -104,7 +104,7 @@
       "name": "Prop_BL_T",
       "inertial": {
         "origin": {
-          "xyz": "-0.900 -0.900 -0.165",
+          "xyz": "-0.837 -0.837 -0.145",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -124,12 +124,12 @@
       },
       "visual": {
         "origin": {
-          "xyz": "-0.900 -0.900 -0.165",
+          "xyz": "-0.837 -0.837 -0.145",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CCW.X-A14B-Propeller_CCW"
+          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
         }
       }
     },
@@ -137,7 +137,7 @@
       "name": "Prop_BR_T",
       "inertial": {
         "origin": {
-          "xyz": "-0.900 0.900 -0.165",
+          "xyz": "-0.837 0.837 -0.145",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -157,12 +157,12 @@
       },
       "visual": {
         "origin": {
-          "xyz": "-0.900 0.900 -0.165",
+          "xyz": "-0.837 0.837 -0.145",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CW.X-A14B-Propeller_CW"
+          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
         }
       }
     },
@@ -170,7 +170,7 @@
       "name": "Prop_FL_B",
       "inertial": {
         "origin": {
-          "xyz": "0.900 -0.900 0.165",
+          "xyz": "0.837 -0.837 0.190",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -190,12 +190,12 @@
       },
       "visual": {
         "origin": {
-          "xyz": "0.900 -0.900 0.165",
+          "xyz": "0.837 -0.837 0.190",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CCW.X-A14B-Propeller_CCW"
+          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
         }
       }
     },
@@ -203,7 +203,7 @@
       "name": "Prop_FR_B",
       "inertial": {
         "origin": {
-          "xyz": "0.900 0.900 0.165",
+          "xyz": "0.837 0.837 0.190",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -223,12 +223,12 @@
       },
       "visual": {
         "origin": {
-          "xyz": "0.900 0.900 0.165",
+          "xyz": "0.837 0.837 0.190",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CW.X-A14B-Propeller_CW"
+          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
         }
       }
     },
@@ -236,7 +236,7 @@
       "name": "Prop_BR_B",
       "inertial": {
         "origin": {
-          "xyz": "-0.900 0.900 0.165",
+          "xyz": "-0.837 0.837 0.190",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -256,12 +256,12 @@
       },
       "visual": {
         "origin": {
-          "xyz": "-0.900 0.900 0.165",
+          "xyz": "-0.837 0.837 0.190",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CCW.X-A14B-Propeller_CCW"
+          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
         }
       }
     },
@@ -269,7 +269,7 @@
       "name": "Prop_BL_B",
       "inertial": {
         "origin": {
-          "xyz": "-0.900 -0.900 0.165",
+          "xyz": "-0.837 -0.837 0.190",
           "rpy-deg": "0 0 0"
         },
         "mass": 0.055,
@@ -289,12 +289,12 @@
       },
       "visual": {
         "origin": {
-          "xyz": "-0.900 -0.900 0.165",
+          "xyz": "-0.837 -0.837 0.190",
           "rpy-deg": "0 0 0"
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Propeller_CW.X-A14B-Propeller_CW"
+          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
         }
       }
     }
@@ -385,7 +385,7 @@
       "parent-link": "Frame",
       "child-link": "Prop_FR_T",
       "origin": {
-        "xyz": "0.900 0.900 -0.165",
+        "xyz": "0.837 0.837 -0.145",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -405,7 +405,7 @@
       "parent-link": "Frame",
       "child-link": "Prop_FL_T",
       "origin": {
-        "xyz": "0.900 -0.900 -0.165",
+        "xyz": "0.837 -0.837 -0.145",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -425,7 +425,7 @@
       "parent-link": "Frame",
       "child-link": "Prop_BL_T",
       "origin": {
-        "xyz": "-0.900 -0.900 -0.165",
+        "xyz": "-0.837 -0.837 -0.145",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -445,7 +445,7 @@
       "parent-link": "Frame",
       "child-link": "Prop_BR_T",
       "origin": {
-        "xyz": "-0.900 0.900 -0.165",
+        "xyz": "-0.837 0.837 -0.145",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -465,7 +465,7 @@
       "parent-link": "Frame",
       "child-link": "Prop_FL_B",
       "origin": {
-        "xyz": "0.900 -0.900 0.165",
+        "xyz": "0.837 -0.837 0.190",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -485,7 +485,7 @@
       "parent-link": "Frame",
       "child-link": "Prop_FR_B",
       "origin": {
-        "xyz": "0.900 0.900 0.165",
+        "xyz": "0.837 0.837 0.190",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -505,7 +505,7 @@
       "parent-link": "Frame",
       "child-link": "Prop_BR_B",
       "origin": {
-        "xyz": "-0.900 0.900 0.165",
+        "xyz": "-0.837 0.837 0.190",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
@@ -525,7 +525,7 @@
       "parent-link": "Frame",
       "child-link": "Prop_BL_B",
       "origin": {
-        "xyz": "-0.900 -0.900 0.165",
+        "xyz": "-0.837 -0.837 0.190",
         "rpy-deg": "0 0 0"
       },
       "rotor-settings": {
