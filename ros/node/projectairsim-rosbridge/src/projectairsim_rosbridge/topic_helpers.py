@@ -22,6 +22,43 @@ from projectairsim import ProjectAirSimClient
 
 
 # --------------------------------------------------------------------------
+# Quaternion helpers (x, y, z, w)
+# --------------------------------------------------------------------------
+def _quat_inv(q):
+    x, y, z, w = q
+    norm = x * x + y * y + z * z + w * w
+    if norm == 0:
+        return (0.0, 0.0, 0.0, 1.0)
+    return (-x / norm, -y / norm, -z / norm, w / norm)
+
+
+def _quat_multiply(q1, q2):
+    x1, y1, z1, w1 = q1
+    x2, y2, z2, w2 = q2
+    return (
+        w1 * x2 + x1 * w2 + y1 * z2 - z1 * y2,
+        w1 * y2 - x1 * z2 + y1 * w2 + z1 * x2,
+        w1 * z2 + x1 * y2 - y1 * x2 + z1 * w2,
+        w1 * w2 - x1 * x2 - y1 * y2 - z1 * z2,
+    )
+
+
+def _quat_rotate_vector(q, v):
+    # Rotate vector v by quaternion q
+    vx, vy, vz = v
+    qx, qy, qz, qw = q
+    # q * v * q^-1, optimized
+    ix = qw * vx + qy * vz - qz * vy
+    iy = qw * vy + qz * vx - qx * vz
+    iz = qw * vz + qx * vy - qy * vx
+    iw = -qx * vx - qy * vy - qz * vz
+    rx = ix * qw + iw * -qx + iy * -qz - iz * -qy
+    ry = iy * qw + iw * -qy + iz * -qx - ix * -qz
+    rz = iz * qw + iw * -qz + ix * -qy - iy * -qx
+    return (rx, ry, rz)
+
+
+# --------------------------------------------------------------------------
 class TopicCallbacks(utils.Callbacks):
     """
     Callback list for (ROS or Project AirSim) topic changes.
@@ -872,7 +909,7 @@ class SensorBridgeToROS(BasicBridgeToROS):
         ros_topic_name: str = None,
         ros_topic_is_latching: bool = False,
         frame_id: str = None,
-        frame_id_parent: str = "map",
+        frame_id_parent: str = None,
     ):
         """
         Constructor.
@@ -917,6 +954,14 @@ class SensorBridgeToROS(BasicBridgeToROS):
             self.frame_id = frame_id
         else:
             self.frame_id = utils.get_sensor_frame_id(projectairsim_topic_name)
+        if frame_id_parent is None:
+            frame_id_parent = utils.get_robot_base_link_frame_id(
+                projectairsim_topic_name
+            )
+            if frame_id_parent is None:
+                raise RuntimeError(
+                    "Unable to derive base_link for sensor frame--unexpected topic format?"
+                )
         self.frame_id_parent = frame_id_parent
         self.transform = (
             rosgeommsg.Transform()
@@ -965,9 +1010,85 @@ class SensorBridgeToROS(BasicBridgeToROS):
             ros_transform = self.transform_message_callback(
                 projectairsim_topic.path, projectairsim_message_data
             )
+            
+            # Debug: Log raw sensor pose from message
+            raw_pose = projectairsim_message_data.get("pose")
+            if raw_pose is None:
+                self.topics_managers.logger.warning(
+                    f"[SensorBridgeToROS] No pose in message for {projectairsim_topic.path}"
+                )
 
             # Publish the sensor transform frame
             if ros_transform is not None:
+                # If transform is in world/map, convert to base_link-relative using odom
+                odom_frame_id = utils.get_robot_odom_frame_id(projectairsim_topic.path)
+                odom_tf = (
+                    self.topics_managers.tf_broadcaster.get_frame_transform(
+                        odom_frame_id
+                    )
+                    if odom_frame_id is not None
+                    else None
+                )
+                
+                # Debug: Log transforms before conversion
+                self.topics_managers.logger.debug(
+                    f"[SensorBridgeToROS] {self.frame_id}: sensor_world=({ros_transform.translation.x:.3f}, {ros_transform.translation.y:.3f}, {ros_transform.translation.z:.3f})"
+                )
+                
+                if odom_tf is not None:
+                    odom_pos = (
+                        odom_tf.translation.x,
+                        odom_tf.translation.y,
+                        odom_tf.translation.z,
+                    )
+                    odom_rot = (
+                        odom_tf.rotation.x,
+                        odom_tf.rotation.y,
+                        odom_tf.rotation.z,
+                        odom_tf.rotation.w,
+                    )
+                    
+                    # Debug: Log odom transform
+                    self.topics_managers.logger.debug(
+                        f"[SensorBridgeToROS] {self.frame_id}: odom_pos=({odom_pos[0]:.3f}, {odom_pos[1]:.3f}, {odom_pos[2]:.3f})"
+                    )
+                    
+                    inv_odom_rot = _quat_inv(odom_rot)
+
+                    rel_pos = _quat_rotate_vector(
+                        inv_odom_rot,
+                        (
+                            ros_transform.translation.x - odom_pos[0],
+                            ros_transform.translation.y - odom_pos[1],
+                            ros_transform.translation.z - odom_pos[2],
+                        ),
+                    )
+                    rel_rot = _quat_multiply(
+                        inv_odom_rot,
+                        (
+                            ros_transform.rotation.x,
+                            ros_transform.rotation.y,
+                            ros_transform.rotation.z,
+                            ros_transform.rotation.w,
+                        ),
+                    )
+                    ros_transform.translation.x = rel_pos[0]
+                    ros_transform.translation.y = rel_pos[1]
+                    ros_transform.translation.z = rel_pos[2]
+                    ros_transform.rotation.x = rel_rot[0]
+                    ros_transform.rotation.y = rel_rot[1]
+                    ros_transform.rotation.z = rel_rot[2]
+                    ros_transform.rotation.w = rel_rot[3]
+                    
+                    # Debug: Log computed relative transform
+                    self.topics_managers.logger.debug(
+                        f"[SensorBridgeToROS] {self.frame_id}: rel_pos=({rel_pos[0]:.3f}, {rel_pos[1]:.3f}, {rel_pos[2]:.3f})"
+                    )
+                else:
+                    self.topics_managers.logger.warning(
+                        f"[SensorBridgeToROS] No odom transform available for {self.frame_id}, using world-frame sensor pose directly"
+                    )
+
                 self.transform = ros_transform
                 self.topics_managers.tf_broadcaster.set_frame(
                     self.frame_id, ros_transform
@@ -1196,7 +1317,7 @@ class CameraBridgeToROS(BasicBridgeToROS):
         desired_pose_message_callback,
         ros_topic_is_latching: bool = False,
         frame_id: str = None,
-        frame_id_parent: str = "map",
+        frame_id_parent: str = None,
     ):
         """
         Constructor.
@@ -1252,6 +1373,14 @@ class CameraBridgeToROS(BasicBridgeToROS):
             self.frame_id = frame_id
         else:
             self.frame_id = utils.get_sensor_frame_id(projectairsim_topic_name)
+        if frame_id_parent is None:
+            frame_id_parent = utils.get_robot_base_link_frame_id(
+                projectairsim_topic_name
+            )
+            if frame_id_parent is None:
+                raise RuntimeError(
+                    "Unable to derive base_link for camera frame--unexpected topic format?"
+                )
         self.frame_id_parent = frame_id_parent
         self.transform = (
             rosgeommsg.Transform()
@@ -1344,25 +1473,14 @@ class CameraBridgeToROS(BasicBridgeToROS):
                 projectairsim_topic.path, projectairsim_message_data
             )
             ros_image.header.frame_id = self.frame_id
-
-            (
-                self.transform.translation.x,
-                self.transform.translation.y,
-                self.transform.translation.z,
-            ) = utils.to_ros_position_list2list(
+            pos_world = utils.to_ros_position_list2list(
                 (
                     projectairsim_message_data["pos_x"],
                     projectairsim_message_data["pos_y"],
                     projectairsim_message_data["pos_z"],
                 )
             )
-
-            (
-                self.transform.rotation.x,
-                self.transform.rotation.y,
-                self.transform.rotation.z,
-                self.transform.rotation.w,
-            ) = utils.to_ros_quaternion_list2list(
+            rot_world = utils.to_ros_quaternion_list2list(
                 (
                     projectairsim_message_data["rot_x"],
                     projectairsim_message_data["rot_y"],
@@ -1370,6 +1488,70 @@ class CameraBridgeToROS(BasicBridgeToROS):
                     projectairsim_message_data["rot_w"],
                 )
             )
+
+            # Convert world pose to base_link-relative pose (parent is base_link)
+            odom_frame_id = utils.get_robot_odom_frame_id(projectairsim_topic.path)
+            odom_tf = (
+                self.topics_managers.tf_broadcaster.get_frame_transform(odom_frame_id)
+                if odom_frame_id is not None
+                else None
+            )
+            
+            # Debug: Log camera world pose
+            self.topics_managers.logger.debug(
+                f"[CameraBridgeToROS] {self.frame_id}: camera_world=({pos_world[0]:.3f}, {pos_world[1]:.3f}, {pos_world[2]:.3f})"
+            )
+            
+            if odom_tf is not None:
+                odom_pos = (
+                    odom_tf.translation.x,
+                    odom_tf.translation.y,
+                    odom_tf.translation.z,
+                )
+                odom_rot = (
+                    odom_tf.rotation.x,
+                    odom_tf.rotation.y,
+                    odom_tf.rotation.z,
+                    odom_tf.rotation.w,
+                )
+                
+                # Debug: Log odom transform
+                self.topics_managers.logger.debug(
+                    f"[CameraBridgeToROS] {self.frame_id}: odom_pos=({odom_pos[0]:.3f}, {odom_pos[1]:.3f}, {odom_pos[2]:.3f})"
+                )
+                
+                delta_pos = (
+                    pos_world[0] - odom_pos[0],
+                    pos_world[1] - odom_pos[1],
+                    pos_world[2] - odom_pos[2],
+                )
+                inv_odom_rot = _quat_inv(odom_rot)
+                rel_pos = _quat_rotate_vector(inv_odom_rot, delta_pos)
+                rel_rot = _quat_multiply(inv_odom_rot, rot_world)
+                
+                # Debug: Log computed relative transform
+                self.topics_managers.logger.debug(
+                    f"[CameraBridgeToROS] {self.frame_id}: rel_pos=({rel_pos[0]:.3f}, {rel_pos[1]:.3f}, {rel_pos[2]:.3f})"
+                )
+            else:
+                self.topics_managers.logger.warning(
+                    f"[CameraBridgeToROS] No odom transform available for {self.frame_id}, using world-frame camera pose directly"
+                )
+                rel_pos = pos_world
+                rel_rot = rot_world
+
+            (
+                self.transform.translation.x,
+                self.transform.translation.y,
+                self.transform.translation.z,
+            ) = rel_pos
+            (
+                self.transform.rotation.x,
+                self.transform.rotation.y,
+                self.transform.rotation.z,
+                self.transform.rotation.w,
+            ) = rel_rot
+
             self.topics_managers.tf_broadcaster.set_frame(self.frame_id, self.transform)
 
             self.topics_managers.ros_topics_manager.publish(
@@ -1619,22 +1801,36 @@ class RobotPoseBridgeToROS(BasicBridgeToROS):
         )
         self.is_subscribed_to_projectairsim_topic = False
         self.frame_id_parent = frame_id_parent
-        self.transform = rosgeommsg.Transform()
+        self.transform_odom = rosgeommsg.Transform()
+        self.transform_base = rosgeommsg.Transform(
+            rotation=rosgeommsg.Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
+        )
 
         # Get ID of transform frame corresponding to the pose and add the frame to the broadcaster
+        self.odom_frame_id = utils.get_robot_odom_frame_id(projectairsim_topic_name)
+        if self.odom_frame_id is None:
+            raise RuntimeError(
+                "Unable to derive the odom frame from the Project AirSim topic name--unexpected format?"
+            )
         if frame_id is not None:
             if not frame_id:
                 raise ValueError("frame_id can't be an empty string")
             self.frame_id = frame_id
         else:
-            self.frame_id = utils.get_robot_frame_id(projectairsim_topic_name)
+            self.frame_id = utils.get_robot_base_link_frame_id(
+                projectairsim_topic_name
+            )
             if self.frame_id is None:
                 raise RuntimeError(
-                    "Unable to derive the robot name from the Project AirSim topic name--unexpected format?"
+                    "Unable to derive the base_link from the Project AirSim topic name--unexpected format?"
                 )
 
         # Add the transform frame
-        topics_managers.tf_broadcaster.add_frame(self.frame_id, self.frame_id_parent)
+        topics_managers.tf_broadcaster.add_frame(
+            self.odom_frame_id, self.frame_id_parent
+        )
+        topics_managers.tf_broadcaster.add_frame(self.frame_id, self.odom_frame_id)
+        topics_managers.tf_broadcaster.set_frame(self.frame_id, self.transform_base)
 
         # Subscribe to Project AirSim topic now since we need to constantly update the transform frame
         self._auto_subscriber.subscribe()
@@ -1644,6 +1840,9 @@ class RobotPoseBridgeToROS(BasicBridgeToROS):
         Stop handling messages and free resources.
         """
         super().clear()
+        if self.odom_frame_id is not None:
+            self.topics_managers.tf_broadcaster.remove_frame(self.odom_frame_id)
+            self.odom_frame_id = None
         if self.frame_id is not None:
             self.topics_managers.tf_broadcaster.remove_frame(self.frame_id)
             self.frame_id = None
@@ -1681,15 +1880,15 @@ class RobotPoseBridgeToROS(BasicBridgeToROS):
             )
 
             # Update transform frame
-            self.transform.translation = rosgeommsg.Vector3(
+            self.transform_odom.translation = rosgeommsg.Vector3(
                 x=posestamped.pose.position.x,
                 y=posestamped.pose.position.y,
                 z=posestamped.pose.position.z,
             )
-            self.transform.rotation = posestamped.pose.orientation
+            self.transform_odom.rotation = posestamped.pose.orientation
             self.topics_managers.tf_broadcaster.set_frame(
-                frame_id=self.frame_id,
-                transform=self.transform,
+                frame_id=self.odom_frame_id,
+                transform=self.transform_odom,
                 timevalue=self.topics_managers.ros_node.get_time_from_msg(
                     posestamped.header.stamp
                 ),

@@ -189,6 +189,38 @@ def get_sensor_frame_id(projectairsim_topic_name: str) -> str:
     return None if match is None else match.group(1)
 
 
+def get_robot_odom_frame_id(projectairsim_topic_name: str) -> str:
+    """
+    Given a Project AirSim topic name, return the odom frame ID for the robot.
+
+    Arguments:
+        projectairsim_topic_name - Project AirSim topic name
+
+    Returns:
+        (return) - The odom transform frame ID for the robot, or None if no robot path is found
+    """
+    robot_path = get_robot_path(projectairsim_topic_name)
+    if robot_path is None:
+        return None
+    return f"{robot_path}/odom"
+
+
+def get_robot_base_link_frame_id(projectairsim_topic_name: str) -> str:
+    """
+    Given a Project AirSim topic name, return the base_link frame ID for the robot.
+
+    Arguments:
+        projectairsim_topic_name - Project AirSim topic name
+
+    Returns:
+        (return) - The base_link transform frame ID for the robot, or None if no robot path is found
+    """
+    robot_path = get_robot_path(projectairsim_topic_name)
+    if robot_path is None:
+        return None
+    return f"{robot_path}/base_link"
+
+
 # --------------------------------------------------------------------------
 # Project AirSim / ROS Coordinate Conversion Functions
 # --------------------------------------------------------------------------

@@ -215,6 +215,31 @@ class TFBroadcaster:
                     transform, self.ros_node.get_time_to_msg(timevalue)
                 )
 
+    def get_frame_transform(self, frame_id: str):
+        """
+        Retrieve a copy of the current transform for the specified frame.
+
+        Arguments:
+            frame_id - Name of the frame
+
+        Returns:
+            (return) - geometry_msgs.msg.Transform or None if frame is unknown
+        """
+        with self.lock_frames:
+            frame = self.frames.get(frame_id)
+            if frame is None:
+                return None
+            with frame.lock:
+                tf = frame.transform_stamped.transform
+                return rosgeommsg.Transform(
+                    translation=rosgeommsg.Vector3(
+                        x=tf.translation.x, y=tf.translation.y, z=tf.translation.z
+                    ),
+                    rotation=rosgeommsg.Quaternion(
+                        x=tf.rotation.x, y=tf.rotation.y, z=tf.rotation.z, w=tf.rotation.w
+                    ),
+                )
+
     def start(self):
         """
         Start broadcasting frames, if any.  If there are no frames yet,

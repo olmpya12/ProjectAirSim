@@ -302,21 +302,7 @@ class MsgConverter:
         Returns:
             (return) - Corresponding ROS Transform object
         """
-        transform = rosgeommsg.Transform()
-        projectairsim_pose = projectairsim_msg["pose"]
-        (
-            transform.translation.x,
-            transform.translation.y,
-            transform.translation.z,
-        ) = utils.to_ros_position_list(projectairsim_pose["position"])
-        (
-            transform.rotation.x,
-            transform.rotation.y,
-            transform.rotation.z,
-            transform.rotation.w,
-        ) = utils.to_ros_quaternion_list(projectairsim_pose["orientation"])
-
-        return transform
+        return self._convert_sensor_pose_to_ros_transform(projectairsim_msg)
 
     def convert_magnetometer_to_ros(self, projectairsim_topic_name, projectairsim_msg):
         """
@@ -358,7 +344,9 @@ class MsgConverter:
             (return) - Corresponding ROS RadarScan message
         """
         radarscan = rosradarmsg.RadarScan()
-        radarscan.header = self._get_standard_ros_header(projectairsim_topic_name)
+        radarscan.header = self._get_sensor_ros_header(
+            projectairsim_topic_name, projectairsim_radar_detections
+        )
 
         radar_returns = radarscan.returns
         rdProjectAirSim = projectairsim_radar_detections["radar_detections"]
@@ -394,6 +382,22 @@ class MsgConverter:
 
         return radarscan
 
+    def convert_radar_detection_to_ros_transform(
+        self, projectairsim_topic_name, projectairsim_msg
+    ):
+        """
+        Returns the ROS transform to the sensor from the parent
+        transform frame (usually the vehicle frame.)
+
+        Arguments:
+            projectairsim_topic_name - The Project AirSim topic name
+            projectairsim_msg - The radar detections data received from the Project AirSim topic
+
+        Returns:
+            (return) - Corresponding ROS Transform object
+        """
+        return self._convert_sensor_pose_to_ros_transform(projectairsim_msg)
+
     def convert_radar_track_to_ros(
         self, projectairsim_topic_name, projectairsim_radar_track
     ):
@@ -409,7 +413,9 @@ class MsgConverter:
             (return) - Corresponding ROS RadarTracks message
         """
         radartracks = rosradarmsg.RadarTracks()
-        radartracks.header = self._get_standard_ros_header(projectairsim_topic_name)
+        radartracks.header = self._get_sensor_ros_header(
+            projectairsim_topic_name, projectairsim_radar_track
+        )
 
         tracks = radartracks.tracks
         rdProjectAirSim = projectairsim_radar_track["radar_tracks"]
@@ -435,6 +441,22 @@ class MsgConverter:
 
         return radartracks
 
+    def convert_radar_track_to_ros_transform(
+        self, projectairsim_topic_name, projectairsim_msg
+    ):
+        """
+        Returns the ROS transform to the sensor from the parent
+        transform frame (usually the vehicle frame.)
+
+        Arguments:
+            projectairsim_topic_name - The Project AirSim topic name
+            projectairsim_msg - The radar tracks data received from the Project AirSim topic
+
+        Returns:
+            (return) - Corresponding ROS Transform object
+        """
+        return self._convert_sensor_pose_to_ros_transform(projectairsim_msg)
+
     def set_robot_base_frame_ids(self, robot_base_frame_ids: list):
         """
         Sets the mapping from Project AirSim topic name to transform frame IDs
@@ -456,3 +478,31 @@ class MsgConverter:
         ]
 
         return header
+
+    def _get_sensor_ros_header(self, projectairsim_topic_name: str, sensor_msg: dict):
+        header = rosstdmsg.Header()
+        header.stamp = self.ros_node.get_time_now_msg()
+        header.frame_id = sensor_msg.get("frame_id") or self.robot_base_frame_ids[
+            projectairsim_topic_name
+        ]
+        return header
+
+    def _convert_sensor_pose_to_ros_transform(self, projectairsim_msg: dict):
+        transform = rosgeommsg.Transform()
+        projectairsim_pose = projectairsim_msg.get("pose")
+        if projectairsim_pose is None:
+            return None
+        pos_x, pos_y, pos_z = utils.to_ros_position_list(
+            projectairsim_pose["position"]
+        )
+        rot_x, rot_y, rot_z, rot_w = utils.to_ros_quaternion_list(
+            projectairsim_pose["orientation"]
+        )
+        transform.translation.x = float(pos_x)
+        transform.translation.y = float(pos_y)
+        transform.translation.z = float(pos_z)
+        transform.rotation.x = float(rot_x)
+        transform.rotation.y = float(rot_y)
+        transform.rotation.z = float(rot_z)
+        transform.rotation.w = float(rot_w)
+        return transform

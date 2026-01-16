@@ -312,16 +312,18 @@ class ProjectAirSimROSBridge:
                 self.TopicEntry.MatchType.ENDS_WITH,
                 "/radar_detections",
                 rosradarmsg.RadarScan,
-                topic_handler_type=BasicBridgeToROS,
+                topic_handler_type=SensorBridgeToROS,
                 message_callback=self.msg_converter.convert_radar_detection_to_ros,
+                transform_message_callback=self.msg_converter.convert_radar_detection_to_ros_transform,
                 ros_topic_is_latching=False,
             ),
             self.TopicEntry(
                 self.TopicEntry.MatchType.ENDS_WITH,
                 "/radar_tracks",
                 rosradarmsg.RadarTracks,
-                topic_handler_type=BasicBridgeToROS,
+                topic_handler_type=SensorBridgeToROS,
                 message_callback=self.msg_converter.convert_radar_track_to_ros,
+                transform_message_callback=self.msg_converter.convert_radar_track_to_ros_transform,
                 ros_topic_is_latching=False,
             ),
             self.TopicEntry(
@@ -480,7 +482,9 @@ class ProjectAirSimROSBridge:
                         robot_path = utils.get_robot_path(topic_name)
                         if robot_path is not None:
                             robot_paths_new[topic_name] = robot_path
-                        robot_base_frame_id = utils.get_robot_frame_id(topic_name)
+                        robot_base_frame_id = utils.get_robot_base_link_frame_id(
+                            topic_name
+                        )
                         if robot_base_frame_id is not None:
                             robot_base_frame_ids_new[topic_name] = robot_base_frame_id
 
