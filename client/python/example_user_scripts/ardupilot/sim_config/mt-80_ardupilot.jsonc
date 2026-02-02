@@ -547,7 +547,7 @@
       "enabled": true,
       "parent-link": "Frame",
       "disable-self-hits": true,
-      "draw-debug-points": true,
+      "draw-debug-points": false,
       "origin": {
         "xyz": "0.10 -0.10 0.0",
         "rpy-deg": "0 90 -60"
@@ -589,7 +589,7 @@
       "cluster-by-resolution": true,
       "rcs-adjust-factor": 0.1,
       "beam-radius": 0.005,
-      "draw-debug-points": true,
+      "draw-debug-points": false,
       "origin": {
         "xyz": "0.10 0.0 0.0",
         "rpy-deg": "0 0 0"
