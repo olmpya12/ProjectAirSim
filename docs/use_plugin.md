@@ -140,7 +140,7 @@ These classes can be used to serve local XYZ tile PNG responses from Unreal for 
    - `TileSize = 256`
 5. In `TileCameraActor`, set `OriginLat`, `OriginLon`, and tile axis options for your map convention.
 
-Rendered top-down tile example:
+Rendered top-down example:
 
 ![Unreal rendered tile output example](images/tile_http_render_example.png)
 
