@@ -123,17 +123,42 @@ Project AirSim now includes the following optional classes in the plugin module:
 - `ATileHttpServerActor` (`TileHttpServerActor.h/.cpp`)
 - `UTileMercatorLibrary` (`TileMercatorLibrary.h/.cpp`)
 
-These classes can be used to serve local XYZ tile PNG responses from Unreal:
+These classes can be used to serve local XYZ tile PNG responses from Unreal for tools such as QGroundControl custom maps.
 
-1. Add `TileCameraActor` to the map.
-2. Add `TileHttpServerActor` to the map.
-3. In `TileHttpServerActor`, set `TileCamera` to the placed `TileCameraActor`.
-4. Set `Port` and `RoutePrefix` (default route pattern: `/<RoutePrefix>/:z/:x/:y`).
-5. Enable `bRenderMissingTiles` if tiles should be rendered on-demand when missing on disk.
+### Basic setup in Unreal
+
+1. Add both actors to your map:
+   - `TileCameraActor`
+   - `TileHttpServerActor`
+2. In `TileHttpServerActor`, assign `TileCamera` to the placed `TileCameraActor`.
+3. Configure server values:
+   - `Port`: example `8081`
+   - `RoutePrefix`: example `/tiles`
+   - `bStartOnBeginPlay`: `true`
+4. For on-demand generation, set:
+   - `bRenderMissingTiles = true`
+   - `TileSize = 256`
+5. In `TileCameraActor`, set `OriginLat`, `OriginLon`, and tile axis options for your map convention.
+
+Rendered top-down tile example:
+
+![Unreal rendered tile output example](images/tile_http_render_example.png)
 
 Default tile cache location:
 
 - `Saved/Tiles/<z>/<x>/<y>.png` (relative to the Unreal project root)
+
+### QGroundControl custom map example
+
+In QGroundControl `Custom Map URL`, use:
+
+- `http://127.0.0.1:8081/tiles/{z}/{x}/{y}.png`
+
+Notes:
+
+- Use `{z}/{x}/{y}.png` placeholders exactly as shown.
+- If you use a different route prefix or port in Unreal, update the QGC URL to match.
+- If `bRenderMissingTiles` is `false`, only cached tile files are served.
 
 UE 5.2 compatibility notes:
 
