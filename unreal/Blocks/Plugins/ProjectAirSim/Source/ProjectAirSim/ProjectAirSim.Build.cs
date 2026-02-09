@@ -99,6 +99,7 @@ public class ProjectAirSim : ModuleRules
                 "CoreUObject",  // for base C++ project
                 "Engine",  // for base C++ project
                 "InputCore",  // for base C++ project
+                "HTTPServer",
                 "ImageWrapper",
                 "RenderCore",
                 "Renderer",

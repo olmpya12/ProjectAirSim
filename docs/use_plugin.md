@@ -115,6 +115,32 @@ or to force **all** content in the environment to always get cooked:
 bCookAll=True
 ```
 
+## Optional Tile Capture + HTTP Tile Server Actors (UE 5.2 compatible)
+
+Project AirSim now includes the following optional classes in the plugin module:
+
+- `ATileCameraActor` (`TileCameraActor.h/.cpp`)
+- `ATileHttpServerActor` (`TileHttpServerActor.h/.cpp`)
+- `UTileMercatorLibrary` (`TileMercatorLibrary.h/.cpp`)
+
+These classes can be used to serve local XYZ tile PNG responses from Unreal:
+
+1. Add `TileCameraActor` to the map.
+2. Add `TileHttpServerActor` to the map.
+3. In `TileHttpServerActor`, set `TileCamera` to the placed `TileCameraActor`.
+4. Set `Port` and `RoutePrefix` (default route pattern: `/<RoutePrefix>/:z/:x/:y`).
+5. Enable `bRenderMissingTiles` if tiles should be rendered on-demand when missing on disk.
+
+Default tile cache location:
+
+- `Saved/Tiles/<z>/<x>/<y>.png` (relative to the Unreal project root)
+
+UE 5.2 compatibility notes:
+
+- The implementation uses `HTTPServer` with response creation that is compatible with UE 5.2.
+- PNG compression flow is implemented to tolerate UE API differences across 5.x.
+- The plugin module includes the `HTTPServer` dependency in `ProjectAirSim.Build.cs`.
+
 ## How to add multiple drones
 
 You can also add more drones to the scene. See **[Multiple Robots in a Simulation](multiple_robots.md)** for more details.
