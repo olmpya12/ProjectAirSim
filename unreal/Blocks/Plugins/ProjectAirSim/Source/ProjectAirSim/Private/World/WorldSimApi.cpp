@@ -12,9 +12,11 @@
 #include "Renderers/ProcMeshActor.h"
 #include "Runtime/Core/Public/Async/ParallelFor.h"
 #include "WeatherLib.h"
+#include "assimp/Importer.hpp"
 #include "assimp/postprocess.h"
 #include "assimp/scene.h"
 #include "core_sim/actor/env_actor.hpp"
+#include "core_sim/geodetic_converter.hpp"
 
 namespace projectairsim = microsoft::projectairsim;
 

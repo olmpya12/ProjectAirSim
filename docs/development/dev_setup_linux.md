@@ -18,7 +18,7 @@ On Linux, Project AirSim can be developed with VS Code which provides a light-we
 
     - **make** - used by build scripts to drive CMake commands
     - **cmake** - used to build sim lib components
-    - **clang 13, libc++ 13** - used to build sim lib components and match the bundled toolchain of Unreal Engine 5.2
+    - **clang 13, libc++ 13** - used to build sim lib components (update if Unreal Engine 5.7 requires a newer toolchain)
     - **ninja** - used as the preferred CMake generator/build tool
     - **vulkan loader library** - for UE rendering on Linux (OpenGL has been deprecated)
     - **vulkan utils** - utilities like `vulkaninfo` for checking for graphics support
@@ -54,7 +54,7 @@ On Linux, Project AirSim can be developed with VS Code which provides a light-we
 
     See **[Optional VS Code User Settings](vscode_user_settings.md)** for some example customized user settings that can help with Project AirSim development.
 
-5. Install Unreal Engine 5.2
+5. Install Unreal Engine 5.7
 
     - Get UE source from **[Unreal Engine's private GitHub repo](https://github.com/EpicGames/UnrealEngine)** (requires **[registering with Epic](https://docs.unrealengine.com/en-US/GettingStarted/DownloadingUnrealEngine/index.html)**)
 

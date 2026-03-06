@@ -10,6 +10,7 @@
 #include <string>
 #include <unordered_map>
 
+#include "Constant.h"
 #include "Engine/Engine.h"
 #include "Interfaces/IPluginManager.h"
 #include "Kismet/KismetSystemLibrary.h"

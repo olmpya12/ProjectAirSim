@@ -9,6 +9,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "UObject/SoftObjectPtr.h"
 #include "Renderers/BlackSharkRenderer.hpp"
 #include "Robot/UnrealEnvActor.h"
 #include "Robot/UnrealRobot.h"
@@ -23,6 +24,10 @@
 
 // comment so that generated.h is always the last include file with clang-format
 #include "UnrealScene.generated.h"
+
+class AActor;
+class APlayerController;
+class UInputMappingContext;
 
 UCLASS()
 class AUnrealScene : public AActor {
@@ -40,6 +45,8 @@ class AUnrealScene : public AActor {
   void UnloadUnrealScene();
 
   void SwitchStreamingView();
+
+  void TogglePlayerDroneView();
 
   void ToggleTrace();
 
@@ -99,9 +106,17 @@ class AUnrealScene : public AActor {
   void UpdateWindVelocity(const microsoft::projectairsim::Vector3& wind_vel);
 
   void EnableUnrealViewportCamera(bool enable);
+  void EnsurePlayerInputEnabled(APlayerController* PlayerController);
+  void ApplyThirdPersonInputMapping(APlayerController* PlayerController);
+  void ApplyInputMappingContext(APlayerController* PlayerController,
+                                const TSoftObjectPtr<UInputMappingContext>&
+                                    MappingContextRef);
 
   nlohmann::json Get3DBoundingBoxServiceMethod(const std::string& object_name,
                                                int box_alignment);
+
+  AUnrealRobot* GetViewTargetRobot();
+  bool SetViewTargetToRobot(APlayerController* PlayerController);
 
   UWorld* unreal_world;
   microsoft::projectairsim::Scene* sim_scene;
@@ -111,6 +126,14 @@ class AUnrealScene : public AActor {
   TArray<AUnrealEnvActor*> unreal_env_actors;
   size_t idx_actor_to_view = 0;
   bool found_actor = false;
+  bool is_player_view_active_ = false;
+  TWeakObjectPtr<AActor> player_view_target_;
+  bool prefer_player_view_ = false;
+  bool pending_player_view_init_ = false;
+  bool allow_player_unpaused_ = false;
+  bool warned_missing_input_context_ = false;
+  TSoftObjectPtr<UInputMappingContext> third_person_input_context_;
+  TSoftObjectPtr<UInputMappingContext> third_person_input_context_secondary_;
 
   FCriticalSection UpdateMutex;
 

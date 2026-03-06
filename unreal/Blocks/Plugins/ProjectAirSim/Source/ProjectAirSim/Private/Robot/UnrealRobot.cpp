@@ -17,12 +17,15 @@
 #include "Engine/TextureRenderTarget2D.h"
 #include "GameFramework/GameUserSettings.h"
 #include "Misc/ScopeLock.h"
+#include "NiagaraComponent.h"
+#include "NiagaraSystem.h"
 #include "ProjectAirSim.h"
 #include "Runtime/Engine/Classes/Engine/StaticMesh.h"
 #include "Sensors/UnrealSensorFactory.h"
 #include "UnrealHelpers.h"
 #include "UnrealLogger.h"
 #include "UnrealScene.h"
+#include "UnrealTransforms.h"
 #include "core_sim/clock.hpp"
 #include "core_sim/math_utils.hpp"
 #include "core_sim/physics_common_types.hpp"
@@ -69,6 +72,7 @@ void AUnrealRobot::Initialize(const projectairsim::Robot& InSimRobot,
   InitializeLinks(InSimRobot.GetLinks(), RootLinks, bWithUnrealPhysics);
   InitializeJoints(InSimRobot.GetJoints());
   InitializeSensors(InSimRobot.GetSensors());
+  InitializeSprayerFx(InSimRobot.GetSprayerFxSettings());
 
   StreamingCameraActiveIdx = 0;
 
@@ -404,6 +408,113 @@ void AUnrealRobot::InitializeSensors(
       });
 }
 
+void AUnrealRobot::InitializeSprayerFx(
+    const std::vector<projectairsim::SprayerFxSettings>& InSettings) {
+  SprayerFxInstances.Empty();
+
+  for (const auto& Settings : InSettings) {
+    FSprayerFxInstance Instance;
+    Instance.Id = UTF8_TO_TCHAR(Settings.id.c_str());
+    Instance.FxPath = UTF8_TO_TCHAR(Settings.fx_path.c_str());
+    Instance.bEnabled = Settings.enabled;
+    Instance.RelativeTransform = UnrealTransform::FromGlobalNed(Settings.origin);
+
+    if (!Instance.bEnabled) {
+      SprayerFxInstances.Add(Instance.Id, Instance);
+      continue;
+    }
+
+    if (Instance.FxPath.IsEmpty()) {
+      UnrealLogger::Log(projectairsim::LogLevel::kWarning,
+                        TEXT("Sprayer FX '%s' has empty fx-path. Skipping."),
+                        *Instance.Id);
+      SprayerFxInstances.Add(Instance.Id, Instance);
+      continue;
+    }
+
+    USceneComponent* Parent = nullptr;
+    if (!Settings.parent_link.empty()) {
+      auto ParentItr = RobotLinks.find(Settings.parent_link);
+      if (ParentItr != RobotLinks.end()) {
+        Parent = ParentItr->second;
+      } else {
+        UnrealLogger::Log(
+            projectairsim::LogLevel::kWarning,
+            TEXT("Sprayer FX '%s' has invalid parent link '%hs'. Using root."),
+            *Instance.Id, Settings.parent_link.c_str());
+      }
+    }
+
+    if (Parent == nullptr) Parent = GetRootComponent();
+
+    if (Parent == nullptr) {
+      UnrealLogger::Log(projectairsim::LogLevel::kWarning,
+                        TEXT("Sprayer FX '%s' has no valid parent component."),
+                        *Instance.Id);
+      SprayerFxInstances.Add(Instance.Id, Instance);
+      continue;
+    }
+
+    UNiagaraSystem* NiagaraSystem =
+        LoadObject<UNiagaraSystem>(nullptr, *Instance.FxPath);
+    if (NiagaraSystem == nullptr) {
+      UnrealLogger::Log(projectairsim::LogLevel::kWarning,
+                        TEXT("Sprayer FX '%s' failed to load asset '%s'."),
+                        *Instance.Id, *Instance.FxPath);
+      SprayerFxInstances.Add(Instance.Id, Instance);
+      continue;
+    }
+
+    UNiagaraComponent* NiagaraComp = NewObject<UNiagaraComponent>(this);
+    if (NiagaraComp == nullptr) {
+      UnrealLogger::Log(projectairsim::LogLevel::kWarning,
+                        TEXT("Sprayer FX '%s' failed to create component."),
+                        *Instance.Id);
+      SprayerFxInstances.Add(Instance.Id, Instance);
+      continue;
+    }
+
+    NiagaraComp->SetAsset(NiagaraSystem);
+    NiagaraComp->SetAutoActivate(false);
+    NiagaraComp->SetupAttachment(Parent);
+    NiagaraComp->SetRelativeTransform(Instance.RelativeTransform);
+    NiagaraComp->RegisterComponent();
+
+    if (Settings.start_enabled) {
+      NiagaraComp->Activate(true);
+      Instance.bActive = true;
+    } else {
+      NiagaraComp->Deactivate();
+      Instance.bActive = false;
+    }
+
+    Instance.Component = NiagaraComp;
+    SprayerFxInstances.Add(Instance.Id, Instance);
+  }
+
+  UpdateSprayerFxState();
+}
+
+void AUnrealRobot::UpdateSprayerFxState() {
+  if (SprayerFxInstances.Num() == 0) return;
+
+  for (auto& Pair : SprayerFxInstances) {
+    FSprayerFxInstance& Instance = Pair.Value;
+    if (!Instance.bEnabled || !IsValid(Instance.Component)) continue;
+
+    const std::string SprayerId = TCHAR_TO_UTF8(*Instance.Id);
+    const bool bShouldBeActive = SimRobot.GetSprayerFxEnabled(SprayerId);
+    if (bShouldBeActive == Instance.bActive) continue;
+
+    Instance.bActive = bShouldBeActive;
+    if (bShouldBeActive) {
+      Instance.Component->Activate(true);
+    } else {
+      Instance.Component->Deactivate();
+    }
+  }
+}
+
 void AUnrealRobot::MoveRobotToUnrealPose(bool bUseCollisionSweep) {
   if (RobotRootLink == nullptr || bHasKinematicsUpdated == false) return;
 
@@ -660,6 +771,7 @@ void AUnrealRobot::Tick(float DeltaTime) {
   }  // end conditions by physics type
 
   ApplyActuatedTransforms();
+  UpdateSprayerFxState();
 
   // For all physics types, set a flag and pose timestamp on the sensors to
   // synchronize their updates with the robot's pose

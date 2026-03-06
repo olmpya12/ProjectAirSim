@@ -86,7 +86,7 @@ To connect to a remote PixelStreaming view, such as running the sim server on Az
 
 1. Ensure port 80 is open for TCP and UDP on the sim server compute machine (including through any OS firewall settings) to allow the stream viewer web browser to connect to the Signalling Web Server and proxy user inputs back to the server.
 
-2. The Signalling Web Server launching scripts need to detect the server's public IP for the STUN server to connect the client to the server over the internet. As of UE 5.2, there are some bugs in the launching scripts that prevent the public IP from being detected correctly. To fix these bugs, manually modify the scripts as follows:
+2. The Signalling Web Server launching scripts need to detect the server's public IP for the STUN server to connect the client to the server over the internet. If you see the public IP detection bug when using UE 5.7, apply the following fixes:
 
     **(Linux) Start_Common.sh**
 

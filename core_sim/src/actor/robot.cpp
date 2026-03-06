@@ -6,6 +6,7 @@
 #include "core_sim/actor/robot.hpp"
 
 #include <memory>
+#include <mutex>
 
 #include "actor_impl.hpp"
 #include "actuators/actuator_impl.hpp"
@@ -52,6 +53,8 @@ class Robot::Loader {
   void LoadActuators(const json& json);
 
   void LoadPhysicsType(const json& json);
+
+  void LoadSprayerFx(const json& json);
 
   void LoadController(const json& json);
 
@@ -144,6 +147,10 @@ class Robot::Impl : public ActorImpl {
   const std::string& GetControllerType() const;
   const std::string& GetControllerSettings() const;
 
+  const std::vector<SprayerFxSettings>& GetSprayerFxSettings() const;
+  bool SetSprayerFxEnabled(const std::string& sprayer_id, bool enabled);
+  bool GetSprayerFxEnabled(const std::string& sprayer_id) const;
+
   void UpdateCollisionInfo(const CollisionInfo& collision_info);
   void SetHasCollided(bool has_collided);
   void UpdateControlInput();
@@ -188,6 +195,11 @@ class Robot::Impl : public ActorImpl {
 
   std::string controller_type_;
   std::string controller_settings_;
+
+  std::vector<SprayerFxSettings> sprayer_fx_settings_;
+  std::unordered_map<std::string, size_t> sprayer_fx_index_by_id_;
+  mutable std::mutex sprayer_fx_mutex_;
+  std::vector<bool> sprayer_fx_enabled_;
 
   std::vector<std::unique_ptr<Sensor>> sensors_;
   std::vector<std::reference_wrapper<Sensor>> sensors_ref_;
@@ -408,6 +420,20 @@ const std::string& Robot::GetControllerType() const {
 
 const std::string& Robot::GetControllerSettings() const {
   return static_cast<Robot::Impl*>(pimpl_.get())->GetControllerSettings();
+}
+
+const std::vector<SprayerFxSettings>& Robot::GetSprayerFxSettings() const {
+  return static_cast<Robot::Impl*>(pimpl_.get())->GetSprayerFxSettings();
+}
+
+bool Robot::SetSprayerFxEnabled(const std::string& sprayer_id, bool enabled) {
+  return static_cast<Robot::Impl*>(pimpl_.get())
+      ->SetSprayerFxEnabled(sprayer_id, enabled);
+}
+
+bool Robot::GetSprayerFxEnabled(const std::string& sprayer_id) const {
+  return static_cast<Robot::Impl*>(pimpl_.get())
+      ->GetSprayerFxEnabled(sprayer_id);
 }
 
 const CollisionInfo& Robot::GetCollisionInfo() const {
@@ -720,6 +746,13 @@ void Robot::Impl::RegisterServiceMethods() {
   auto get_camera_ray_handler =
       get_camera_ray.CreateMethodHandler(&Robot::Impl::GetCameraRay, *this);
   service_manager_.RegisterMethod(get_camera_ray, get_camera_ray_handler);
+
+  auto set_sprayer_fx =
+      ServiceMethod(topic_path_ + "/SetSprayerFx", {"sprayer_id", "enabled"});
+  auto set_sprayer_fx_handler =
+      set_sprayer_fx.CreateMethodHandler(&Robot::Impl::SetSprayerFxEnabled,
+                                         *this);
+  service_manager_.RegisterMethod(set_sprayer_fx, set_sprayer_fx_handler);
 }
 
 bool Robot::Impl::SetExternalForce(const std::vector<float>& ext_force) {
@@ -994,6 +1027,40 @@ const std::string& Robot::Impl::GetControllerType() const {
 
 const std::string& Robot::Impl::GetControllerSettings() const {
   return controller_settings_;
+}
+
+const std::vector<SprayerFxSettings>& Robot::Impl::GetSprayerFxSettings()
+    const {
+  return sprayer_fx_settings_;
+}
+
+bool Robot::Impl::SetSprayerFxEnabled(const std::string& sprayer_id,
+                                      bool enabled) {
+  std::lock_guard<std::mutex> lock(sprayer_fx_mutex_);
+  auto it = sprayer_fx_index_by_id_.find(sprayer_id);
+  if (it == sprayer_fx_index_by_id_.end()) {
+    logger_.LogWarning(name_, "[%s] Sprayer FX id '%s' not found.",
+                       id_.c_str(), sprayer_id.c_str());
+    return false;
+  }
+
+  const auto& settings = sprayer_fx_settings_.at(it->second);
+  if (!settings.enabled) {
+    logger_.LogWarning(name_,
+                       "[%s] Sprayer FX '%s' is disabled in config.",
+                       id_.c_str(), sprayer_id.c_str());
+    return false;
+  }
+
+  sprayer_fx_enabled_.at(it->second) = enabled;
+  return true;
+}
+
+bool Robot::Impl::GetSprayerFxEnabled(const std::string& sprayer_id) const {
+  std::lock_guard<std::mutex> lock(sprayer_fx_mutex_);
+  auto it = sprayer_fx_index_by_id_.find(sprayer_id);
+  if (it == sprayer_fx_index_by_id_.end()) return false;
+  return sprayer_fx_enabled_.at(it->second);
 }
 
 Pose Robot::Impl::GetCameraRay(const std::string& camera_id, int image_type,
@@ -1273,6 +1340,7 @@ void Robot::Loader::Load(const json& json) {
   LoadJoints(json);
   LoadSensors(json);
   LoadActuators(json);
+  LoadSprayerFx(json);
   LoadController(json);
 
   impl_.is_loaded_ = true;
@@ -1388,6 +1456,79 @@ void Robot::Loader::LoadActuators(const json& json) {
     throw;
   }
   impl_.logger_.LogVerbose(impl_.name_, "[%s] 'actuators' loaded.",
+                           impl_.id_.c_str());
+}
+
+void Robot::Loader::LoadSprayerFx(const json& json) {
+  impl_.logger_.LogVerbose(impl_.name_, "[%s] Loading 'fx'.",
+                           impl_.id_.c_str());
+
+  impl_.sprayer_fx_settings_.clear();
+  impl_.sprayer_fx_enabled_.clear();
+  impl_.sprayer_fx_index_by_id_.clear();
+
+  auto fx_json = JsonUtils::GetJsonObject(json, Constant::Config::fx);
+  if (JsonUtils::IsEmpty(fx_json)) {
+    impl_.logger_.LogVerbose(impl_.name_, "[%s] 'fx' missing or empty.",
+                             impl_.id_.c_str());
+    return;
+  }
+
+  auto sprayers_json =
+      JsonUtils::GetArray(fx_json, Constant::Config::sprayers);
+  if (JsonUtils::IsEmptyArray(sprayers_json)) {
+    impl_.logger_.LogVerbose(impl_.name_, "[%s] 'sprayers' missing or empty.",
+                             impl_.id_.c_str());
+    return;
+  }
+
+  try {
+    for (const auto& sprayer_json : sprayers_json) {
+      SprayerFxSettings settings;
+      settings.id =
+          JsonUtils::GetIdentifier(sprayer_json, Constant::Config::id);
+      settings.enabled = JsonUtils::GetBoolean(
+          sprayer_json, Constant::Config::enabled, true);
+      settings.start_enabled = JsonUtils::GetBoolean(
+          sprayer_json, Constant::Config::start_enabled, false);
+      settings.parent_link =
+          JsonUtils::GetString(sprayer_json, Constant::Config::parent_link, "");
+      settings.origin =
+          JsonUtils::GetTransform(sprayer_json, Constant::Config::origin);
+      settings.fx_path =
+          JsonUtils::GetString(sprayer_json, Constant::Config::fx_path, "");
+
+      if (settings.id.empty()) {
+        impl_.logger_.LogWarning(
+            impl_.name_,
+            "[%s] Sprayer FX has empty id. Skipping this entry.",
+            impl_.id_.c_str());
+        continue;
+      }
+
+      if (impl_.sprayer_fx_index_by_id_.count(settings.id) > 0) {
+        impl_.logger_.LogWarning(
+            impl_.name_,
+            "[%s] Duplicate sprayer FX id '%s'. Skipping this entry.",
+            impl_.id_.c_str(), settings.id.c_str());
+        continue;
+      }
+
+      const size_t idx = impl_.sprayer_fx_settings_.size();
+      impl_.sprayer_fx_index_by_id_.emplace(settings.id, idx);
+      impl_.sprayer_fx_settings_.emplace_back(std::move(settings));
+      impl_.sprayer_fx_enabled_.push_back(
+          impl_.sprayer_fx_settings_.back().enabled &&
+          impl_.sprayer_fx_settings_.back().start_enabled);
+    }
+  } catch (...) {
+    impl_.sprayer_fx_settings_.clear();
+    impl_.sprayer_fx_enabled_.clear();
+    impl_.sprayer_fx_index_by_id_.clear();
+    throw;
+  }
+
+  impl_.logger_.LogVerbose(impl_.name_, "[%s] 'fx' loaded.",
                            impl_.id_.c_str());
 }
 

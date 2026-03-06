@@ -127,7 +127,11 @@ ExternalProject_Add(nng-external
         -DCMAKE_INSTALL_MESSAGE=LAZY  # don't print out all files copied
         -DCMAKE_BUILD_TYPE:STRING=${NNG_BUILD_TYPE}  # for single-config generators (Ninja)
         -DNNG_HAVE_GETRANDOM=False  # llvm-ar fails to find symbol `getrandom` (a syscall on Linux); Requires glibc >=2.25
-        -DNNG_TESTS=False  # don't build NNG's unit tests
+        -DNNG_TESTS=OFF  # don't build NNG's unit tests
+        -DNNG_ENABLE_TESTS=OFF
+        -DNNG_BUILD_TESTS=OFF
+        -DNNG_ENABLE_TOOLS=OFF
+        -DBUILD_TESTING=OFF
     EXCLUDE_FROM_ALL        True
 )
 set(NNG_LIB_DIR ${CMAKE_BINARY_DIR}/_deps/nng-install/lib)

@@ -7,7 +7,7 @@ if [ -z "$UE_ROOT" ]
 then
   echo
   echo ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-    Unreal engine\'s root folder path, ex. /home/projectairsimuser/UnrealEngine-5.0.3
+    Unreal engine\'s root folder path, ex. /home/projectairsimuser/UnrealEngine-5.7.0
 else
   # Generate VS Code UE project files (overwrites .vscode\settings.json)
   echo Generating VS Code project files with environment variable UE_ROOT=$UE_ROOT

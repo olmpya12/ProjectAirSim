@@ -11,15 +11,20 @@
 #include "DrawDebugHelpers.h"
 #include "Engine/Engine.h"
 #include "Engine/World.h"
+#include "EnhancedInputSubsystems.h"
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/PlayerInput.h"
+#include "InputMappingContext.h"
 #include "Kismet/GameplayStatics.h"
+#include "ProjectAirSimGameMode.h"
 #include "ProjectAirSim.h"
 #include "Robot/UnrealEnvActor.h"
 #include "Robot/UnrealRobot.h"
+#include "Sensors/UnrealCamera.h"
 #include "UObject/ConstructorHelpers.h"
 #include "UnrealHelpers.h"
 #include "UnrealLogger.h"
+#include "World/WorldSimApi.h"
 #include "World/WeatherLib.h"
 #include "core_sim/clock.hpp"
 
@@ -214,10 +219,138 @@ void AUnrealScene::SwitchStreamingView() {
   found_actor = true;
   UnrealRobotToView->SetViewportResolution();
   unreal_world->GetFirstPlayerController()->SetViewTarget(UnrealRobotToView);
+  is_player_view_active_ = false;
 
   UnrealLogger::Log(projectairsim::LogLevel::kTrace,
                     TEXT("[UnrealScene] Switched view to actor: %s"),
                     *(unreal_actors[idx_actor_to_view]->GetName()));
+}
+
+AUnrealRobot* AUnrealScene::GetViewTargetRobot() {
+  if (unreal_actors.Num() == 0) {
+    found_actor = false;
+    return nullptr;
+  }
+
+  int32 StartIndex = static_cast<int32>(idx_actor_to_view);
+  if (StartIndex < 0 || StartIndex >= unreal_actors.Num()) {
+    StartIndex = 0;
+  }
+
+  AUnrealRobot* Candidate = unreal_actors[StartIndex];
+  if (Candidate != nullptr &&
+      Candidate->GetActiveStreamingCapture() != nullptr) {
+    idx_actor_to_view = StartIndex;
+    return Candidate;
+  }
+
+  for (int32 i = 0; i < unreal_actors.Num(); ++i) {
+    Candidate = unreal_actors[i];
+    if (Candidate != nullptr &&
+        Candidate->GetActiveStreamingCapture() != nullptr) {
+      idx_actor_to_view = i;
+      return Candidate;
+    }
+  }
+
+  for (int32 i = 0; i < unreal_actors.Num(); ++i) {
+    Candidate = unreal_actors[i];
+    if (Candidate != nullptr) {
+      idx_actor_to_view = i;
+      return Candidate;
+    }
+  }
+
+  found_actor = false;
+  return nullptr;
+}
+
+bool AUnrealScene::SetViewTargetToRobot(APlayerController* PlayerController) {
+  if (PlayerController == nullptr) return false;
+
+  AUnrealRobot* UnrealRobotToView = GetViewTargetRobot();
+  if (UnrealRobotToView == nullptr) {
+    found_actor = false;
+    return false;
+  }
+
+  found_actor = true;
+  UnrealRobotToView->SetViewportResolution();
+  PlayerController->SetViewTarget(UnrealRobotToView);
+  return true;
+}
+
+void AUnrealScene::EnsurePlayerInputEnabled(APlayerController* PlayerController) {
+  if (PlayerController == nullptr) return;
+
+  PlayerController->EnableInput(PlayerController);
+  PlayerController->SetIgnoreMoveInput(false);
+  PlayerController->SetIgnoreLookInput(false);
+  PlayerController->bShowMouseCursor = false;
+
+  FInputModeGameOnly InputMode;
+  PlayerController->SetInputMode(InputMode);
+
+  ApplyThirdPersonInputMapping(PlayerController);
+}
+
+void AUnrealScene::ApplyThirdPersonInputMapping(APlayerController* PlayerController) {
+  ApplyInputMappingContext(PlayerController, third_person_input_context_);
+  ApplyInputMappingContext(PlayerController, third_person_input_context_secondary_);
+}
+
+void AUnrealScene::ApplyInputMappingContext(
+    APlayerController* PlayerController,
+    const TSoftObjectPtr<UInputMappingContext>& MappingContextRef) {
+  if (PlayerController == nullptr) return;
+  if (MappingContextRef.IsNull()) return;
+
+  ULocalPlayer* LocalPlayer = PlayerController->GetLocalPlayer();
+  if (LocalPlayer == nullptr) return;
+
+  UEnhancedInputLocalPlayerSubsystem* InputSubsystem =
+      ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LocalPlayer);
+  if (InputSubsystem == nullptr) return;
+
+  UInputMappingContext* MappingContext = MappingContextRef.LoadSynchronous();
+  if (MappingContext == nullptr) {
+    if (!warned_missing_input_context_) {
+      warned_missing_input_context_ = true;
+      UnrealLogger::Log(
+          projectairsim::LogLevel::kWarning,
+          TEXT("[UnrealScene] ThirdPersonInputMappingContext could not be loaded."));
+    }
+    return;
+  }
+
+  if (!InputSubsystem->HasMappingContext(MappingContext)) {
+    InputSubsystem->AddMappingContext(MappingContext, 0);
+  }
+}
+
+void AUnrealScene::TogglePlayerDroneView() {
+  if (unreal_viewport_camera_) return;
+
+  APlayerController* PlayerController =
+      unreal_world ? unreal_world->GetFirstPlayerController() : nullptr;
+  if (PlayerController == nullptr) return;
+
+  if (is_player_view_active_) {
+    if (SetViewTargetToRobot(PlayerController)) {
+      is_player_view_active_ = false;
+    }
+    return;
+  }
+
+  if (!player_view_target_.IsValid()) {
+    player_view_target_ = PlayerController->GetPawn();
+  }
+
+  if (player_view_target_.IsValid()) {
+    PlayerController->SetViewTarget(player_view_target_.Get());
+    EnsurePlayerInputEnabled(PlayerController);
+    is_player_view_active_ = true;
+  }
 }
 
 void AUnrealScene::ToggleTrace() {
@@ -320,12 +453,37 @@ void AUnrealScene::BeginPlay() {
   // Set up keyboard input bindings (use Tab key to switch chase cam target)
   APlayerController* P1Controller = unreal_world->GetFirstPlayerController();
   EnableInput(P1Controller);
+  prefer_player_view_ = false;
+  allow_player_unpaused_ = false;
+  third_person_input_context_ = nullptr;
+  third_person_input_context_secondary_ = nullptr;
+  if (unreal_world) {
+    if (const auto* GameMode =
+            Cast<AProjectAirSimGameMode>(unreal_world->GetAuthGameMode())) {
+      prefer_player_view_ = GameMode->bUseThirdPersonPawn;
+      allow_player_unpaused_ = GameMode->bAllowPlayerMovementWithSteppableClock;
+      third_person_input_context_ = GameMode->ThirdPersonInputMappingContext;
+      third_person_input_context_secondary_ =
+          GameMode->ThirdPersonInputMappingContextSecondary;
+    }
+  }
+  player_view_target_ = P1Controller ? P1Controller->GetPawn() : nullptr;
+  is_player_view_active_ = player_view_target_.IsValid();
+  pending_player_view_init_ = prefer_player_view_ && !is_player_view_active_;
 
   if (sim_scene && !sim_scene->GetVRMode()) {
     FInputActionKeyMapping SwitchViewAction("SwitchStreamingView", EKeys::Tab);
     P1Controller->PlayerInput->AddActionMapping(SwitchViewAction);
     InputComponent->BindAction("SwitchStreamingView", IE_Pressed, this,
                                &AUnrealScene::SwitchStreamingView);
+  }
+
+  if (sim_scene && !sim_scene->GetVRMode()) {
+    FInputActionKeyMapping TogglePlayerViewAction("TogglePlayerDroneView",
+                                                  EKeys::V);
+    P1Controller->PlayerInput->AddActionMapping(TogglePlayerViewAction);
+    InputComponent->BindAction("TogglePlayerDroneView", IE_Pressed, this,
+                               &AUnrealScene::TogglePlayerDroneView);
   }
 
   // Set up keyboard input bindings (use T key to enable/disable path tracing)
@@ -335,30 +493,22 @@ void AUnrealScene::BeginPlay() {
                              &AUnrealScene::ToggleTrace);
 
   if (sim_scene && !sim_scene->GetVRMode()) {
-    // Set game view target to one of the robots
-    idx_actor_to_view = 0;
-    AUnrealRobot* UnrealRobotToView = nullptr;
-    if (unreal_actors.Num() > 0) {
-      // Find the first robot with a valid streaming camera. If no robots have
-      // any valid streaming cameras, leave the view target index as the first
-      // robot since the view will fall back to the origin of the actor to still
-      // be able to display something.
-      for (int i = 0; i < unreal_actors.Num(); ++i) {
-        UnrealRobotToView = unreal_actors[i];
-        if (UnrealRobotToView != nullptr &&
-            UnrealRobotToView->GetActiveStreamingCapture() != nullptr) {
-          idx_actor_to_view = i;
-          break;
-        }
+    if (prefer_player_view_) {
+      if (player_view_target_.IsValid()) {
+        P1Controller->SetViewTarget(player_view_target_.Get());
+        EnsurePlayerInputEnabled(P1Controller);
+        is_player_view_active_ = true;
       }
-
-      UnrealRobotToView = unreal_actors[idx_actor_to_view];
-      if (UnrealRobotToView != nullptr) {
-        found_actor = true;
-        UnrealRobotToView->SetViewportResolution();
-        P1Controller->SetViewTarget(UnrealRobotToView);
+    } else {
+      if (!is_player_view_active_) {
+      if (SetViewTargetToRobot(P1Controller)) {
+        is_player_view_active_ = false;
       }
+    } else if (player_view_target_.IsValid()) {
+      P1Controller->SetViewTarget(player_view_target_.Get());
+      EnsurePlayerInputEnabled(P1Controller);
     }
+  }
   }
 
   // Initialize WorldSimAPI, Weather, and TimeOfDay
@@ -462,10 +612,38 @@ void AUnrealScene::Tick(float DeltaTime) {
     // Unreal time follows after SimClock so just check if sim time has
     // advanced to decide if Unreal needs to pause/resume to stay in sync.
     cur_sim_time = projectairsim::SimClock::Get()->NowSimNanos();
-    if (is_unreal_paused && unreal_time < cur_sim_time) {
-      UGameplayStatics::SetGamePaused(unreal_world, false);
-    } else if (!is_unreal_paused && unreal_time >= cur_sim_time) {
-      UGameplayStatics::SetGamePaused(unreal_world, true);
+    const bool allow_player_unpaused =
+        allow_player_unpaused_ && is_player_view_active_;
+    if (allow_player_unpaused) {
+      if (is_unreal_paused) {
+        UGameplayStatics::SetGamePaused(unreal_world, false);
+      }
+    } else {
+      if (is_unreal_paused && unreal_time < cur_sim_time) {
+        UGameplayStatics::SetGamePaused(unreal_world, false);
+      } else if (!is_unreal_paused && unreal_time >= cur_sim_time) {
+        UGameplayStatics::SetGamePaused(unreal_world, true);
+      }
+    }
+  }
+
+  if (prefer_player_view_) {
+    APlayerController* P1Controller =
+        unreal_world ? unreal_world->GetFirstPlayerController() : nullptr;
+    if (P1Controller) {
+      if (APawn* Pawn = P1Controller->GetPawn()) {
+        player_view_target_ = Pawn;
+      }
+      if (player_view_target_.IsValid()) {
+        is_player_view_active_ =
+            (P1Controller->GetViewTarget() == player_view_target_.Get());
+        if (allow_player_unpaused_ && is_player_view_active_) {
+          if (UGameplayStatics::IsGamePaused(unreal_world)) {
+            UGameplayStatics::SetGamePaused(unreal_world, false);
+          }
+          EnsurePlayerInputEnabled(P1Controller);
+        }
+      }
     }
   }
 
@@ -485,6 +663,22 @@ void AUnrealScene::Tick(float DeltaTime) {
 
   // Save sim time for next loop
   unreal_time = cur_sim_time;
+
+  if (pending_player_view_init_) {
+    APlayerController* P1Controller =
+        unreal_world ? unreal_world->GetFirstPlayerController() : nullptr;
+    if (P1Controller) {
+      if (!player_view_target_.IsValid()) {
+        player_view_target_ = P1Controller->GetPawn();
+      }
+      if (player_view_target_.IsValid()) {
+        P1Controller->SetViewTarget(player_view_target_.Get());
+        EnsurePlayerInputEnabled(P1Controller);
+        is_player_view_active_ = true;
+        pending_player_view_init_ = false;
+      }
+    }
+  }
 
   if (time_of_day->tod_move_sun_) time_of_day->advance();
 
@@ -609,7 +803,6 @@ bool AUnrealScene::GetSimBoundingBox3D(
 
 nlohmann::json AUnrealScene::Get3DBoundingBoxServiceMethod(
     const std::string& object_name, int box_alignment) {
-  FRotator BoxRotation;
   FOrientedBox OrientedBox;
   projectairsim::BBox3D OutBBox;
   auto BoxAlignment =

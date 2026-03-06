@@ -1,0 +1,135 @@
+Project AirSim UE 5.7 Upgrade - Implementation TODO
+================================================================================
+
+Status: FINAL
+Owner: TBD
+Date: 2026-02-02
+
+Context
+--------------------------------------------------------------------------------
+- Project: Project AirSim (Blocks UE environment + ProjectAirSim plugin + sim libs)
+- Target: Upgrade UE dependency and project metadata to 5.7; update scripts/docs; rebuild sim libs + plugin + Blocks; validate runtime.
+- Constraints: Windows-only for now; keep Epic Launcher binary UE distribution.
+- Dependencies: UE 5.7 installed (Launcher), UE_ROOT set, VS toolchain matching UE 5.7.
+- Compatibility: Drop UE 5.2 support.
+- Legacy docs: Leave docs_external as-is.
+
+Discussion / Open Questions
+--------------------------------------------------------------------------------
+[ ] Are there any other Unreal environments or plugins besides `unreal/Blocks` that need UE 5.7 upgrades?
+
+================================================================================
+PHASE 1: Scope & Inventory
+================================================================================
+
+[ ] 1.1 Audit UE version references and generated outputs
+    Location: docs/development/dev_setup_win.md, docs/development/dev_setup_linux.md,
+              docs/development/use_source.md, docs/sensors/camera_streaming.md,
+              unreal/Blocks/Blocks.uproject, unreal/Blocks/Binaries/Win64/*.target,
+              unreal/Blocks/blocks_genprojfiles_*.bat, unreal/Blocks/blocks_genprojfiles_vscode.sh,
+              build_windows.mk
+    - Implementation details: confirm which references are informational vs functional; mark generated files to regenerate.
+    - Acceptance criteria: agreed list of files to update or regenerate.
+
+================================================================================
+PHASE 2: Project Metadata and Scripts
+================================================================================
+
+[ ] 2.1 Update engine association for Blocks project
+    Location: unreal/Blocks/Blocks.uproject
+    - Implementation details: set EngineAssociation to "5.7".
+    - Acceptance criteria: Blocks opens in UE 5.7 without upgrade prompt.
+
+[ ] 2.2 Refresh UE_ROOT examples in generator scripts
+    Location: unreal/Blocks/blocks_genprojfiles_vs2019.bat,
+              unreal/Blocks/blocks_genprojfiles_vs2022.bat,
+              unreal/Blocks/blocks_genprojfiles_vscode.bat,
+              unreal/Blocks/blocks_genprojfiles_vscode.sh
+    - Implementation details: update example paths to UE_5.7 naming.
+    - Acceptance criteria: scripts run and generate project files with UE 5.7 when UE_ROOT is set.
+
+[ ] 2.3 Update build script UE_ROOT example text
+    Location: build_windows.mk
+    - Implementation details: replace old example paths with UE_5.7.
+    - Acceptance criteria: error/help messages reflect UE 5.7.
+
+[ ] 2.4 Purge stale UE 5.2 build artifacts before regeneration
+    Location: unreal/Blocks/Binaries, unreal/Blocks/Build, unreal/Blocks/Intermediate,
+              unreal/Blocks/Plugins/ProjectAirSim/Binaries,
+              unreal/Blocks/Plugins/ProjectAirSim/Intermediate
+    - Implementation details: use `build.cmd clean` or delete generated folders.
+    - Acceptance criteria: next UBT run regenerates binaries for UE 5.7.
+
+================================================================================
+PHASE 3: Code and Plugin Migration
+================================================================================
+
+[ ] 3.1 Regenerate project files and re-run UBT for UE 5.7
+    Location: unreal/Blocks/Blocks.uproject, unreal/Blocks/Source/Blocks.Target.cs,
+              unreal/Blocks/Source/BlocksEditor.Target.cs
+    - Implementation details: run blocks_genprojfiles_*; adjust BuildSettingsVersion/IncludeOrderVersion if 5.7 requires.
+    - Acceptance criteria: UBT project generation succeeds with UE 5.7.
+
+[ ] 3.2 Update module rules for UE 5.7 compatibility
+    Location: unreal/Blocks/Plugins/ProjectAirSim/Source/ProjectAirSim/ProjectAirSim.Build.cs
+    - Implementation details: reconcile IWYU settings, module deps (PixelStreaming, Renderer, RHI), and any UE 5.7 rule changes.
+    - Acceptance criteria: ProjectAirSim module builds without rule warnings.
+
+[ ] 3.3 Fix UE 5.7 API breakages surfaced by build
+    Location: unreal/Blocks/Plugins/ProjectAirSim/Source/ProjectAirSim/**,
+              unreal/Blocks/Source/Blocks/**
+    - Implementation details: update includes, renamed APIs, deprecated types, PixelStreaming settings in UnrealSimLoader.cpp.
+    - Acceptance criteria: Editor and game targets compile for DebugGame and Development.
+
+================================================================================
+PHASE 4: Documentation Update
+================================================================================
+
+[ ] 4.1 Update Windows setup guide for UE 5.7
+    Location: docs/development/dev_setup_win.md
+    - Implementation details: update UE version references, UE_ROOT examples, toolchain notes.
+    - Acceptance criteria: doc consistently references UE 5.7.
+
+[ ] 4.2 Update Linux setup notes for UE 5.7 toolchain awareness
+    Location: docs/development/dev_setup_linux.md
+    - Implementation details: update UE version references; note toolchain alignment if needed.
+    - Acceptance criteria: doc consistently references UE 5.7.
+
+[ ] 4.3 Update build-from-source guidance for UE 5.7 toolset
+    Location: docs/development/use_source.md
+    - Implementation details: replace UE 5.2 toolset wording with UE 5.7 guidance.
+    - Acceptance criteria: toolset notes no longer mention UE 5.2.
+
+[ ] 4.4 Revalidate PixelStreaming guidance for UE 5.7
+    Location: docs/sensors/camera_streaming.md
+    - Implementation details: keep workaround note but make it conditional for UE 5.7.
+    - Acceptance criteria: guidance matches current UE 5.7 behavior or remains clearly conditional.
+
+================================================================================
+PHASE N: Build, Test & Validation
+================================================================================
+
+[ ] N.1 Build / compile (Windows)
+    - Commands:
+        - `build.cmd clean`
+        - `build.cmd simlibs_debug`
+        - `build.cmd simlibs_release`
+        - `build.cmd blocks_debuggame`
+        - `build.cmd blocks_development`
+    - Expected result: all targets build without errors; UE 5.7 binaries generated.
+
+[ ] N.2 Tests
+    - Commands:
+        - `build.cmd test_simlibs_debug`
+        - `build.cmd test_simlibs_release`
+    - Expected result: all sim lib tests pass.
+
+[ ] N.3 Runtime checks
+    - What to verify:
+        - Open `unreal/Blocks/Blocks.uproject` in UE 5.7 Editor and Play-in-Editor spawns the drone.
+        - Run `client/python/example_user_scripts/ardupilot/ardupilot_quadrotor.py` and validate API connectivity.
+        - If using PixelStreaming, verify stream starts with `-PixelStreamingURL` args.
+
+================================================================================
+END OF TODO
+================================================================================

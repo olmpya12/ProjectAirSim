@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "CoreMinimal.h"
+#include "UnrealCamera.h"
 #include "UnrealCameraRenderRequest.h"
 #include "core_sim/sensors/camera.hpp"
 #include "core_sim/transforms/transform_utils.hpp"

@@ -11,7 +11,8 @@ public class BlocksEditorTarget : TargetRules
 	public BlocksEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-		DefaultBuildSettings = BuildSettingsVersion.V2;
+		DefaultBuildSettings = BuildSettingsVersion.V6;
+		CppStandard = CppStandardVersion.Cpp20;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;  // from UE5.1
 		ExtraModuleNames.AddRange(new string[] { "Blocks" });
 

@@ -63,6 +63,18 @@ CMAKE_CMD = cmake -G "Ninja" \
 CMAKE_DBG_BUILD_CMD = cmake --build $(CMAKE_BUILD_DIR)\Debug
 CMAKE_REL_BUILD_CMD = cmake --build $(CMAKE_BUILD_DIR)\Release
 
+!ifdef UE_COMPILER_VERSION
+UE_COMPILER_VERSION_ARG = -CompilerVersion=$(UE_COMPILER_VERSION)
+!else
+UE_COMPILER_VERSION_ARG =
+!endif
+
+!ifdef UE_TOOLCHAIN_VERSION
+UE_TOOLCHAIN_VERSION_ARG = -VCToolchainVersion=$(UE_TOOLCHAIN_VERSION)
+!else
+UE_TOOLCHAIN_VERSION_ARG =
+!endif
+
 .PHONY: config_simlibs_debug
 config_simlibs_debug:
 	@echo =======================================================================
@@ -154,13 +166,11 @@ blocks_debuggame: simlibs_debug
 !ifndef UE_ROOT
 	@echo.
 	@echo ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_4.25
+	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_5.7
 !else
 	@echo UE_ROOT env variable set to: %%UE_ROOT%%
-	"%UE_ROOT%\Engine\Build\BatchFiles\Build.bat" Blocks Win64 DebugGame \
-		-project="%CD%\unreal\Blocks\Blocks.uproject"
-	"%UE_ROOT%\Engine\Build\BatchFiles\Build.bat" BlocksEditor Win64 DebugGame \
-		-project="%CD%\unreal\Blocks\Blocks.uproject"
+	"$(UE_ROOT)\Engine\Build\BatchFiles\Build.bat" Blocks Win64 DebugGame -project="$(MAKEDIR)\unreal\Blocks\Blocks.uproject" $(UE_COMPILER_VERSION_ARG) $(UE_TOOLCHAIN_VERSION_ARG)
+	"$(UE_ROOT)\Engine\Build\BatchFiles\Build.bat" BlocksEditor Win64 DebugGame -project="$(MAKEDIR)\unreal\Blocks\Blocks.uproject" $(UE_COMPILER_VERSION_ARG) $(UE_TOOLCHAIN_VERSION_ARG)
 !endif
 
 .PHONY: blocks_development
@@ -170,11 +180,10 @@ blocks_development: simlibs_release
 !ifndef UE_ROOT
 	@echo.
 	@echo ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_4.25
+	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_5.7
 !else
 	@echo UE_ROOT env variable set to: %%UE_ROOT%%
-	"%UE_ROOT%\Engine\Build\BatchFiles\Build.bat" Blocks Win64 Development \
-		-project="%CD%\unreal\Blocks\Blocks.uproject"
+	"$(UE_ROOT)\Engine\Build\BatchFiles\Build.bat" Blocks Win64 Development -project="$(MAKEDIR)\unreal\Blocks\Blocks.uproject" $(UE_COMPILER_VERSION_ARG) $(UE_TOOLCHAIN_VERSION_ARG)
 !endif
 
 .PHONY: blocks_shipping
@@ -184,11 +193,10 @@ blocks_shipping: simlibs_release
 !ifndef UE_ROOT
 	@echo.
 	@echo ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_4.25
+	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_5.7
 !else
 	@echo UE_ROOT env variable set to: %%UE_ROOT%%
-	"%UE_ROOT%\Engine\Build\BatchFiles\Build.bat" Blocks Win64 Shipping \
-		-project="%CD%\unreal\Blocks\Blocks.uproject"
+	"$(UE_ROOT)\Engine\Build\BatchFiles\Build.bat" Blocks Win64 Shipping -project="$(MAKEDIR)\unreal\Blocks\Blocks.uproject" $(UE_COMPILER_VERSION_ARG) $(UE_TOOLCHAIN_VERSION_ARG)
 !endif
 
 # Cooking content uses Development Editor so packaging DebugGame needs both Debug and Release sim libs builds
@@ -199,14 +207,10 @@ package_blocks_debuggame: simlibs_debug simlibs_release
 !ifndef UE_ROOT
 	@echo.
 	@echo ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_4.25
+	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_5.7
 !else
 	@echo UE_ROOT env variable set to: %%UE_ROOT%%
-	"%UE_ROOT%\Engine\Build\BatchFiles\RunUAT.bat" BuildCookRun \
-		-project="%CD%\unreal\Blocks\Blocks.uproject" \
-		-nop4 -nocompile -build -cook -compressed -pak -allmaps -stage \
-		-archive -archivedirectory="%CD%\packages\Blocks\DebugGame" \
-		-clientconfig=DebugGame -clean -utf8output -prereqs
+	"$(UE_ROOT)\Engine\Build\BatchFiles\RunUAT.bat" BuildCookRun -project="$(MAKEDIR)\unreal\Blocks\Blocks.uproject" -nop4 -nocompile -build -cook -compressed -pak -allmaps -stage -archive -archivedirectory="$(MAKEDIR)\packages\Blocks\DebugGame" -clientconfig=DebugGame -clean -utf8output -prereqs
 !endif
 
 .PHONY: package_blocks_development
@@ -216,14 +220,10 @@ package_blocks_development: simlibs_release
 !ifndef UE_ROOT
 	@echo.
 	@echo ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_4.25
+	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_5.7
 !else
 	@echo UE_ROOT env variable set to: %%UE_ROOT%%
-	"%UE_ROOT%\Engine\Build\BatchFiles\RunUAT.bat" BuildCookRun \
-		-project="%CD%\unreal\Blocks\Blocks.uproject" \
-		-nop4 -nocompile -build -cook -compressed -pak -allmaps -stage \
-		-archive -archivedirectory="%CD%\packages\Blocks\Development" \
-		-clientconfig=Development -clean -utf8output -prereqs
+	"$(UE_ROOT)\Engine\Build\BatchFiles\RunUAT.bat" BuildCookRun -project="$(MAKEDIR)\unreal\Blocks\Blocks.uproject" -nop4 -nocompile -build -cook -compressed -pak -allmaps -stage -archive -archivedirectory="$(MAKEDIR)\packages\Blocks\Development" -clientconfig=Development -clean -utf8output -prereqs
 !endif
 
 .PHONY: package_blocks_shipping
@@ -233,14 +233,10 @@ package_blocks_shipping: simlibs_release
 !ifndef UE_ROOT
 	@echo.
 	@echo ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_4.25
+	Unreal engine's root folder path, ex. C:\Program Files\Epic Games\UE_5.7
 !else
 	@echo UE_ROOT env variable set to: %%UE_ROOT%%
-	"%UE_ROOT%\Engine\Build\BatchFiles\RunUAT.bat" BuildCookRun \
-		-project="%CD%\unreal\Blocks\Blocks.uproject" \
-		-nop4 -nocompile -build -cook -compressed -pak -allmaps -stage \
-		-archive -archivedirectory="%CD%\packages\Blocks\Shipping" \
-		-clientconfig=Shipping -clean -utf8output -prereqs -nodebuginfo
+	"$(UE_ROOT)\Engine\Build\BatchFiles\RunUAT.bat" BuildCookRun -project="$(MAKEDIR)\unreal\Blocks\Blocks.uproject" -nop4 -nocompile -build -cook -compressed -pak -allmaps -stage -archive -archivedirectory="$(MAKEDIR)\packages\Blocks\Shipping" -clientconfig=Shipping -clean -utf8output -prereqs -nodebuginfo
 !endif
 
 .PHONY: package_plugin

@@ -7,6 +7,7 @@ ROS bridge for Project AirSim: Main bridge module
 
 import logging
 import re
+from typing import Dict, List
 
 import geometry_msgs.msg as rosgeommsg
 import radar_msgs.msg as rosradarmsg
@@ -15,7 +16,7 @@ import std_msgs.msg as rosstdmsg
 
 import projectairsim
 from projectairsim import ProjectAirSimClient
-from projectairsim.utils import projectairsim_log
+from projectairsim.utils import load_scene_config_as_dict, projectairsim_log
 
 from . import utils
 from .msg_converter import MsgConverter
@@ -181,6 +182,7 @@ class ProjectAirSimROSBridge:
         port_topics: int = 8989,
         port_services: int = 8990,
         sim_config_path: str = "sim_config/",
+        scene_config_name: str = "",
         start_ros: bool = True,
         client: ProjectAirSimClient = None,
         logger: logging.Logger = None,
@@ -209,6 +211,7 @@ class ProjectAirSimROSBridge:
             port_topics - The TCP port where Project AirSim is handling the pub-sub Client API if client is None
             port_services - The TCP port where Project AirSim is handling the services Client API if client is None
             sim_config_path - THe directory containing the simulation config files
+            scene_config_name - Optional scene config file name used to preload sprayer IDs
             start_ros - If true, ROS topic processing is started immediately
             client - Project AirSim client object (already connected to Project AirSim)
             logger - Logger object; if None, the default Project AirSim logger is used
@@ -357,6 +360,11 @@ class ProjectAirSimROSBridge:
         self.sim_config_path = (
             sim_config_path  # Directory containing the simulation configuration files
         )
+        self.scene_config_name = scene_config_name
+        self.default_sprayer_ids = ["left", "right"]
+        self.sprayer_ids_by_robot_name: Dict[str, List[str]] = {}
+        if self.scene_config_name:
+            self._load_sprayer_ids_from_scene_config(self.scene_config_name)
         self.is_client_ours = (
             False  # Whether we created self.projectairsim_client or it was passed to us
         )
@@ -504,6 +512,25 @@ class ProjectAirSimROSBridge:
                         topic_handlers_new[topic_name] = topic_handler
                         break
 
+        # Add ROS subscribers for sprayer FX control per robot
+        for robot_path in set(robot_paths_new.values()):
+            for sprayer_id in self._get_sprayer_ids_for_robot(robot_path):
+                handler_key = f"{robot_path}/sprayer_{sprayer_id}"
+                if handler_key in self.topic_handlers:
+                    topic_handler = self.topic_handlers.pop(handler_key)
+                else:
+                    ros_topic_name = f"{robot_path}/sprayer_{sprayer_id}"
+                    topic_handler = BasicROSSubscriber(
+                        ros_topic_name=ros_topic_name,
+                        ros_message_type=rosstdmsg.Bool,
+                        topics_managers=self.topics_managers,
+                        message_callback=lambda ros_topic_name, msg, rp=robot_path, sid=sprayer_id: self._sprayer_command_cb(
+                            rp, sid, msg
+                        ),
+                    )
+
+                topic_handlers_new[handler_key] = topic_handler
+
         # Clear handlers that are no longer needed and save new handlers
         self._clear_handlers()  # Skip setting empty dictionaries
         self.topic_handlers = topic_handlers_new
@@ -565,6 +592,9 @@ class ProjectAirSimROSBridge:
                     scene_config_name=scene_config,
                     sim_config_path=self.sim_config_path,
                 )
+                self.scene_config_name = scene_config
+                self._load_sprayer_ids_from_scene_config(scene_config)
+
                 if self.ros_is_started:
                     self.update_topics()
 
@@ -573,6 +603,68 @@ class ProjectAirSimROSBridge:
                 self.logger.error(
                     f'Failed to load scene config file "{scene_config}": {e}'
                 )
+
+    def _sprayer_command_cb(self, robot_path: str, sprayer_id: str, ros_message):
+        """
+        Handle a sprayer FX command from ROS and forward to Project AirSim.
+        """
+        if self.projectairsim_client is None:
+            return
+
+        enabled = bool(ros_message.data)
+        try:
+            self.projectairsim_client.request(
+                {
+                    "method": f"{robot_path}/SetSprayerFx",
+                    "params": {"sprayer_id": sprayer_id, "enabled": enabled},
+                    "version": 1.0,
+                }
+            )
+        except Exception as e:
+            self.logger.error(
+                f"Failed to set sprayer FX '{sprayer_id}' for {robot_path}: {e}"
+            )
+
+    def _get_sprayer_ids_for_robot(self, robot_path: str) -> List[str]:
+        robot_name = utils.get_robot_name(robot_path) if robot_path else None
+        if robot_name:
+            sprayer_ids = self.sprayer_ids_by_robot_name.get(robot_name)
+            if sprayer_ids:
+                return sprayer_ids
+        return self.default_sprayer_ids
+
+    def _load_sprayer_ids_from_scene_config(self, scene_config_name: str) -> None:
+        try:
+            config_dict, _ = load_scene_config_as_dict(
+                scene_config_name, sim_config_path=self.sim_config_path
+            )
+        except Exception as e:
+            self.logger.warning(
+                f"Failed to load sprayer IDs from scene config '{scene_config_name}': {e}"
+            )
+            return
+
+        sprayer_ids_by_robot_name: Dict[str, List[str]] = {}
+        for actor in config_dict.get("actors", []):
+            if actor.get("type") != "robot":
+                continue
+            robot_name = actor.get("name")
+            robot_config = actor.get("robot-config", {})
+            sprayers = (
+                robot_config.get("fx", {}).get("sprayers", [])
+                if isinstance(robot_config, dict)
+                else []
+            )
+            ids = [
+                sprayer.get("id")
+                for sprayer in sprayers
+                if isinstance(sprayer, dict) and sprayer.get("id")
+            ]
+            if robot_name and ids:
+                sprayer_ids_by_robot_name[robot_name] = ids
+
+        if sprayer_ids_by_robot_name:
+            self.sprayer_ids_by_robot_name = sprayer_ids_by_robot_name
 
     def _on_ros_shutdown(self):
         """

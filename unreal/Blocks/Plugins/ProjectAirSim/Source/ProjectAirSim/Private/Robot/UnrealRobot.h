@@ -30,6 +30,7 @@
 
 class AUnrealScene;
 class UUnrealCamera;
+class UNiagaraComponent;
 
 UCLASS()
 class AUnrealRobot : public AActor {
@@ -97,11 +98,16 @@ class AUnrealRobot : public AActor {
       const microsoft::projectairsim::ActuatedTransforms& InActuatedTransforms,
       TimeNano DeltaSimtime);
 
-  void MoveRobotToUnrealPose(bool bUseCollisionSweep);
+ void MoveRobotToUnrealPose(bool bUseCollisionSweep);
 
-  void ApplyActuatedTransforms();
+ void ApplyActuatedTransforms();
 
-  void SetExternalWrench(microsoft::projectairsim::Wrench InWrench);
+ void SetExternalWrench(microsoft::projectairsim::Wrench InWrench);
+
+  void InitializeSprayerFx(
+      const std::vector<microsoft::projectairsim::SprayerFxSettings>&
+          InSettings);
+  void UpdateSprayerFxState();
 
   std::set<std::string> GetRootLinks(
       const std::vector<microsoft::projectairsim::Link>& InLinks,
@@ -121,6 +127,17 @@ class AUnrealRobot : public AActor {
   AUnrealScene* UnrealScene;
 
   FCriticalSection UpdateMutex;
+
+  struct FSprayerFxInstance {
+    FString Id;
+    FString FxPath;
+    bool bEnabled = true;
+    bool bActive = false;
+    FTransform RelativeTransform;
+    UNiagaraComponent* Component = nullptr;
+  };
+
+  TMap<FString, FSprayerFxInstance> SprayerFxInstances;
 
   bool bHasKinematicsUpdated = false;
   microsoft::projectairsim::Kinematics RobotKinematics;

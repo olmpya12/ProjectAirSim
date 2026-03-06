@@ -30,7 +30,7 @@
       "visual": {
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/EFT_X2300.EFT_X2300"
+          "name": "/Drone/EFT_X2300.EFT_X2300"
         }
       }
     },

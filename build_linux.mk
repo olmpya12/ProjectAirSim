@@ -153,7 +153,7 @@ blocks_debuggame: simlibs_debug
 ifndef UE_ROOT
 	@echo
 	@echo "ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-4.25.0"
+	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-5.7.0"
 else
 	@echo "UE_ROOT env variable set to: $(UE_ROOT)"
 	$(UE_ROOT)/Engine/Build/BatchFiles/Linux/Build.sh Blocks Linux DebugGame \
@@ -169,7 +169,7 @@ blocks_development: simlibs_release
 ifndef UE_ROOT
 	@echo
 	@echo "ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-4.25.0"
+	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-5.7.0"
 else
 	@echo "UE_ROOT env variable set to: $(UE_ROOT)"
 	$(UE_ROOT)/Engine/Build/BatchFiles/Linux/Build.sh Blocks Linux Development \
@@ -183,7 +183,7 @@ blocks_shipping: simlibs_release
 ifndef UE_ROOT
 	@echo
 	@echo "ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-4.25.0"
+	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-5.7.0"
 else
 	@echo "UE_ROOT env variable set to: $(UE_ROOT)"
 	$(UE_ROOT)/Engine/Build/BatchFiles/Linux/Build.sh Blocks Linux Shipping \
@@ -198,7 +198,7 @@ package_blocks_debuggame: simlibs_debug simlibs_release
 ifndef UE_ROOT
 	@echo
 	@echo "ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-4.25.0"
+	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-5.7.0"
 else
 	@echo "UE_ROOT env variable set to: $(UE_ROOT)"
 	$(UE_ROOT)/Engine/Build/BatchFiles/RunUAT.sh BuildCookRun \
@@ -215,7 +215,7 @@ package_blocks_development: simlibs_release
 ifndef UE_ROOT
 	@echo
 	@echo "ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-4.25.0"
+	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-5.7.0"
 else
 	@echo "UE_ROOT env variable set to: $(UE_ROOT)"
 	$(UE_ROOT)/Engine/Build/BatchFiles/RunUAT.sh BuildCookRun \
@@ -232,7 +232,7 @@ package_blocks_shipping: simlibs_release
 ifndef UE_ROOT
 	@echo
 	@echo "ERROR: UE_ROOT environmant variable is not set. It must be set to the target \
-	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-4.25.0"
+	Unreal engine's root folder path, ex. /home/ue4/UnrealEngine-5.7.0"
 else
 	@echo "UE_ROOT env variable set to: $(UE_ROOT)"
 	$(UE_ROOT)/Engine/Build/BatchFiles/RunUAT.sh BuildCookRun \

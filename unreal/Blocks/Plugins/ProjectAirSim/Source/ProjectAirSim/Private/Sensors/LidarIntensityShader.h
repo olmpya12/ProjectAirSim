@@ -12,8 +12,8 @@
 #include "Runtime/RenderCore/Public/RenderGraphResources.h"
 
 // FScreenPassTextureViewportParameters and FScreenPassTextureInput
-#include "Runtime/Renderer/Private/ScreenPass.h"
-#include "Runtime/Renderer/Private/SceneTextureParameters.h"
+#include "ScreenPass.h"
+#include "SceneTextureParameters.h"
 
 BEGIN_SHADER_PARAMETER_STRUCT(FLidarIntensityShaderInputParameters, )
   SHADER_PARAMETER_STRUCT_REF(FViewUniformShaderParameters, View)
@@ -51,11 +51,6 @@ class FLidarIntensityPS : public FLidarIntensityShader {
       const ShaderMetaType::CompiledShaderInitializerType& Initializer)
       : FLidarIntensityShader(Initializer) {}
 
-  void SetParameters(FRHICommandList& RHICmdList, const FSceneView& View) {
-    FGlobalShader::SetParameters<FViewUniformShaderParameters>(
-        RHICmdList, RHICmdList.GetBoundPixelShader(), View.ViewUniformBuffer);
-  }
-
   static void ModifyCompilationEnvironment(
       const FGlobalShaderPermutationParameters& Parameters,
       FShaderCompilerEnvironment& OutEnvironment) {
@@ -73,8 +68,4 @@ class FLidarIntensityVS : public FLidarIntensityShader {
       const ShaderMetaType::CompiledShaderInitializerType& Initializer)
       : FLidarIntensityShader(Initializer) {}
 
-  void SetParameters(FRHICommandList& RHICmdList, const FSceneView& View) {
-    FGlobalShader::SetParameters<FViewUniformShaderParameters>(
-        RHICmdList, RHICmdList.GetBoundVertexShader(), View.ViewUniformBuffer);
-  }
 };

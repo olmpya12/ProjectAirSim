@@ -7,6 +7,7 @@
 
 #include <map>
 
+#include "UnrealLogger.h"
 #include "core_sim/message/image_message.hpp"
 
 namespace projectairsim = microsoft::projectairsim;

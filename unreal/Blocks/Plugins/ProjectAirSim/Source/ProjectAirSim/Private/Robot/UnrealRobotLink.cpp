@@ -11,6 +11,7 @@
 #include "Engine/StaticMesh.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "ProjectAirSim.h"
+#include "UnrealHelpers.h"
 #include "UnrealLogger.h"
 #include "core_sim/link/geometry/unreal_mesh.hpp"
 #include "core_sim/math_utils.hpp"

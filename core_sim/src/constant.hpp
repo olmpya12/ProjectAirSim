@@ -169,6 +169,10 @@ class Constant {
         "flight-control-setpoint";
     static constexpr const char* sensors = "sensors";
     static constexpr const char* actuators = "actuators";
+    static constexpr const char* fx = "fx";
+    static constexpr const char* sprayers = "sprayers";
+    static constexpr const char* fx_path = "fx-path";
+    static constexpr const char* start_enabled = "start-enabled";
     static constexpr const char* enabled = "enabled";
     static constexpr const char* vr_mode = "vr-mode";
     //! Camera sensor related config parameters

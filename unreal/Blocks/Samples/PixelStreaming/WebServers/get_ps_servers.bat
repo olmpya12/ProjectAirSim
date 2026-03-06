@@ -45,7 +45,7 @@ if DEFINED ARG (
     )
     if "%ARG%"=="/r" (
         SET "ReleaseVersion=%2"
-        SET "ReleaseUrl=https://github.com/EpicGames/PixelStreamingInfrastructure/releases/download/!ReleaseVersion!/!ReleaseVersion!.zip"
+        SET "ReleaseUrl=https://github.com/EpicGamesExt/PixelStreamingInfrastructure/releases/download/!ReleaseVersion!/!ReleaseVersion!.zip"
         SET IsTag=0
         SET FlagPassed=1
         SHIFT
@@ -55,7 +55,7 @@ if DEFINED ARG (
 )
 
 @Rem Name and version of ps-infra that we are downloading
-SET PSInfraOrg=EpicGames
+SET PSInfraOrg=EpicGamesExt
 SET PSInfraRepo=PixelStreamingInfrastructure
 
 @Rem If a UE version is supplied set the right branch or tag to fetch for that version of UE
@@ -80,11 +80,31 @@ if DEFINED UEVersion (
     SET PSInfraTagOrBranch=UE5.2
     SET IsTag=0
   )
+  if "%UEVersion%"=="5.3" (
+    SET PSInfraTagOrBranch=UE5.3
+    SET IsTag=0
+  )
+  if "%UEVersion%"=="5.4" (
+    SET PSInfraTagOrBranch=UE5.4
+    SET IsTag=0
+  )
+  if "%UEVersion%"=="5.5" (
+    SET PSInfraTagOrBranch=UE5.5
+    SET IsTag=0
+  )
+  if "%UEVersion%"=="5.6" (
+    SET PSInfraTagOrBranch=UE5.6
+    SET IsTag=0
+  )
+  if "%UEVersion%"=="5.7" (
+    SET PSInfraTagOrBranch=UE5.7
+    SET IsTag=0
+  )
 )
 
 @Rem If no arguments select a specific version, fetch the appropriate default
 if NOT DEFINED PSInfraTagOrBranch (
-    SET PSInfraTagOrBranch=UE5.2
+    SET PSInfraTagOrBranch=UE5.7
     SET IsTag=0
 )
 echo Tag or branch: !PSInfraTagOrBranch!
@@ -101,9 +121,9 @@ if %IsTag%==0 (
   if NOT DEFINED ReleaseUrl (
     @Rem We don't want to auto-set the release version if the user passed an explicit flag.
     if NOT DEFINED FlagPassed (
-      FOR /F "tokens=* USEBACKQ" %%F IN (`curl -s -f -L https://raw.githubusercontent.com/EpicGames/PixelStreamingInfrastructure/%PSInfraTagOrBranch%/RELEASE_VERSION`) DO (
+      FOR /F "tokens=* USEBACKQ" %%F IN (`curl -s -f -L https://raw.githubusercontent.com/EpicGamesExt/PixelStreamingInfrastructure/%PSInfraTagOrBranch%/RELEASE_VERSION`) DO (
         SET "ReleaseVersion=!PSInfraTagOrBranch!-%%F"
-        SET "ReleaseUrl=https://github.com/EpicGames/PixelStreamingInfrastructure/releases/download/!ReleaseVersion!/!ReleaseVersion!.zip"
+        SET "ReleaseUrl=https://github.com/EpicGamesExt/PixelStreamingInfrastructure/releases/download/!ReleaseVersion!/!ReleaseVersion!.zip"
       )
     )
   )
@@ -190,6 +210,6 @@ echo  Where:
 echo    /v      Specify a version of Unreal Engine to download the recommended release for
 echo    /b      Specify a specific branch for the tool to download from repo
 echo    /t      Specify a specific tag for the tool to download from repo
-echo    /r      Specify a specific release url path e.g. https://github.com/EpicGames/PixelStreamingInfrastructure/releases/download/${RELEASE_HERE}.zip
+echo    /r      Specify a specific release url path e.g. https://github.com/EpicGamesExt/PixelStreamingInfrastructure/releases/download/${RELEASE_HERE}.zip
 echo    /h      Display this help message
 goto :EOF

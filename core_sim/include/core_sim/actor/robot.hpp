@@ -30,6 +30,15 @@
 namespace microsoft {
 namespace projectairsim {
 
+struct SprayerFxSettings {
+  std::string id;
+  std::string parent_link;
+  Transform origin;
+  std::string fx_path;
+  bool enabled = true;
+  bool start_enabled = false;
+};
+
 class ConfigJson;
 class Logger;
 class TopicManager;
@@ -71,6 +80,10 @@ class Robot : public Actor {
 
   const std::string& GetControllerType() const;
   const std::string& GetControllerSettings() const;
+
+  const std::vector<SprayerFxSettings>& GetSprayerFxSettings() const;
+  bool SetSprayerFxEnabled(const std::string& sprayer_id, bool enabled);
+  bool GetSprayerFxEnabled(const std::string& sprayer_id) const;
 
   //---------------------------------------------------------------------------
   // Runtime

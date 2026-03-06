@@ -20,6 +20,7 @@
 #include "CoreMinimal.h"
 #include "Engine/World.h"
 #include "EngineUtils.h"
+#include "ProceduralMeshComponent.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/PlayerInput.h"
 #include "IImageWrapperModule.h"

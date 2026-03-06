@@ -13,8 +13,18 @@ AProjectAirSimGameMode::AProjectAirSimGameMode(
     const FObjectInitializer& ObjectInitializer)
     : Super(ObjectInitializer),
       UnrealSimLoader(FPaths::ConvertRelativePathToFull(FPaths::ProjectDir())) {
-  DefaultPawnClass = nullptr;
   FApp::bUseFixedSeed = true;  // for determinism, persists in UE project
+}
+
+UClass* AProjectAirSimGameMode::GetDefaultPawnClassForController_Implementation(
+    AController* InController) {
+  if (bUseThirdPersonPawn && !ThirdPersonPawnClass.IsNull()) {
+    if (UClass* LoadedClass = ThirdPersonPawnClass.LoadSynchronous()) {
+      return LoadedClass;
+    }
+  }
+
+  return Super::GetDefaultPawnClassForController_Implementation(InController);
 }
 
 void AProjectAirSimGameMode::StartPlay() {

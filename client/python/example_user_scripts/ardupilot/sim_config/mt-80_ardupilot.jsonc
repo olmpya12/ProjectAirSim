@@ -30,7 +30,7 @@
       "visual": {
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/EFT_X2300.EFT_X2300"
+          "name": "/Drone/EFT_X2300.EFT_X2300"
         }
       }
     },
@@ -63,7 +63,7 @@
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
+          "name": "/Script/Engine.StaticMesh'/Drone/X-A14B-Proppeller.X-A14B-Proppeller'"
         }
       }
     },
@@ -96,7 +96,7 @@
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
+          "name": "/Script/Engine.StaticMesh'/Drone/X-A14B-Proppeller.X-A14B-Proppeller'"
         }
       }
     },
@@ -129,7 +129,7 @@
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
+          "name": "/Script/Engine.StaticMesh'/Drone/X-A14B-Proppeller.X-A14B-Proppeller'"
         }
       }
     },
@@ -162,7 +162,7 @@
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
+          "name": "/Script/Engine.StaticMesh'/Drone/X-A14B-Proppeller.X-A14B-Proppeller'"
         }
       }
     },
@@ -195,7 +195,7 @@
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
+          "name": "/Script/Engine.StaticMesh'/Drone/X-A14B-Proppeller.X-A14B-Proppeller'"
         }
       }
     },
@@ -228,7 +228,7 @@
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
+          "name": "/Script/Engine.StaticMesh'/Drone/X-A14B-Proppeller.X-A14B-Proppeller'"
         }
       }
     },
@@ -261,7 +261,7 @@
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
+          "name": "/Script/Engine.StaticMesh'/Drone/X-A14B-Proppeller.X-A14B-Proppeller'"
         }
       }
     },
@@ -294,7 +294,7 @@
         },
         "geometry": {
           "type": "unreal_mesh",
-          "name": "/Game/X-A14B-Proppeller.X-A14B-Proppeller"
+          "name": "/Script/Engine.StaticMesh'/Drone/X-A14B-Proppeller.X-A14B-Proppeller'"
         }
       }
     }
@@ -539,6 +539,32 @@
       }
     }
   ],
+  "fx": {
+    "sprayers": [
+      {
+        "id": "left",
+        "enabled": true,
+        "start-enabled": false,
+        "parent-link": "Frame",
+        "origin": {
+          "xyz": "-0.837 -0.837 0.190",
+          "rpy-deg": "0 180 0"
+        },
+        "fx-path": "/Script/Niagara.NiagaraSystem'/Game/NewNiagaraSystem.NewNiagaraSystem'"
+      },
+      {
+        "id": "right",
+        "enabled": true,
+        "start-enabled": false,
+        "parent-link": "Frame",
+        "origin": {
+          "xyz": "-0.837 0.837 0.190",
+          "rpy-deg": "0 180 0"
+        },
+        "fx-path": "/Script/Niagara.NiagaraSystem'/Game/NewNiagaraSystem.NewNiagaraSystem'"
+      }
+    ]
+  },
   "sensors": [
     {
       "id": "livox_lidar",
@@ -589,7 +615,7 @@
       "cluster-by-resolution": true,
       "rcs-adjust-factor": 0.1,
       "beam-radius": 0.005,
-      "draw-debug-points": false,
+      "draw-debug-points": true,
       "origin": {
         "xyz": "0.10 0.0 0.0",
         "rpy-deg": "0 0 0"

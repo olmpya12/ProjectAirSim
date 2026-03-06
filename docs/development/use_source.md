@@ -63,12 +63,13 @@ Choose your development tool:
 
 On Windows, run the `build.cmd` script using the `x64 Native Tools Command Prompt for VS 2019`. 
 
-Unreal Engine 5.2.x requires a specific MSVC compiler version and will fail with newer versions. Load the correct toolset into your command prompt session:
+Unreal Engine 5.7 may require a specific MSVC compiler version. If Unreal Build Tool reports a mismatch, load the correct toolset into your command prompt session:
 ```cmd
-"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" -vcvars_ver=14.37.32822
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" -vcvars_ver=14.xx.xxxxx
 ```
 
 Note: This path assumes a default VS 2022 Community installation. Adjust the path if yours is different.
+Replace `14.xx.xxxxx` with the toolset version required for UE 5.7.
 
 On Linux, run the `build.sh` shell script.
 

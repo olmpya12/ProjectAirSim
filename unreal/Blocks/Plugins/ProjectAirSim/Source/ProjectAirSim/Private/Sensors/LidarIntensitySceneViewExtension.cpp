@@ -1,9 +1,11 @@
 #include "LidarIntensitySceneViewExtension.h"
 
 #include "RHI.h"
+#include "RHICommandList.h"
 #include "SceneView.h"
 #include "RenderGraph.h"
 #include "Runtime/Renderer/Private/PostProcess/PostProcessing.h"
+#include "PostProcess/DrawRectangle.h"
 #include "CommonRenderResources.h"
 #include "Containers/DynamicRHIResourceArray.h"
 #include "Engine/World.h"
@@ -83,11 +85,11 @@ void DrawScreenPass(FRHICommandListImmediate& RHICmdList,
   FIntPoint LocalOutputSize(OutputSize);
   EDrawRectangleFlags DrawRectangleFlags = EDRF_UseTriangleOptimization;
 
-  DrawPostProcessPass(RHICmdList, LocalOutputPos.X, LocalOutputPos.Y,
-                      LocalOutputSize.X, LocalOutputSize.Y, InputRect.Min.X,
-                      InputRect.Min.Y, InputRect.Width(), InputRect.Height(),
-                      OutputSize, InputSize, PipelineState.VertexShader,
-                      View.StereoViewIndex, false, DrawRectangleFlags);
+  UE::Renderer::PostProcess::DrawPostProcessPass(
+      RHICmdList, PipelineState.VertexShader, LocalOutputPos.X,
+      LocalOutputPos.Y, LocalOutputSize.X, LocalOutputSize.Y, InputRect.Min.X,
+      InputRect.Min.Y, InputRect.Width(), InputRect.Height(), OutputSize,
+      InputSize, View.StereoViewIndex, false, DrawRectangleFlags);
 }
 ///////////////////////////////////////////////////////////
 
@@ -196,12 +198,10 @@ void FLidarIntensitySceneViewExtension::PrePostProcessPass_RenderThread(
             FScreenPassPipelineState(VertexShader, PixelShader,
                                      DefaultBlendState, DepthStencilState),
             [&](FRHICommandListImmediate& RHICmdList) {
-              VertexShader->SetParameters(RHICmdList, View);
               SetShaderParameters(RHICmdList, VertexShader,
                                   VertexShader.GetVertexShader(),
                                   *PostProcessMaterialParameters);
 
-              PixelShader->SetParameters(RHICmdList, View);
               SetShaderParameters(RHICmdList, PixelShader,
                                   PixelShader.GetPixelShader(),
                                   *PostProcessMaterialParameters);
@@ -288,12 +288,12 @@ void FLidarIntensitySceneViewExtension::PrePostProcessPass_RenderThread(
         RDG_EVENT_NAME("FCopyBufferToCPUPass"), CopyPassParameters,
         ERDGPassFlags::Readback,
         [this, &InitialData, PointCloudBufferRDG, BufferSize](FRHICommandList& RHICmdList) {
-          InitialData = (float*)RHILockBuffer(PointCloudBufferRDG->GetRHI(), 0,
-                                              BufferSize, RLM_ReadOnly);
+          InitialData = static_cast<float*>(RHICmdList.LockBuffer(
+              PointCloudBufferRDG->GetRHI(), 0, BufferSize, RLM_ReadOnly));
 
           FMemory::Memcpy(LidarPointCloudData.data(), InitialData, BufferSize);
 
-          RHIUnlockBuffer(PointCloudBufferRDG->GetRHI());
+          RHICmdList.UnlockBuffer(PointCloudBufferRDG->GetRHI());
         });
 }
 

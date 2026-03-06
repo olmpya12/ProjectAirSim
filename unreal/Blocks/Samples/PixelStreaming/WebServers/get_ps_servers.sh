@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copyright Epic Games, Inc. All Rights Reserved.
 
-BASH_LOCATION=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+BASH_LOCATION="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
 
 pushd "${BASH_LOCATION}" > /dev/null
 
@@ -17,19 +17,19 @@ print_help() {
            release for
    -b      Specify a specific branch for the tool to download from repo
    -t      Specify a specific tag for the tool to download from repo
-   -r      Specify a specific release url path e.g. https://github.com/EpicGames/PixelStreamingInfrastructure/releases/download/<RELEASE_VERSION>/<RELEASE_VERSION>.zip
+   -r      Specify a specific release url path e.g. https://github.com/EpicGamesExt/PixelStreamingInfrastructure/releases/download/<RELEASE_VERSION>/<RELEASE_VERSION>.zip
    -h      Display this help message
 "
  exit 1
 }
 
 # Set all default variables (e.g. # Name and version of ps-infra that we are downloading)
-PSInfraOrg=EpicGames
+PSInfraOrg=EpicGamesExt
 PSInfraRepo=PixelStreamingInfrastructure
-PSInfraTagOrBranch=UE5.2
+PSInfraTagOrBranch=UE5.7
 RefType=heads
 IsTag=0
-ReleaseUrlBase=https://github.com/EpicGames/PixelStreamingInfrastructure/releases/download
+ReleaseUrlBase=https://github.com/EpicGamesExt/PixelStreamingInfrastructure/releases/download
 # Unset any variables that don't have defaults that we use that may have persisted between bash terminals.
 unset Url
 unset DownloadVersion
@@ -37,7 +37,7 @@ unset FlagPassed
 unset ReleaseVersion
 unset ReleaseUrl
 
-while(($#)) ; do
+while (($#)) ; do
   case "$1" in
    -h ) print_help;;
    -v ) UEVersion="$2"; FlagPassed=1; shift 2;;
@@ -76,12 +76,37 @@ then
     PSInfraTagOrBranch=UE5.2
     IsTag=0
   fi
+  if [ "$UEVersion" = "5.3" ]
+  then
+    PSInfraTagOrBranch=UE5.3
+    IsTag=0
+  fi
+  if [ "$UEVersion" = "5.4" ]
+  then
+    PSInfraTagOrBranch=UE5.4
+    IsTag=0
+  fi
+  if [ "$UEVersion" = "5.5" ]
+  then
+    PSInfraTagOrBranch=UE5.5
+    IsTag=0
+  fi
+  if [ "$UEVersion" = "5.6" ]
+  then
+    PSInfraTagOrBranch=UE5.6
+    IsTag=0
+  fi
+  if [ "$UEVersion" = "5.7" ]
+  then
+    PSInfraTagOrBranch=UE5.7
+    IsTag=0
+  fi
 fi
 
 # If no arguments select a specific version, fetch the appropriate default
 if [ -z "$PSInfraTagOrBranch" ]
 then
-  PSInfraTagOrBranch=UE5.2
+  PSInfraTagOrBranch=UE5.7
   IsTag=0
 fi
 echo "Tag or branch: $PSInfraTagOrBranch"
@@ -97,10 +122,10 @@ fi
 # We have a branch, no user-specified release, then check repo for the presence of a RELEASE_VERSION file in the current branch.
 if [ "$IsTag" -eq 0 ] && [ -z "$ReleaseUrl" ] && [ -z "$FlagPassed" ]
 then
-  RelUrl=https://raw.githubusercontent.com/EpicGames/PixelStreamingInfrastructure/$PSInfraTagOrBranch/RELEASE_VERSION
+  RelUrl=https://raw.githubusercontent.com/EpicGamesExt/PixelStreamingInfrastructure/$PSInfraTagOrBranch/RELEASE_VERSION
   if curl --output /dev/null --silent -r 0-0 --fail "$RelUrl"; then
     ReleaseVersion="$PSInfraTagOrBranch-$(curl -L -s $RelUrl)"
-    ReleaseUrl=https://github.com/EpicGames/PixelStreamingInfrastructure/releases/download/$ReleaseVersion/$ReleaseVersion.tar.gz
+    ReleaseUrl=https://github.com/EpicGamesExt/PixelStreamingInfrastructure/releases/download/$ReleaseVersion/$ReleaseVersion.tar.gz
     echo "Valid RELEASE_VERSION file found in Github repo at $RelUrl"
   else
     echo "RELEASE_VERSION file does not exist at: $RelUrl"

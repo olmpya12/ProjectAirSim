@@ -11,7 +11,7 @@ public class ProjectAirSim : ModuleRules
 {
     public ProjectAirSim(ReadOnlyTargetRules Target) : base(Target)
     {
-        CppStandard = CppStandardVersion.Cpp17;
+        CppStandard = CppStandardVersion.Cpp20;
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         PrivatePCHHeaderFile = "Public/ProjectAirSim.h";
 
@@ -38,7 +38,8 @@ public class ProjectAirSim : ModuleRules
 
         PrivateIncludePaths.AddRange(
             new string[] {
-                EngineDirectory + "/Source/Runtime/Renderer/Private"
+                EngineDirectory + "/Source/Runtime/Renderer/Private",
+                EngineDirectory + "/Source/Runtime/Renderer/Internal"
             }
         );
 
@@ -99,6 +100,8 @@ public class ProjectAirSim : ModuleRules
                 "CoreUObject",  // for base C++ project
                 "Engine",  // for base C++ project
                 "InputCore",  // for base C++ project
+                "EnhancedInput",
+                "HTTPServer",
                 "ImageWrapper",
                 "RenderCore",
                 "Renderer",
@@ -126,7 +129,8 @@ public class ProjectAirSim : ModuleRules
                 "Projects",  // default
                 "ProceduralMeshComponent",
                 "PixelStreaming",
-                "SunPosition"
+                "SunPosition",
+                "Niagara"
                 // ... add private dependencies that you statically link with here ...
             }
         );
